@@ -53,8 +53,18 @@ nav.menu li.cadastro a{
 	padding: 10px;
 	color: white;
 	background: #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 80px;
+	transform: scaleY(1.5);
 }
+
+nav.menu li.cadastro a:hover{
+	transform: scaleY(0);	
+  	color: #000000;
+	background-color: #ffffff;
+	background-image: linear-gradient(to right, #ffffff,#ffffff);
+}
+
 .menu a:hover{
 	text-decoration: underline;
 }
