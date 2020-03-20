@@ -53,7 +53,13 @@ nav.menu li.cadastro a{
 	padding: 10px;
 	color: white;
 	background: #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 80px;
+}
+nav.menu li.cadastro a:hover{
+  	color: #000000;
+	background-color: #ffffff;
+	background-image: linear-gradient(to right, #ffffff,#ffffff);
 }
 .menu a:hover{
 	text-decoration: underline;
@@ -74,9 +80,8 @@ section.banner_bg{
 .banner h2{
 	text-align: justify;
 	color: white;
-	font-family: 'Montserrat', sans-serif;
 	font-size: 60px;
-	padding: 22px 70px 20px;
+	padding: 24px 70px 20px;
 }
 .botao1 a{
 	font-size: 20px;
@@ -220,7 +225,11 @@ slider > *{
 slide:nth-child(1){
 	left: 0%;
 	animation-delay: -1s;
+<<<<<<< HEAD
 	background-image: url("../imagens/gato.jpg");
+=======
+	background-image: url("../imagens/gato01.jpg");
+>>>>>>> 3905bde62622edbce51ee50854bfdea0799d2c0c
 	background-size: cover;
 	background-position: center;
 }
