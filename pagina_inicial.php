@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	$_SESSION['anonimo'] = "deslogado";
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,7 +118,7 @@
 
 	<footer class="footer">
 		<a href="sobre.php">Sobre nós</a>
-		<a href="adocao.php">adoção</a>
+		<a href="doacao.php">adoção</a>
 		<a href="adote.php">doação</a>
 		<a href="login.php">Cadastre-se</a>
 		<p>Igarassu-PE</p>
