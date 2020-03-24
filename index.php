@@ -9,16 +9,19 @@ $_SESSION['anonimo'] = "logado";
  if ($_SESSION['anonimo'] == "logado" && $_SESSION['usuario'] != "nick" &&  $_SESSION['senha'] != "123") {
  	unset($_SESSION['usuario']);
  	unset($_SESSION['senha']);
-			 header("location:pagina_inicial.php");
+			 include 'header01.html';
+			include 'pagina_inicial.html';
  }
 		else if ($_SESSION['anonimo'] == "logado" || $_SESSION['usuario'] == "nick" &&  $_SESSION['senha'] == "123") 
 			{
-			 header("location:pagina_inicial.php");
+			  include 'header01.html';
+			include 'pagina_inicial.html';
 
 		}else if(isset($_SESSION['anonimo']) == "deslogado"){
 			unset($_SESSION['anonimo']);
 				if ($_SESSION['anonimo'] == null  || $_SESSION['usuario'] == "nick" &&  $_SESSION['senha'] == "123" ) {	
-			 header("location:pagina_inicial.php");
+			 include 'header02.html';
+			include 'pagina_inicial.html';
 				}
 					if ($_SESSION['anonimo'] == null  && $_SESSION['usuario'] != "nick" &&  $_SESSION['senha'] != "123" ) {
 						header("location:login.php");
@@ -28,3 +31,5 @@ $_SESSION['anonimo'] = "logado";
 	}
 ?>
  
+
+
