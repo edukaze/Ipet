@@ -60,12 +60,13 @@ nav.menu li.cadastro a{
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 80px;
 }
+
 nav.menu li.cadastro a:hover{
-  	color: #000000;
-	background-color: #ffffff;
-	background-image: linear-gradient(to right, #ffffff,#ffffff);
-	border: 1px solid black;
+  	color: #ffffff;
+	background-color: #000;
+	background-image: linear-gradient(to right, #000,#000);
 }
+
 .menu a:hover{
 	text-decoration: none;
 	color: #f27300;
