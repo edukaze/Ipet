@@ -3,23 +3,18 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
-	text-decoration: none;
 }
 .container{
-	padding: 20px;
 	margin:0 auto;
-	width: 1090px;
+	width: 1000px;
 	height: 550px;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 html. body{
-	width: 100%;
 	height: 100%;
-	padding: 0;
-	margin: 0px;
 }
 .clear{
 	clear: both;
@@ -43,7 +38,7 @@ nav.menu{
 nav.menu li{ 
 	float: center; 
 	display: inline-block;
-	padding: 0 27px;
+	padding: 0 30px;
 }
 nav.menu a{
 	color: black;
@@ -71,143 +66,278 @@ nav.menu li.cadastro a:hover{
 	text-decoration: none;
 	color: #f27300;
 }
-section.box3 div{
+section.bn{
 	width: 100%;
-	height: 600px;
+	height: 550px;
 	background-image: url("../imagens/passaros.jpg");
 	background-size: cover;
 	background-attachment: fixed;
 }
+section.box{
+	position: relative;
+	width: 100%;
+	height: 250px;
+}
+.box .bloco1{
+	width: 20%;
+	height: 100%;
+	border: 1px solid #fff;
+	background: #ffa14e;
+	font-size: 100px;
+	padding: 60px;
+	display: inline-block;
+	float: left;
+}
+.box .bloco2{
+	width: 20%;
+	height: 100%;
+	border: 1px solid #fff;
+	display: inline-block;
+	background: #04cd7b;
+	font-size: 100px;
+	padding: 70px;
+	float:left;
+}
+.box .bloco3{
+	width: 20%;
+	height: 100%;
+	border: 1px solid #fff;
+	background: #8caa9c;
+	font-size: 100px;
+	padding: 70px;
+	display: inline-block;
+	float:left;
+}
+.box .bloco4 img{
+	width: 20%;
+	border: 1px solid #fff;
+	background: #fff;
+	padding: 80px;
+	display: inline-block;
+	float:left;
+}
+.box .bloco5 img{
+	width: 20%;
+	height: 50%;
+	border: 1px solid #fff;
+	background: #ff4d35;
+	padding: 80px;
+	display: inline-block;
+	float:left;
+}
 section.box1{
 	width: 100%;
-	height: 100%;
-	padding: 0px 10px;
-}
-.box1 h1{
-	background: #04cd7b;
-	text-align: center;
-	font-size: 30px;
-	padding: 80px 20px;
-	border-bottom: 5px solid #fff;
-}
-.box1 p{
-	background: #ffa14e;
-	text-align: center;
-	font-weight: bold;
-	font-size: 30px;
-	padding: 80px 20px;
+	height: 500px;
 }
 .box1 h2{
-	background: #8caa9c;
+	margin-top: 150px;
 	text-align: center;
 	font-size: 30px;
-	color: black;
-	padding: 40px;
-	border-top: 5px solid #fff;
 }
-.box2{
-	margin: 0;
-	padding: 0;
+.box1 p{
+	width: 70%;
+	margin-top: 50px;
+	margin-left: 190px;
+	font-size: 20px;
+	font-weight: lighter;
+	font-family: 'Amiri', serif;
+	text-align: justify;
+	column-count: 2;
+	column-gap: 40px;
+}
+section.box2{
+	width: 100%;
+	height: 300px;
+	background-image: url("../imagens/dog04.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+.box2 .overlay{
+	width: 100%;
+	height: 300px;
+	background: rgba(0,0,0,.5);
+}
+.overlay h1{
+	padding: 70px;
+	text-align: center;
+	color: #fff;
+	font-size: 40px;
+}
+.overlay a{
+	padding: 30px;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 30%;
+	margin-left: 43%; 
+	font-size: 20px;
+}
+.overlay a:hover{
+	background: white;
+	color: black;
+}
+section.box3{
+	width: 100%;
+	height: 550px;
+}
+.box3 h2{
+	margin-top: 150px;
+	text-align: center;
+	font-size: 30px;
+}
+.box3 p{
+	width: 70%;
+	margin-top: 70px;
+	margin-left: 190px;
+	font-size: 20px;
+	font-weight: lighter;
+	font-family: 'Amiri', serif;
+	text-align: justify;
+	column-count: 2;
+	column-gap: 40px;
+}
+section.box4{
+	width: 100%;
+	height: 300px;
+	background-image: url("../imagens/dog05.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+.box4 .overlay1{
+	width: 100%;
+	height: 300px;
+	background: rgba(0,0,0,.5);
+}
+.overlay1 h1{
+	padding: 60px 0 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 40px;
+}
+.overlay1 .botao1 a{
+	display: inline;
+	float: left;
+	padding: 30px;
+	margin-left: 40%;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 30%; 
+	font-size: 20px;
+	display: inline-block;
+	float: left;
+}
+.overlay1 .botao2 a{
+	display: inline;
+	float: left;
+	margin: 0 10px;
+	padding: 30px;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 30%; 
+	font-size: 20px;
+}
+.overlay1 a:hover{
+	background: white;
+	color: black;
+}
+section.box5{
+	width: 100%;
+	height: 150px;
+}
+.box5 h1{
+	padding-top: 50px;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Dancing Script', cursive;
+}
+section.perguntas{
+	width: 100%;
+	height: 1400px;
+	background: #8caa9c;
+}
+.container .card{
+	background: #8caa9c;
+	position: relative;	
+	padding: 24px 0;
+	margin: 10px 0;
+}
+.container .card .face{
+	width: 300px;
+	height: 200px;
+	transition: 0.5s;
+}
+.container .card .face.face1{
+	position: relative;
+	background: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
-	font-family: 'Poppins', sans-serif;
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	z-index: 1;
+	transform: translateY(100px);
 }
-.box{
-	position: relative;
-	width: 300px;
-	height: 300px;
-	background: #000;
-	box-shadow: 50px 30px 30px rgba(0,0,0,.7);
-	margin: 10px 10px 20px 20px;
+.container .card:hover .face.face1{
+	transform: translateY(0);	
 }
-.box .imgBx{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.box .imgBx img{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.container .card .face.face1 .content{
+	opacity: 0.8;
 	transition: 0.5s;
-	opacity: 0.7;
 }
-.box:hover .imgBx img{
-	opacity: 0;
-}
-.box .content{
-	border: 1px solid #000;
-	position: absolute;
-	bottom: 20px;
-	left: 20%;
-	width: 60%;
-	height: 40px;
-	background: #fff;
-	transition: 0.5s;
-	overflow: hidden;
-	padding: 10px;
-	box-sizing: border-box;
-	align-items: center;
-}
-.box:hover .content{
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	left: 0;
-}
-.box .content h3{
-	margin: 0;
-	padding: 0;
-	font-size: 20px;
-	text-align: center;
-}
-.box .content p{
-	position: relative;
-	top: 5%;
-	margin: 10px 0 0;
-	padding: 10px 0 20px;
-	opacity: 0;
-	line-height: 1.2em;
-	transition: 0.5s;
-	text-align: center;
-}
-.box:hover .content p{
+.container .card:hover .face.face1 .content{
 	opacity: 1;
-	transition-delay: 0.5s;
 }
-.icones{
-	margin: 20px 40px;
+.container .card .face.face1 .content img{
+	max-width: 90px;
 }
-.icones a{
-	width: 40px;
-	height: 40px;
-	font-size: 40px;
-	color: black;
+.container .card .face.face1 .content h3{
+	margin: 10px 0 0;
+	padding: 0;
+	color: #000;
+	text-align: center;
+	font-size: 1.5em;
+}
+.container .card .face.face2{
 	position: relative;
-	top: 70%;
-	left: 26%;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	box-shadow: 50px 20px 50px rgba(0,0,0,0.9);
+	transform: translateY(-100px);
 }
-.icones a:hover{
-	color: blue;
+.container .card:hover .face.face2{
+	transform: translateY(0);
 }
-.icones .gmail:hover{
-	color: red;
+.container .card .face.face2 .content p{
+	text-align: center;
+	margin: 10px;
+	padding-top: 0;
+}
+.container .card .face.face2 .content a{
+	position: relative;
+	top: 10px;
+	left: 80px;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 40px;
+	color: #333;
+	padding: 5px;
+	border: 1px solid #333;	
+}
+.container .card .face.face2 .content a:hover{
+	background: #333;
+	color: #fff;
 }
 .footer{
 	width: 100%;
 	height: 50px;
-	border-top: 1px solid #000;
+}
+.footer p{
+	display: inline-block;
+	float: left;
+	padding: 16px;
 }
 .footer a{
 	 float: right;
@@ -216,14 +346,7 @@ section.box1{
 	 color: black;
 	 padding: 16px;
 }
-.footer a:hover{
-	text-decoration: underline;
-}
-.footer p{
-	display: inline-block;
-	float: left;
-	padding-top: 15px;
-	padding-left: 18px;
-	color: black;
-	font-size: 18px
+a:hover{
+	text-decoration: none;
+	color: #8caa9c;
 }
