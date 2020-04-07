@@ -1,33 +1,24 @@
 <?php
 session_start();
-$_SESSION['anonimo'] = "logado";
-	 $_SESSION['usario'] ="nick";
-	 $_SESSION['senha'] = "123";
+	$anonimo = true;
+	$usuario= "nick";
+	$senha = "13";
 
-
-
- if ($_SESSION['anonimo'] == "logado" && $_SESSION['usuario'] != "nick" &&  $_SESSION['senha'] != "123") {
- 	unset($_SESSION['usuario']);
- 	unset($_SESSION['senha']);
+ if ($anonimo == true && $usuario != "nick" ||  $senha != "123") {
+ 	$_SESSION['anonimo'] = true;
 			 include 'header01.html';
-			include 'pagina_inicial.html';
+			 include 'pagina_inicial.html';
  }
-		else if ($_SESSION['anonimo'] == "logado" || $_SESSION['usuario'] == "nick" &&  $_SESSION['senha'] == "123") 
-			{
-			  include 'header01.html';
-			include 'pagina_inicial.html';
-
-		}else if(isset($_SESSION['anonimo']) == "deslogado"){
-			unset($_SESSION['anonimo']);
-				if ($_SESSION['anonimo'] == null  || $_SESSION['usuario'] == "nick" &&  $_SESSION['senha'] == "123" ) {	
-			 include 'header02.html';
-			include 'pagina_inicial.html';
+		else if(($anonimo) == false){
+						if ($usuario== "nick" &&  $senha == "123" ) {
+			unset($_SESSION['anonimo']);	
+			$_SESSION['usuario'] = true;
+			 include  'header02.html';
+			 include 'pagina_inicial.html';
 				}
-					if ($_SESSION['anonimo'] == null  && $_SESSION['usuario'] != "nick" &&  $_SESSION['senha'] != "123" ) {
+					if ($usuario!= "nick" &&  $senha != "123" ) {
 						header("location:login.php");
 					}
-	}else if ($_SESSION['anonimo'] == "logado" || $_SESSION['usuario'] == "nick" &&  $_SESSION['senha'] == "123" ) {
-		echo "todos os usuarios estao logados";
 	}
 ?>
  

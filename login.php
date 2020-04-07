@@ -1,8 +1,16 @@
-<?php 
-	session_start();
-	$_SESSION['anonimo'] = "logado";
-	 $_SESSION['usario'] ="nick";
-	 $_SESSION['senha'] = "123";
+<?php
+session_start();
 
-include 'login.html';
 ?>
+<?php  
+
+if (isset($_SESSION['anonimo'])) {
+	include 'login.html';
+}
+	elseif (isset($_SESSION['usuario'])) {
+		unset($_SESSION['usuario']);
+		$_SESSION['anonimo'] = true;
+		include 'login.html';
+
+}
+ ?>
