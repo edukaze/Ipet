@@ -2,23 +2,25 @@
 <html lang="pt-br">
 <head>
 	<title>Login</title>
+	<meta charset="utf-8">
 </head>
 <body>
 
 <div id="formario_login">
-<form method="post" action="login.php">
+<form method="POST" action="verificar_login.php">
 	<fieldset><legend>Login ipet</legend>
-	<p><label for="usario">Usuário: </label>
-	<input type="text" name="t-usario" id="usario" size="20" placeholder="Digite o seu usario"></p>
+	<p><label for="nickname">nickname: </label>
+	<input type="text" name="t-usuario" id="nickname" size="20" placeholder="Digite o seu nickname"></p>
 	<p><label for="senha">senha: </label>
-	<input type="text" name="t-senha" id="senha" size="20" placeholder="Digite o seu usario"></p>
+	<input type="password" name="t-senha" id="senha" size="20" placeholder="Digite o sua  senha"></p>
+	<input type="submit" value="login">
 	</fieldset>
 	
 </form>
 </div>
 <section id="bg">
 	<div class="cadastro-escolha">
-		<h1>Escolha sua forma de login</h1>
+		<h1>Escolha sua forma de cadastro</h1>
 		<div class="botao-01">
 			<a href="cadastro-usuario.php">Usuário</a>
 		</div>
