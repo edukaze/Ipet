@@ -1,16 +1,67 @@
-<?php //criando a sessão
-session_start();
-
-?>
-<?php  
-
-if (isset($_SESSION['anonimo'])) {
-	include 'login.html';
-}
-	elseif (isset($_SESSION['usuario'])) {
-		unset($_SESSION['usuario']);
-		$_SESSION['anonimo'] = true;
-		include 'login.html';
-
-}
- ?>
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<section class="formulario">
+	<div class="formario_login">
+		<div class="conteiner-box">
+			<div class="text-area">
+				<div class="icone">
+					<h1>login</h1><img src="img/iPettt.png" alt="">
+				</div>
+				<?php if(isset($_SESSION['erro-campo'])): ?>
+					<div class="erro-campo">
+						<p>Por favor preenchar todos os campos.</p>
+					</div>
+				<?php unset($_SESSION['erro-campo']); ?>
+				<?php elseif(isset($_SESSION['nao-autenticado'])): ?>
+					<div class="erro-campo">
+						<p>ERROR: Usuário ou senha inválidos.</p>
+					</div>
+				<?php unset($_SESSION['nao-autenticado']); ?>
+				<?php endif; ?>
+				<div class="formulario1">
+				<form method="POST" action="verificar_login.php">
+					<div class="fild">
+						<div class="controle">
+							<label for="usuario">Usuário: </label>
+							<input type="usuario" name="t-usuario" id="usuario" size="20" placeholder="Digite o seu usuario"></p>
+						</div>
+					</div>
+					<div class="fild">
+						<div class="controle">
+							<label for="Senha">Senha: </label>
+							<input type="password" name="t-senha" id="senha" size="20" placeholder="Digite o sua  senha"></p>
+						</div>
+					</div>
+					<div class="botao">
+						<input type="submit" value="Login">
+					</div>
+	
+	
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="bg">
+	<div class="cadastro-escolha">
+		<h1>Escolha sua Forma de Cadastro</h1>
+		<div class="botoes-escolha">
+			<div class="botao1">
+				<a href="cadastro_usuario.php">USUÁRIO</a>
+			</div>
+			<div class="botao1">
+				<a href="cadastro_ongs.php">ONG</a>
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>

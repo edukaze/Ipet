@@ -1,0 +1,167 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+.conteiner-box{
+	margin: auto;
+	padding-top: 100px;
+	margin-bottom: -10px;
+	height: 360px;
+	width:  455px;
+}
+.text-area{
+	border: solid  #04cd7b 3px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px 4px #039e5f;
+}
+.icone img{
+	max-width: 50px;
+	margin: 20px 0px 10px 69px;
+}
+.icone h1{
+	text-align: center;
+	margin: 35px 0px 0px 130px;
+	position: absolute;
+	font-size: 15pt;
+	text-transform: uppercase;
+}
+.erro-campo p{
+	position: absolute;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 11pt;
+	background-color: rgba(255,0,0,0.8);
+	width: 275px;
+	height: 15px;
+	box-shadow: 1px 1px 1px 1px #B22222;
+	padding-left: 10px;
+	margin-left: 60px;
+	border:solid #800000 2px;
+	border-radius: 6px;
+	color:#800000;
+	margin-bottom: 0px;
+	margin-left: 88px;
+}
+.erro-campo-grande p{
+	position: absolute;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 11pt;
+	background-color: rgba(255,0,0,0.8);
+	width: 275px;
+	height: 30px;
+	box-shadow: 1px 1px 1px 1px #B22222;
+	padding-left: 10px;
+	margin-left: 60px;
+	border:solid #800000 2px;
+	border-radius: 6px;
+	color:#800000;
+	margin-bottom: 0px;
+	margin-left: 88px;
+}
+.campo-certo{
+	position: absolute;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 11pt;
+	background-color: rgba(0,128,0,0.8);
+	width: 275px;
+	height: 30px;
+	box-shadow: 1px 1px 1px 1px #23b03b;
+	padding-left: 10px;
+	margin-left: 60px;
+	border:solid #008006 2px;
+	border-radius: 6px;
+	color:#016306;
+	margin-bottom: 0px;
+	margin-left: 88px;
+}
+.campo-certo a{
+	text-decoration: none;
+	color: #00FFFF;
+}
+.formulario1{
+	margin: 50px 0px 0px 50px;
+}
+.controle{
+	font-size: 13pt;
+	color: #1C1C1C;
+	margin-bottom: 16px;
+}
+input#senha{
+	margin-left: 29px;
+}
+input#nome{
+	margin-left: 28px;
+}
+
+input#usuario{
+	margin-left: 20px;
+}
+input#facebook{
+	margin-left: 12px;
+}
+input#nome-ong{
+	margin-left: 34px;
+}
+input#email{
+	margin-left: 31px;
+}
+input#contato{
+	margin-left: 17px;
+}
+
+input{
+	background-color: #e3e8e6;
+	font-size: 13pt;
+}
+
+.botao{
+	margin: 30px 40px 30px 0px;
+	text-align: center;
+	font-size: 20pt;
+}
+.cadastro-escolha h1{
+	text-align: center;
+	font-size: 25pt;
+	font-family: 'Merriweather', serif;
+	color: black;
+	margin-bottom: 20px;
+} 
+.botoes-escolha{
+	display: flex;
+	justify-content: center;
+}
+.botoes-escolha a{
+	font-size: 15pt;
+	border-radius: 8px;
+	max-width: 400px;
+
+}
+.botao1 a{
+	text-decoration: none;
+	color: black; 
+	background-color: #0a97f5;
+	height: 100px;
+	margin-left: 50px;
+	max-width: 400px;
+}
+.botao1 a:hover{
+	background-color: #03609e;
+}
+.botao-volta  {
+	text-align: center;
+	margin-top: 173px;
+}
+.botao-volta a{
+	color: #000000;
+	text-decoration: none;
+	font-size: 12pt;
+}
+.botao-volta a:hover{
+	text-decoration: underline;
+}

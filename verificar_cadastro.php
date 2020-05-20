@@ -1,43 +1,80 @@
-<?php //criando a sessão
+<?php 
 session_start();
+include 'conexao.php';
 
-?>
-<?php  
+$nome =  mysqli_real_escape_string($conexao, trim($_POST['u-nome']));
+$sobrenome =  mysqli_real_escape_string($conexao, trim($_POST['u-sobrenome']));
+$usuario =  mysqli_real_escape_string($conexao, trim($_POST['u-usuario']));
+$email =  mysqli_real_escape_string($conexao, trim($_POST['u-email']));
+$senha =  mysqli_real_escape_string($conexao, trim(md5($_POST['u-senha'])));
+$conf_senha =  mysqli_real_escape_string($conexao, trim(md5($_POST['u-conf-senha'])));
+$num =  mysqli_real_escape_string($conexao, trim($_POST['u-contato']));
+include 'funcoes.php';
 
-if (isset($_SESSION['anonimo'])) {
-	include 'cadastro-usuario.html';
+if (empty($nome) ||  empty($sobrenome) || empty($usuario) || empty($email) || empty($senha) || empty($conf_senha) || empty($num)){
+	$_SESSION['erro-campo'] = true;
+	header("location:cadastro_usuario.php");
+	exit(); 
 }
-	elseif (isset($_SESSION['usuario'])) {
-		unset($_SESSION['usuario']);
-		$_SESSION['anonimo'] = true;
-		include 'cadastro-usuario.html';
+	elseif (validar($padrao_numero, $num) === false) {
+		$_SESSION['erro-contato'] = true;
+		header("location:cadastro_usuario.php");
+		exit();
+	}
+	elseif(validar($padrao_email,$email) === false){
+		$_SESSION['erro-email'] = true;
+		header("location:cadastro_usuario.php");
+		exit(); 
+	}
+	elseif (strlen($nome) > 20) {
+		$_SESSION['erro-nome'] = true;
+		header("location:cadastro_usuario.php");
+		exit();
+		}
+	elseif(validar($padrao_nome, $nome) === false){
+		$_SESSION['erro-nome-char'] = true;
+		header("location:cadastro_usuario.php");
+		exit();
+	}
+	elseif(strlen($sobrenome) > 25){
+		$_SESSION['erro-sobrenome'] = true;
+		header("location:cadastro_usuario.php");
+		exit();
+	}
+	elseif(validar($padao_sobrenome, $sobrenome) === false){
+		$_SESSION['erro-sobrenome-char'] = true;
+		header("location:cadastro_usuario.php");
+		exit();
+	}
+	elseif(strlen($senha) < 8){
+		$_SESSION['erro-senha'] = true;
+		header("location:cadastro_usuario.php");
+		exit();
+	}
+	elseif($senha != $conf_senha){
+		$_SESSION['erro-conf-senha'] = true;
+		header("location:cadastro_usuario.php");
+		exit();
+	}
 
+
+$sql = "select count(*) as total from usuario where usuario = '$usuario'";
+$result = mysqli_query($conexao, $sql);
+$row = mysqli_fetch_assoc($result);
+
+if($row['total'] == 1) {
+	$_SESSION['usuario_existe'] = true;
+	header('Location: cadastro_usuario.php');
+	exit;
 }
+$sql = "INSERT INTO usuario (nome, sobrenome, usuario, senha, email, data_cadastro, contato) VALUES ('$nome', '$sobrenome', '$usuario', '$senha', '$email', NOW(), '$num')";
+
+if($conexao->query($sql) === TRUE) {
+	$_SESSION['status_cadastro'] = true;
+}
+
+$conexao->close();
+
+header('Location: cadastro_usuario.php');
+exit;
  ?>
-
- <?php 
-$nome = $_POST['u-nome'];
-$sobrenome = $_POST['u-sobrenome'];
-$nomeOng = $_POST['u-nome-ong'];
-$email = $_POST['u-email'];
-$nickname = $_POST['u-nickname'];
-$senha = $_POST['u-senha'];
-$conf_senha = $_POST['u-conf-senha'];
-?>
-
-<?php if(empty($nome) || empty($sobrenome) || empty($email) || empty($nickname) || empty($senha) || empty($conf_senha) || empty($nomeOng)): ?>
-	<?php echo "<div class='erro'><h1>Por favor preenchar todos os campos</h1></div>"; ?>
-
-	<?php elseif(strrpos($email, "@") == false): ?>
-		<?php echo "<div class='erro'><h1>Por favor digite um email valido</h1></div>"; ?>
-	<?php elseif(strlen($nome) > 20): ?>
-		<?php echo "<div class='erro'><h1>Campo nome minimo de 20 caracteres excedido</h1></div>"; ?>
-	<?php elseif(strlen($sobrenome) > 20): ?>
-		<?php echo "<div class ='erro'><h1><Campo sobrenome minimo de 20 caracteres excedido/h1></div>"; ?>
-	<?php elseif(strlen($nomeOng) > 36): ?>
-		<?php echo "<div class ='erro'><h1>Campo nome da ong deve ter no minimo de 36 caracteres</h1><div>"; ?>
-	<?php elseif(strlen($senha) < 8): ?>
-	 	<?php echo "<div class ='erro'><h1>A senha deve ter no minimo 8 caracteres</h1></div>"; ?>
-	<?php elseif($senha != $conf_senha): ?>
-		<?php echo "<div class ='erro'><h1> As senha não coincidem </h1></div>"; ?>
-<?php endif ?>

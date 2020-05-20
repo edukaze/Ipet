@@ -1,42 +1,77 @@
-<?php //criando a sessão
+<?php 
 session_start();
+include 'conexao.php';
 
-?>
-<?php  
 
-if (isset($_SESSION['anonimo'])) {
-	include 'cadastro-ongs.html';
+$nome =  mysqli_real_escape_string($conexao, trim($_POST['o-nome']));
+$sobrenome =  mysqli_real_escape_string($conexao, trim($_POST['o-sobrenome']));
+$usuario =  mysqli_real_escape_string($conexao, trim($_POST['o-usuario']));
+$nome_ong =  mysqli_real_escape_string($conexao, trim($_POST['o-nome-ong']));
+$senha =  mysqli_real_escape_string($conexao, md5(trim($_POST['o-senha'])));
+$conf_senha = mysqli_real_escape_string($conexao, md5(trim($_POST['o-conf-senha'])));
+$fb =  mysqli_real_escape_string($conexao, trim($_POST['o-facebook']));
+ 
+ include 'funcoes.php';
+
+
+if (empty($nome) || empty($sobrenome) || empty($usuario) || empty($nome_ong) || empty($senha) || empty($conf_senha)){
+	$_SESSION['erro-campo'] = true;
+	header("location:cadastro_ongs.php");
+	exit(); 
 }
-	elseif (isset($_SESSION['usuario'])) {
-		unset($_SESSION['usuario']);
-		$_SESSION['anonimo'] = true;
-		include 'cadastro-ongs.html';
+ elseif (strlen($nome) > 20) {
+		$_SESSION['erro-nome'] = true;
+		header("location:cadastro_ongs.php");
+		exit();
+	}
+ elseif(strlen($sobrenome) > 20){
+		$_SESSION['erro-sobrenome'] = true;
+		header("location:cadastro_ongs.php");
+		exit();
+	}
+ elseif(strlen($nome_ong) > 50){
+		$_SESSION['erro-nome-ong'] = true;
+		header("location:cadastro_ongs.php");
+		exit();
+	}
+ elseif(validar($padrao_facebook, $bf)){
+ 		$_SESSION['erro-facebook'] = true;
+		header("location:cadastro_ongs.php");
+		exit();
+ }
+ elseif(strlen($senha) < 8){
+		$_SESSION['erro-senha'] = true;
+		header("location:cadastro_ongs.php");
+		exit();
+	}
+ elseif($senha != $conf_senha){
+		$_SESSION['erro-conf-senha'] = true;
+		header("location:cadastro_ongs.php");
+		exit();
+	}
 
+
+ 
+$sql = "select count(*) as total from ong where usuario = '$usuario'";
+$result = mysqli_query($conexao, $sql);
+$row = mysqli_fetch_assoc($result);
+
+if($row['total'] == 1) {
+	$_SESSION['ong_existe'] = true;
+	header('Location: cadastro_ongs.php');
+	exit;
 }
+
+$sql = "INSERT INTO ong (nome, sobrenome, nome_ong, senha, data_cadastro, usuario, facebook) VALUES ('$nome', '$sobrenome', '$nome_ong', '$senha', NOW(), '$usuario', '$fb')";
+
+
+if($conexao->query($sql) === TRUE) {
+	$_SESSION['status_cadastro'] = true;
+}
+
+$conexao->close();
+
+header('Location: cadastro_ongs.php');
+exit;
+
  ?>
-
- <?php 
-$nome = $_POST['u-nome'];
-$sobrenome = $_POST['u-sobrenome'];
-$nomeOng = $_POST['u-nome-ong'];
-$email = $_POST['u-email'];
-$senha = $_POST['u-senha'];
-$conf_senha = $_POST['u-conf-senha'];
-?>
-
-<?php if(empty($nome) || empty($sobrenome) || empty($email) || empty($nickname) || empty($senha) || empty($conf_senha) || empty($nomeOng)): ?>
-	<?php echo "<div class='erro'><h1>Por favor preenchar todos os campos</h1></div>"; ?>
-
-	<?php elseif(strrpos($email, "@") == false): ?>
-		<?php echo "<div class='erro'><h1>Por favor digite um email valido</h1></div>"; ?>
-	<?php elseif(strlen($nome) > 20): ?>
-		<?php echo "<div class='erro'><h1>Campo nome minimo de 20 caracteres excedido</h1></div>"; ?>
-	<?php elseif(strlen($sobrenome) > 20): ?>
-		<?php echo "<div class ='erro'><h1><Campo sobrenome minimo de 20 caracteres excedido/h1></div>"; ?>
-	<?php elseif(strlen($nomeOng) > 36): ?>
-		<?php echo "<div class ='erro'><h1>Campo nome da ong deve ter no minimo de 36 caracteres</h1><div>"; ?>
-	<?php elseif(strlen($senha) < 8): ?>
-	 	<?php echo "<div class ='erro'><h1>A senha deve ter no minimo 8 caracteres</h1></div>"; ?>
-	<?php elseif($senha != $conf_senha): ?>
-		<?php echo "<div class ='erro'><h1> As senha não coincidem </h1></div>"; ?>
-<?php endif ?>

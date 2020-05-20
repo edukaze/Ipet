@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+html
+{
+	scroll-behavior: smooth; 
+}
+body
+{
+	min-height: 1000px;
+}
+header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	padding: 40px 50px;
+	z-index: 1000; 
+	transition: 0.6s;
+}
+header.sticky 
+{
+	padding: 5px 50px;
+	background: #fff;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+header.sticky .logo img{
+	filter: inherit;
+}
+header .logo img
+{
+	max-width: 60px;
+	filter: invert(1);
+}
+header ul
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header ul ul{
+	position: absolute;
+	top: 50px;
+	display: none;
+}
+header ul li:hover > ul{
+	display: block;
+}
+header ul ul li.cadastro_user
+{
+	float: none;
+	display: list-item;
+	position: relative;
+}
+header ul li
+{
+	position: relative;
+	list-style: none;
+}
+header ul li a 
+{
+	display: block;
+	line-height: 60px;
+	position: relative;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #fff;
+	letter-spacing: 2px;
+	font-weight: 300;
+	transition: 0.6s;
+	text-transform: uppercase;
+}
+header ul li a.cadastro
+{
+	text-decoration: none;
+	padding: 8px 25px;
+	color: white;
+	background: #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 80px;
+}
+header ul li a.cadastro_user
+{
+	background-color: #1690fb;
+	width: 100px;
+	text-align: center;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 5px;
+
+}
+
+header ul li a:hover
+{
+	text-decoration: underline;
+}
+header.sticky ul li a.cadastro
+{
+	text-decoration: none;
+	padding: 8px 25px;
+	color: white;
+	background: #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 80px;
+}
+
+header.sticky .logo, 
+header.sticky ul li a
+{
+	color: #000;
+}
+.banner
+{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background-image: url("../img/dog.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.overlay
+{
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,.6);
+}
+.banner .overlay h2
+{
+	padding-top: 180px;
+	color: #fff;
+	font-size: 60px;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1em;
+}
+.overlay h2 span
+{
+	color: #f27300;
+}
+.sec
+{
+	background: #fff;
+	padding: 100px;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid black;
+
+}
+.sec .content
+{
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+.mxw800p
+{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+h3
+{
+	font-size: 40px;
+	font-weight: 200;
+	margin-bottom: 10px;
+}
+p
+{
+	position: relative;
+	font-size: 18px;
+	font-weight: 300;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+.btn
+{
+	position: relative;
+	display: inline-block;
+	padding: 10px 30px;
+	background: #f27300;
+	text-decoration: none;
+	color: #fff;
+}
+.btn:hover
+{
+ text-decoration: underline;
+}
+.services
+{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+	grid-gap: 30px;
+	max-width: 100%;
+	margin-top: 40px;
+}
+.services .box
+{
+	width: 300px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 15px;
+	box-shadow: 0 15px 30px rgba(0,0,0,.2);
+}
+.services .box .iconBx 
+{
+	margin-top: 20px;
+}
+.services .box .iconBx img
+{
+	max-width: 70px;
+	margin-bottom: 15px;
+}
+.services .box h2{
+	font-size: 18px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.stats
+{
+	background: #000;
+	padding-top: 250px;
+	margin-top: -250px;
+}
+.stats h3, .stats p
+{
+	color: #fff;
+}
+.statsBox
+{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+	grid-gap: 20px;
+	max-width: 100%;
+	margin-top: 40px;
+}
+.statsBox h2{
+	color: #fff;
+	font-size: 25px;
+}
+.statsBox h4
+{
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.workBx
+{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
+	grid-gap: 30px;
+	max-width: 100%;
+	margin-top: 40px;
+}
+.workBx .pet
+{
+	position: relative;
+	background: #04cd7b;
+	min-height: 300px;
+	width: 250px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+}
+.workBx .pet:hover
+{
+	background: #f27300;
+}
+.workBx .pet h2
+{
+	color: #fff;
+}
+.workBx .pet:hover h2
+{
+	color: #fff;
+}
+.teamBx
+{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(162px,1fr)); 
+	max-width: 100%;
+	margin-top: 40px;
+}
+.teamBx .member
+{
+	position: relative;
+	background: #000;
+	min-height: 215px;
+	width: 162px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.teamBx .member .imgBx
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.teamBx .member .imgBx img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-height: 100%;
+	object-fit: cover;	
+	opacity: 0.7;
+}
+.teamBx .member .details
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	transition: 0.2s;
+	opacity: 0;
+}
+.teamBx .member:hover .details 
+{
+	opacity: 0.7;
+}
+.teamBx .member .details h2
+{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+.teamBx .member .details h2 span
+{
+	display: block;
+	font-size: 12px;
+	font-weight: 300;
+} 
+.contact
+{
+	background: #000;
+}
+.contact h3, .contact p
+{
+	color: #fff;
+}
+.contactForm
+{
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+}
+.contactForm form
+{
+	width: 100%;
+}
+.contactForm .row100
+{
+	display: flex;
+	width: 100%;
+}
+.contactForm .row100 .inputBx50
+{
+	width: 50%;
+	margin: 0 20px;
+}
+.contactForm .row100 .inputBx100
+{
+	width: 100%;
+	margin: 0 20px;
+}
+.contactForm .row100 input, .contactForm .row100 textarea
+{
+	position: relative;
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	width: 100%;
+	padding: 10px 0;
+	outline: none;
+	font-size: 18px;
+	font-weight: 300;
+	margin: 20px 0;
+	resize: none;
+	color: #fff;
+}
+.contactForm .row100 textarea
+{
+	height: 100px;
+}
+.contactForm .row100 input::placeholder,
+.contactForm .row100 textarea::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.contactForm .row100 input[type="submit"]
+{
+	background: #fff;
+	color: #000;
+	max-width: 100px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.contactForm .row100 input[type="submit"]:hover
+{
+	background: black;
+	color: white;
+	border: 1px solid #fff;
+}
+.sci
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0;
+}
+.sci ul
+{
+	display: flex;
+}
+.sci ul li
+{
+	list-style: none;
+}
+.sci ul li a
+{
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 30px;
+}
+.sci ul li a img
+{
+	filter: invert(1);
+	max-width: 40px;
+	max-width: 50px;
+}
+.sci ul li a:hover img
+{
+	opacity: 0.5;
+}
+.copyright a
+{
+	color: #fff;
+}
+.toggle /*para o menu responsivo*/
+{
+	display: none;
+}
+@media (max-width: 992px){
+	.toggle /*O meu reponsivo começa aqui*/
+	{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+	.toggle:before 
+	{
+		content: '';
+		position: absolute;
+		top: 4px;
+		width: 100%;
+		height: 2px;
+		background: #000;
+		z-index: 1;
+		box-shadow: 0 10px 0 #000;
+		transition: 0.5s;
+	}
+	.toggle:after 
+	{
+		content: '';
+		position: absolute;
+		bottom: 4px;
+		width: 100%;
+		height: 2px;
+		background: #000;
+		z-index: 1;
+		transition: 0.5s;
+	}
+	header,
+	header.sticky
+	{
+		padding: 5px 50px;
+		background: #fff;
+	}
+	header .logo
+	{
+		color: #000;
+	}
+	header ul 
+	{
+		position: absolute;
+		top: 70px;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		text-align: center;
+		overflow: auto;
+		background: #fff;
+		visibility: hidden;
+		opacity: 0;
+	}
+	header.active ul 
+	{
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+	header.active ul li a
+	{
+		display: inline-block;
+		font-size: 20px;
+	}
+	header.active ul li a:hover
+	{
+		text-decoration: underline;
+		padding: 10px 30px;
+	}
+	header,
+	header ul li a
+	{
+	    padding: 10px 45px;
+		color: #000;
+	}
+	header .logo img /*E acaba aqui*/
+	{
+		filter: inherit;
+	}
+	.banner
+	{
+		background-position: center;
+	}
+	.banner .overlay h2
+	{
+	    padding-top: 130px;
+		font-size: 30px;
+	}
+	.sec
+	{
+		padding: 100px  20px 50px;
+	}
+	.sec .content .mxw800p h3
+	{
+		font-size: 30px;
+	}
+	.sec .content .mxw800p p
+	{
+		font-size: 15px;
+		text-align: justify;
+	}
+	.services .box 
+	{
+		width: 90%;
+	}
+	.services .box .content p
+	{
+		font-size: 15px;
+	}
+	.stats 
+	{
+		padding: 280px 25px 100px;
+	}
+	.work .pet
+	{
+		width: 90%;
+	}
+	.sec .member
+	{
+		margin-top: 10px;
+		position: relative;
+		width: 99%;
+		height: 420px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.row100 
+	{ 
+		flex-direction: column;
+	}
+	.contactForm .row100 .inputBx50,
+	.contactForm .row100 .inputBx100
+	{
+		width: 100%;
+		margin: 0;
+	}
+}
