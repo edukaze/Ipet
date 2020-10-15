@@ -4,15 +4,14 @@ iPet é um serviço online que permite a adoção e doação de animais, destina
 
 # EQUIPE
 
-
- - CLEICY KEROLIM
+- CLEICY KEROLIM
   <br>
  - DESIREE FERNANDES
   <br>
- - EDUARDO BEZERRA
+- EDUARDO BEZERRA
   <br>
- - LAMARTINE NOGUEIRA
+- LAMARTINE NOGUEIRA
   <br>
- - SUELEN SALVINO
+- SUELEN SALVINO
   <br>
-  - TIAGO BARROS
+- TIAGO BARROS
