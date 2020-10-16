@@ -44,7 +44,7 @@ session_start();
 				</ul>
 				<div class="toggle" onclick="toggle()"></div>
 			</header>
-			
+
 
 			<!-- banner -->
 			<section class="banner" id="home">
@@ -64,7 +64,7 @@ session_start();
 								<?php else: ?>
 									<a href="login.php" class="btn">Cadastre-se aqui</a>
 								<?php endif; ?>
-								
+
 							</div>
 						</div>
 					</section>
@@ -285,8 +285,8 @@ session_start();
 							<div class="sci">
 								<nav>
 									<ul>
-										<li><a href="https://github.com/edukaze/iPET" target="blanck"><img src="img/git.png"></a></li>
-										<li><a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view" target="blanck"><img src="img/pdf.png"></a></li>	
+										<li><a href="https://github.com/edukaze/iPET" target="_black"><img src="img/git.png"></a></li>
+										<li><a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view" target="_blank"><img src="img/pdf.png"></a></li>	
 									</ul>
 								</nav>
 							</div>
