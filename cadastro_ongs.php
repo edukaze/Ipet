@@ -5,7 +5,8 @@
 <head>
 	<title>Cadastro ONGs</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/Cadastro.css">
+	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
 <body>
 	<section>
