@@ -1,6 +1,6 @@
 # iPET
 
-Esse site foi idealizado pelos alunos do 2º período do curso Informática para Internet, do IFPE campus Igarassu, através da disciplina de Projeto e Prática, ministrada pelo professor Ranieri Valença.
+Este site foi idealizado pelos alunos do 2º período do curso Informática para Internet, do IFPE campus Igarassu, através da disciplina de Projeto e Prática, ministrada pelo professor Ranieri Valença.
 
 # OBJETIVO DO PROJETO
 
