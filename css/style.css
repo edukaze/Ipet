@@ -83,11 +83,11 @@ header ul li a
 header ul li a.cadastro
 {
 	text-decoration: none;
-	padding: 8px 25px;
+	padding: 3px 25px;
 	color: white;
 	background: #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
-	border-radius: 80px;
+	border-radius: 30px;
 }
 header ul li a.cadastro_user
 {
@@ -96,9 +96,7 @@ header ul li a.cadastro_user
 	text-align: center;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 5px;
-
 }
-
 header ul li a:hover
 {
 	text-decoration: underline;
@@ -106,13 +104,18 @@ header ul li a:hover
 header.sticky ul li a.cadastro
 {
 	text-decoration: none;
-	padding: 8px 25px;
+	padding: 3px 25px;
 	color: white;
 	background: #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
-	border-radius: 80px;
+	border-radius: 30px;
 }
-
+header.sticky ul li a.cadastro:hover
+{
+	color: #1690fb;
+    background: #fff;
+    border: 1px solid #1690fb;
+}
 header.sticky .logo, 
 header.sticky ul li a
 {
@@ -150,14 +153,12 @@ header.sticky ul li a
 }
 .sec
 {
-	background: #fff;
 	padding: 100px;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-bottom: 1px solid black;
-
 }
 .sec .content
 {
@@ -189,13 +190,16 @@ p
 	position: relative;
 	display: inline-block;
 	padding: 10px 30px;
-	background: #f27300;
+	background: #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	text-decoration: none;
 	color: #fff;
 }
 .btn:hover
 {
- text-decoration: underline;
+	color: #1690fb;
+	background: #fff;
+	border: 1px solid #1690fb;
 }
 .services
 {
@@ -294,6 +298,7 @@ p
 }
 .teamBx
 {
+	margin-left: 20px;
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(162px,1fr)); 
