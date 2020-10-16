@@ -5,6 +5,7 @@
 	<title>Login</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
 <body>
 <section class="formulario">
