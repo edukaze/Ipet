@@ -15,6 +15,6 @@ iPet é um serviço online que permite a adoção e doação de animais, destina
 * Suelen Salvino
 * Tiago Barros
 
-# PROPOSTA DE PROJETO
+# PROPOSTA D0 PROJETO
 
 https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view
