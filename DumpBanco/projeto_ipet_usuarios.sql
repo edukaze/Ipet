@@ -32,7 +32,7 @@ CREATE TABLE `ipet_usuarios` (
   `USU_INSTAGRAM` varchar(100) DEFAULT NULL,
   `USU_FACEBOOK` varchar(100) DEFAULT NULL,
   `USU_EMAIL` varchar(100) NOT NULL,
-  `USU_NOME_ONG` varchar(30) NOT NULL,
+  `USU_NOME_ONG` varchar(30) NULL,
   `USU_DESCRICAO_ONG` text,
   `USU_CPNJ_ONG` bigint DEFAULT NULL,
   `USU_BAIRRO` varchar(50) DEFAULT NULL,
