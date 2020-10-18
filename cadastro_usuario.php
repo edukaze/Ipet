@@ -19,7 +19,7 @@
 				</div>
 				<?php include 'condicional-cadastro.php'; ?>
 		<div class="formulario1">
-	<form action="verificar_cadastro.php" method="POST">
+	<form action="validar_cadastro_usuario.php" method="POST">
 		<div class="fild">
 			<div class="controle">
 			<p><label for="nome">&nbsp;&nbsp;&nbsp;Nome: </label>
