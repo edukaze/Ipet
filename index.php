@@ -8,8 +8,8 @@ session_start();
 	<title>IPET</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
 <body>
 	<!-- navbar -->
@@ -21,7 +21,7 @@ session_start();
 			<li><a href="#serviços"  onclick="toggle()">serviços</a></li>
 			<li><a href="#pets"  onclick="toggle()">Pets</a></li>
 			<li><a href="#equipe"  onclick="toggle()">Equipe</a></li>
-			<li><a href="#contato"  onclick="toggle()">Contato</a></li>
+			<!-- <li><a href="#contato"  onclick="toggle()">Contato</a></li> -->
 			<li><a href="#"  onclick="toggle()">Adoção</a></li>
 			<li><a href="#"  onclick="toggle()">Doação</a></li>
 			<li><a href="#"  onclick="toggle()">Ongs</a></li>
@@ -49,7 +49,7 @@ session_start();
 	<!-- banner -->
 	<section class="banner" id="home">
 		<div class="overlay">
-			<h2><span>Atitude</span> é uma pequena<br>coisa que faz uma grande <span>diferença</span></h2>
+			<!-- <h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2> -->
 		</div>
 	</section>
 
@@ -111,7 +111,7 @@ session_start();
 	<section class="sec stats">
 		<div class="content">
 			<div class="mxw800p">
-				<h3>Estatísticas</h3>
+				<!-- <h3>Estatísticas</h3>
 				<p>O iPet busca trazer uma abordagem mais simples aos meios já existentes, aproximando indivíduos que querem doar animais e pessoas que desejam possuir, cuidar e amar um bichinho, ambos de uma mesma cidade ou região.</p>
 			</div>
 			<div class="statsBox">
@@ -130,7 +130,7 @@ session_start();
 				<div class="box">
 					<h2>30MILHÕES+</h2>
 					<h4>De animais esperando <br> por você</h4>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -242,8 +242,8 @@ session_start();
 		</div>
 	</section>
 
-					<!-- Contato -->
-	<section class="sec contact" id="contato">
+	<!-- Contato -->
+    <!-- <section class="sec contact" id="contato">
 		<div class="content">
 			<div class="mxw800p">
 				<h3>Fale Conosco</h3>
@@ -281,7 +281,14 @@ session_start();
 			</div>
 			<p class="copyright">Igarassu/2020</p>
 		</div>
-	</section>
+	</section> -->
+
+	<footer class="footer">
+		<p>Igarassu-PE</p>
+		<a href="https://github.com/edukaze/iPET" target="_black"><i class="fab fa-github"></i></a>
+		<a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view?usp=sharing" class="pdf" target="_black"><i class="far fa-file-pdf"></i></a>
+	</footer>
+
 
 	<script type="text/javascript">
 		// Deixa o header fixo no site

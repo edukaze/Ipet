@@ -32,13 +32,17 @@
 		</div>
 	</section>
 
-	<!-- Sobre -->
-	<section class="sec" id="sobre">
+	 <!-- Sobre -->
+    <section class="sec" id="sobre">
 		<div class="content">
 			<div class="mxw800p">
 				<h3>Qual o objetivo do iPet?</h3>
 				<p>Reverter a situação do grande número de animais abandonados nas ruas, revela-se como um passo importante na luta pelo bem-estar de animais em situação de risco, o descaso com este assunto demonstra que parte da sociedade ainda não está convencida das reais necessidades dos animais esquecendo-se das problemáticas que envolvem o abandono. Os animais devem ser respeitados e ter a possibilidade de vida digna, já que são seres não aptos a manter sua sobrevivência sozinhos, tal temática exige a colaboração de toda a sociedade. No Brasil, centros de adoção, locais e entidades revelam-se como um, dos muitos, modos de solução, sendo assim o iPet manifesta-se com o objetivo de somar, ou seja, um meio imediato e facilitado de ajuda, agindo diretamente na situação que deveria ser o princípio básico de um mundo civilizado, o respeito à vida.</p>
-				<a href="#" class="btn">Cadastre-se aqui</a>
+				<?php if(isset($_SESSION['nome'])): ?>
+				<?php elseif (isset($_SESSION['nome_ong'])): ?>
+					<?php else: ?>
+						<a href="login.php" class="btn">Cadastre-se aqui</a>
+					<?php endif; ?>
 			</div>
 		</div>
 	</section>
@@ -86,7 +90,7 @@
 	<section class="sec stats">
 		<div class="content">
 			<div class="mxw800p">
-				<h3>Estatísticas</h3>
+				<!-- <h3>Estatísticas</h3>
 				<p>O iPet busca trazer uma abordagem mais simples aos meios já existentes, aproximando indivíduos que querem doar animais e pessoas que desejam possuir, cuidar e amar um bichinho, ambos de uma mesma cidade ou região.</p>
 			</div>
 			<div class="statsBox">
@@ -105,7 +109,7 @@
 				<div class="box">
 					<h2>30MILHÕES+</h2>
 					<h4>De animais esperando <br> por você</h4>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -218,7 +222,7 @@
 	</section>
 
 	<!-- Contato -->
-	<section class="sec contact" id="contato">
+    <!-- <section class="sec contact" id="contato">
 		<div class="content">
 			<div class="mxw800p">
 				<h3>Fale Conosco</h3>
@@ -247,14 +251,23 @@
 				</form>
 			</div>
 			<div class="sci">
-				<ul>
-					<li><a href="https://github.com/edukaze/Projeto_e_pratica"><img src="img/git.png"></a></li>
-					<li><a href="https://drive.google.com/open?id=1onAAbIkNYK50C1SbLo4ZsexYWmdhic1W"><img src="img/pdf.png"></a></li>	
-				</ul>
+				<nav>
+					<ul>
+						<li><a href="https://github.com/edukaze/iPET" target="_black"><img src="img/git.png"></a></li>
+						<li><a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view?usp=sharing" target="_blank"><img src="img/pdf.png"></a></li>	
+					</ul>
+				</nav>
 			</div>
 			<p class="copyright">Igarassu/2020</p>
 		</div>
-	</section>
+	</section> -->
+
+	<footer class="footer">
+		<p>Igarassu-PE</p>
+		<a href="https://github.com/edukaze/iPET" target="_black"><i class="fab fa-github"></i></a>
+		<a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view?usp=sharing" class="pdf" target="_black"><i class="far fa-file-pdf"></i></a>
+	</footer>
+
 
 	<script type="text/javascript">
 		// Deixa o header fixo no site
