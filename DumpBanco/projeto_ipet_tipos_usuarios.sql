@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `ipet_tipos_usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ipet_tipos_usuarios` (
   `TIP_CODIGO` int NOT NULL AUTO_INCREMENT,
-  `TIPO_NOME` varchar(10) DEFAULT NULL,
+  `TIP_NOME` varchar(3) DEFAULT NULL,
   PRIMARY KEY (`TIP_CODIGO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
