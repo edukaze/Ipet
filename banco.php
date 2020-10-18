@@ -2,9 +2,9 @@
 
 function dbConnect(){
 	try {
-		$dsn = 'mysql:dbname=' . 'cadastro' . ';host=' . 'localhost' . ';port=' . 3306 . ';charset=utf8';
+		$dsn = 'mysql:dbname=' . 'projeto' . ';host=' . 'localhost' . ';port=' . 3306 . ';charset=utf8';
 
-		$pdo = new PDO($dsn, 'ipet', '201');
+		$pdo = new PDO($dsn, 'ipet', 'ipet@2020');
 
 		return $pdo;
 	} catch (PDOException $e) {
