@@ -13,7 +13,7 @@
 		<div class="conteiner-box">
 			<div class="text-area">
 				<div class="icone">
-					<h1>login</h1><img src="img/iPettt.png" alt="">
+					<img src="img/iPettt.png" alt="">
 				</div>
 				<?php if(isset($_SESSION['erro-campo'])): ?>
 					<div class="erro-campo">
@@ -53,7 +53,10 @@
 </section>
 <section id="bg">
 	<div class="cadastro-escolha">
-		<h1>Escolha sua Forma de Cadastro</h1>
+		<p>
+			Não possui conta?<br>
+			Escolha sua forma de cadastro
+		</p>
 		<div class="botoes-escolha">
 			<div class="botao1">
 				<a href="cadastro_usuario.php">USUÁRIO</a>
