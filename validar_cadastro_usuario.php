@@ -12,12 +12,12 @@ $contato = $_POST['u-contato'];
 $pdo = dbConnect();
 
 $stmt = $pdo->prepare("
-	INSERT INTO IPET_USUARIOS (usu_nome, usu_sobrenome, usu_usuario, usu_email, usu_senha, usu_telefone, usu_tip_codigo)
-	VALUES (?, ?, ?, ?, md5(?), ?, ?)
+	INSERT INTO IPET_USUARIOS_NORMAL (NOR_NOME, NOR_SOBRENOME, NOR_SENHA, NOR_USUARIO, NOR_CONTATO, NOR_EMAIL)
+	VALUES (?, ?, ?, ?, ?, ?);
 ");
 
-$stmt->execute([$nome, $sobrenome, $usuario, $email, $senha, $contato, 2]);
+$stmt->execute([$nome, $sobrenome, $senha, $usuario, $contato, $email]);
 
-header('location:cadastro_usuario.php');
+header("location:cadastro_usuario.php");
 
 ?>
