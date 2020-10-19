@@ -92,6 +92,8 @@
 	color: #1C1C1C;
 	margin-bottom: 16px;
 }
+
+/*
 input#senha{
 	margin-left: 29px;
 }
@@ -114,10 +116,16 @@ input#email{
 input#contato{
 	margin-left: 17px;
 }
+*/
+
+section{
+	margin: 0 89px;
+}
 
 input{
 	background-color: #e3e8e6;
 	font-size: 13pt;
+	margin: 0;
 }
 
 .botao{
