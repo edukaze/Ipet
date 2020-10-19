@@ -23,17 +23,16 @@ DROP TABLE IF EXISTS `IPET_USUARIOS_ONG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `IPET_USUARIOS_ONG` (
-  `ONG_CODIGO` int NOT NULL AUTO_INCREMENT,
+  `ONG_CNPJ` bigint NOT NULL,
   `ONG_NOME` varchar(30) NOT NULL,
+  `ONG_EMAIL` varchar(100) NOT NULL,
   `ONG_TELEFONE` bigint NOT NULL,
+  `ONG_USUARIO` varchar(20) NOT NULL,
   `ONG_SENHA` varchar(20) NOT NULL,
   `ONG_INSTAGRAM` varchar(100) DEFAULT NULL,
   `ONG_FACEBOOK` varchar(100) DEFAULT NULL,
-  `ONG_EMAIL` varchar(100) NOT NULL,
-  `ONG_USUARIO` varchar(20) NOT NULL,
-  `ONG_CNPJ` bigint DEFAULT NULL,
   `ONG_DESCRICAO` text,
-  PRIMARY KEY (`ONG_CODIGO`)
+  PRIMARY KEY (`ONG_CNPJ`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-18 21:53:52
+-- Dump completed on 2020-10-18 23:33:50
