@@ -23,7 +23,7 @@ session_start();
 			<li><a href="#equipe"  onclick="toggle()">Equipe</a></li>
 			<!-- <li><a href="#contato"  onclick="toggle()">Contato</a></li> -->
 			<li><a href="#"  onclick="toggle()">Adoção</a></li>
-			<li><a href="#"  onclick="toggle()">Doação</a></li>
+			<li><a href="doacao.php"  onclick="toggle()">Doação</a></li>
 			<li><a href="#"  onclick="toggle()">Ongs</a></li>
 			<?php if(isset($_SESSION['nome'])): ?>
 			<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome'];?> </a>
