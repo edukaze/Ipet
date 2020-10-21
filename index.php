@@ -22,7 +22,7 @@ session_start();
 			<li><a href="#pets"  onclick="toggle()">Pets</a></li>
 			<li><a href="#equipe"  onclick="toggle()">Equipe</a></li>
 			<!-- <li><a href="#contato"  onclick="toggle()">Contato</a></li> -->
-			<li><a href="#"  onclick="toggle()">Adoção</a></li>
+			<li><a href="adocao.php"  onclick="toggle()">Adoção</a></li>
 			<li><a href="doacao.php"  onclick="toggle()">Doação</a></li>
 			<li><a href="#"  onclick="toggle()">Ongs</a></li>
 			<?php if(isset($_SESSION['nome'])): ?>
