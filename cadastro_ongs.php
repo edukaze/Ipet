@@ -8,6 +8,19 @@
 	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
+ <script type="text/javascript">
+        function ipet(telefone){ 
+            if(telefone.value.length == 0)
+                telefone.value = '(' + telefone.value; 
+
+            if(telefone.value.length == 3)
+                telefone.value = telefone.value + ') ';
+
+            if(telefone.value.length == 10)
+                telefone.value = telefone.value + '-'; 
+  
+}
+    </script>
 <body>
 	<section>
 		<div class="formario_login">
@@ -58,7 +71,7 @@
 												<div class="fild">
 													<div class="controle">
 														<p><label for="telefone">Telefone:</label>
-															<input type="text" name="o-telefone" id="telefone" size="20" placeholder="(00) 00000-0000"></p>
+															<input type="text" name="o-telefone" id="telefone" size="20" placeholder="(00) 00000-0000" onkeypress="ipet(this)"></p>
 														</div>
 													</div>
 
