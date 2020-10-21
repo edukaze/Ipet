@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Cadratro Usuário</title>
+	<title>Cadrastro Usuário</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+	<link rel="stylesheet" type="text/css" href="css/cadastro_usuario.css">
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
   <script type="text/javascript">
@@ -28,56 +28,56 @@
 		<div class="conteiner-box">
 			<div class="text-area">
 				<div class="icone">
-					<h1>Cadastro Usuário</h1><img src="img/iPettt.png" alt="">
+					<img src="img/iPettt.png" alt="">
 				</div>
 				<?php include 'condicional-cadastro.php'; ?>
 		<div class="formulario1">
 	<form action="validar_cadastro_usuario.php" method="POST">
 		<div class="fild">
 			<div class="controle">
-			<p><label for="nome">&nbsp;&nbsp;&nbsp;Nome: </label>
-				<input type="text" name="u-nome" id="nome" size="20" placeholder="Digite seu primeiro nome"></p>
+			<p><label for="nome">Nome </label></p>
+				<input type="text" name="u-nome" id="nome" size="35" placeholder="Digite seu primeiro nome">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">
-			<p><label for="sobrenome">Sobrenome: </label>
-				<input type="text" name="u-sobrenome" id="sobrenome" size="20" placeholder="Digite  o seu sobrenome"></p>
+			<p><label for="sobrenome">Sobrenome </label></p>
+				<input type="text" name="u-sobrenome" id="sobrenome" size="35" placeholder="Digite seu sobrenome">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">
-			<p><label for="usuario"> &nbsp;&nbsp;Usuário: </label>
-				<input type="text" name="u-usuario" id="usuario" size="20" placeholder="Digite  o seu usuario"></p>
+			<p><label for="usuario"> Usuário </label></p>
+				<input type="text" name="u-usuario" id="usuario" size="35" placeholder="Digite um usuário">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">	
-			<p><label for="email">&nbsp;&nbsp;&nbsp;Email: </label> 
-				<input type="email" name="u-email" id="email" size="20" placeholder="Digite o seu email"></p>
+			<p><label for="email">Email </label> </p>
+				<input type="email" name="u-email" id="email" size="35" placeholder="Digite seu email">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">	
-			<p><label for="senha">&nbsp;&nbsp;Senha: </label>
-				<input type="password" name="u-senha" id="senha" size="20" placeholder="Digite uma senha"></p>
+			<p><label for="senha">Senha </label></p>
+				<input type="password" name="u-senha" id="senha" size="35" placeholder="Digite uma senha">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">
-			<p><label for="conf_senha">Conf senha: </label>
-				<input type="password" name="u-conf-senha" id="conf_senha" size="20" placeholder="Digite novamente a senha"></p>
+			<p><label for="conf_senha">Confirme a senha </label></p>
+				<input type="password" name="u-conf-senha" id="conf_senha" size="35" placeholder="Digite novamente a senha">
 			</div>
 		</div>
 		<div class="fild">
 			<div class="controle">	
-			<p><label for="contato">&nbsp;&nbsp;Contato: </label>
-				<input type="tel" name="u-contato" id="contato" size="20" placeholder="(00) 0 0000-0000" onkeypress="ipet(this)"></p>
+			<p><label for="contato">Contato </label></p>
+				<input type="tel" name="u-contato" id="contato" size="35" placeholder="(00) 0 0000-0000" onkeypress="ipet(this)">
 			</div>
 		</div>
 
@@ -92,7 +92,8 @@
 </section>
 <section>
 	<div class="botao-volta">
-	<p><a href="login.php">LOGIN</a></p>
+	<br>
+	<a href="login.php">Fazer login</a>
 	</div>
 </section>
 </body>

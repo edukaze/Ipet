@@ -231,7 +231,7 @@ session_start();
 				</div>
 				<div class="member">
 					<div class="imgBx">
-						<!-- <img src="img/tiago.jpg"> -->
+						<img src="img/tiago.png">
 					</div>
 					<div class="details">
 						<div>

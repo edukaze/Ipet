@@ -13,7 +13,7 @@ body {
 
 .conteiner-box {
 	margin: auto;
-	padding-top: 30px;
+	padding-top: 50px;
 	margin-bottom: -10px;
 	height: 360px;
 	width:  410px;
@@ -23,8 +23,8 @@ body {
 	background-color: #ecf0f3;
 	border: solid  #ecf0f3 1px;
 	border-radius: 40px;
-	box-shadow: inset 13px 13px 20px #cbced1,
-				inset -13px -13px 20px #ffffff; 
+	box-shadow: 13px 13px 20px #cbced1,
+				-13px -13px 20px #ffffff; 
 }
 
 .icone img {
@@ -91,7 +91,7 @@ body {
 	color: #00FFFF;
 }
 
-.formulario1 {
+.formulario2 {
 	margin: 50px 0px 0px 50px;
 }
 
@@ -116,52 +116,6 @@ p {
 	text-align: left;
 	letter-spacing: 1px;
 }
-
-/*
-input#senha {
-	margin-left: 30px;
-}
-
-input#nome {
-	margin-left: 28px;
-}
-
-input#usuario {
-	margin-left: 21px;
-}
-
-input#facebook {
-	margin-left: 13px;
-}
-
-input#instagram {
-	margin-left: 12px;
-}
-
-input#nome-ong {
-	margin-left: 35px;
-}
-
-input#cnpj {
-	margin-left: 34px;
-}
-
-input#email {
-	margin-left: 46px;
-}
-
-input#contato {
-	margin-left: 17px;
-}
-
-input#telefone {
-	margin-left: 24px;
-}
-
-input#descricao {
-	margin-left: 13px;
-}
-*/
 
 input[type=submit] {
 	color: #fff; 
@@ -189,22 +143,15 @@ input[type=submit]:hover {
 	font-size: 13pt;
 }
 
-.cadastro-escolha h1 {
-	text-align: center;
-	font-size: 25pt;
-	color: black;
-	margin-bottom: 20px;
-}
-
 
 .botao-volta {
+	letter-spacing: 1px;
 	position: absolute;
 	margin: auto;
-	padding-top: 135px;
-    margin-left: 607px;
     display: block;
 	text-align: center;
-	margin-top: 185px;
+	margin-left: 48%;
+	margin-top: 13%;
 	margin-bottom: 20px;
 }
 

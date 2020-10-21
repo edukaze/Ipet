@@ -30,14 +30,14 @@
 				<form method="POST" action="verificar_login.php">
 					<div class="fild">
 						<div class="controle">
-							<label for="usuario">Usuário: </label>
-							<input type="usuario" name="t-usuario" id="usuario" size="20" placeholder="Digite o seu usuario"></p>
+							<p><label for="usuario">Usuário: </label></p>
+							<input type="usuario" name="t-usuario" id="usuario" size="20" placeholder="Digite seu usuario">
 						</div>
 					</div>
 					<div class="fild">
 						<div class="controle">
-							<label for="Senha">Senha: </label>
-							<input type="password" name="t-senha" id="senha" size="20" placeholder="Digite o sua  senha"></p>
+							<p><label for="Senha">Senha: </label></p>
+							<input type="password" name="t-senha" id="senha" size="20" placeholder="Digite sua senha">
 						</div>
 					</div>
 					<div class="botao">
@@ -54,6 +54,7 @@
 <section id="bg">
 	<div class="cadastro-escolha">
 		<p>
+			<br>
 			Não possui conta?<br>
 			Escolha sua forma de cadastro
 		</p>
@@ -63,6 +64,10 @@
 			</div>
 			<div class="botao1">
 				<a href="cadastro_ongs.php">ONG</a>
+			</div>
+
+			<div class="botao-volta">
+				<a href="index.php">Voltar</a>
 			</div>
 		</div>
 	</div>

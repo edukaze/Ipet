@@ -6,7 +6,7 @@ session_start();
 <head>
 	<title>Cadastro Animais</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+	<link rel="stylesheet" type="text/css" href="css/cadastro_doacao.css">
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
 <body>
@@ -15,51 +15,51 @@ session_start();
 			<div class="conteiner-box">
 				<div class="text-area">
 					<div class="icone">
-						<h1>Cadastro Animais</h1><img src="img/iPettt.png" alt="">
+						<img src="img/iPettt.png" alt="">
 					</div>
 					<?php include 'condicional-cadastro.php'; ?>
 					<div class="formulario2">
 						<form action="validar_cadastro_animais.php" method="POST">
 							<div class="fild">
 								<div class="controle">
-									<p><label for="nome-ani">Nome:</label>
-										<input type="text" name="a-nome" id="nome-ong" size="20" placeholder="Nome"></p>
+									<p><label for="nome-ani">Nome</label></p>
+										<input type="text" name="a-nome" id="nome-ong" size="35" placeholder="Ex: Tobe">
 									</div>
 								</div>
 
 								<div class="fild">
 									<div class="controle">
-										<p><label for="especie">Espécie: </label>
-											<input type="text" name="a-especie" id="cnpj" size="20" placeholder="Espécie"></p>
+										<p><label for="especie">Espécie</label></p>
+											<input type="text" name="a-especie" id="cnpj" size="35" placeholder="Ex: Cão, gato, coelho">
 										</div>
 									</div>
 
 
 									<div class="fild">
 										<div class="controle">
-											<p><label for="raca">Raça:</label>
-												<input type="text" name="a-raca"  size="20" placeholder="Raça"></p>
+											<p><label for="raca">Raça</label></p>
+												<input type="text" name="a-raca"  size="35" placeholder="Ex: Pinscher">
 											</div>
 										</div>
 
 										<div class="fild">
 											<div class="controle">
-												<p><label for="porte">Porte:</label>
-													<input type="text" name="a-porte"  size="20" placeholder="Porte"></p>
+												<p><label for="porte">Porte</label></p>
+													<input type="text" name="a-porte"  size="35" placeholder="P | M | G">
 												</div>
 											</div>
 
 											<div class="fild">
 												<div class="controle">
-													<p><label for="genero">Gênero</label>
-														<input type="text" name="a-genero"  size="20" placeholder="Gênero"></p>
+													<p><label for="genero">Gênero</label></p>
+														<input type="text" name="a-genero"  size="35" placeholder="F | M">
 													</div>
 												</div>
 
 												<div class="fild">
 													<div class="controle">
-														<p><label for="descricao">Descrição:</label>
-															<input type="text" name="a-descricao" size="20" placeholder="Descrição"></p>
+														<p><label for="descricao">Descrição</label></p>
+															<input type="text" name="a-descricao" size="35" placeholder="Faça uma breve descrição do pet">
 														</div>
 													</div>
 
@@ -74,6 +74,6 @@ session_start();
 								</div>
 							</section>
 							<div class="botao-volta">
-								<p><a href="index.php">VOLTAR</a></p>
+								<a href="index.php">Voltar</a>
 							</div>
 						</body>
