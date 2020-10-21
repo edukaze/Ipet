@@ -57,7 +57,7 @@
 					<div class="erro-campo">
 						<p>Usuário ja exister</p>
 					</div>
-				<?php unset($$_SESSION['usuario_existe']); ?>
+				<?php unset($_SESSION['usuario_existe']); ?>
 
 				<?php elseif(isset($_SESSION['status_cadastro'])): ?>
 					<div class="campo-certo">
