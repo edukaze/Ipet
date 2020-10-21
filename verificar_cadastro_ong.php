@@ -1,39 +1,25 @@
-$pdo = dbConnect();
+<?php
+include 'banco.php';
 
-$verificandoExistencia = $pdo->prepare("
-		SELECT COUNT(*) AS TOTAL FROM IPET_USUARIO_ONG
-		WHERE ONG_USUARIO = ?;
-	");
-$verificandoExistencia->execute([$usuario]);
-$row = $verificandoExistencia->fetchAll();
+$nomeong = $_POST['o-nome-ong'];
+$cnpj = $_POST['o-cnpj'];
+$usuario = $_POST['o-usuario'];
+$facebook = $_POST['o-facebook'];
+$instagram = $_POST['o-instagram'];
+$email= $_POST['o-email'];
+$senha = $_POST['o-senha'];
+$conf_senha = $_POST['o-conf-senha'];
+$telefone = $_POST['o-telefone'];
+$descricao = $_POST['o-descricao'];
+include 'funcoes.php';
 
-
-	if($row[0]['TOTAL'] == 1) {
-	$_SESSION['usuario_existe'] = true;
-	header('Location: cadastro_ongs.php');
-	exit();
-}
-elseif ($row[0]['TOTAL']  != 1) {
-	
-$stmt = $pdo->prepare("
-    INSERT INTO ipet_usuarios_ong (ONG_CNPJ, ONG_USUARIO, ONG_FACEBOOK, ONG_INSTAGRAM, ONG_EMAIL, ONG_TELEFONE, ONG_NOME, ONG_SENHA, ONG_CONF_SENHA, ONG_DESCRICAO)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-");
-$stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nome, $senha, $conf_senha, $descricao]);
-
-	$_SESSION['status_cadastro'] = true;
-	header('location: cadastro_ongs.php');
-
-	exit;
+if (empty($nomeong)|| empty($cnpj) || empty($usuario) || empty($facebook) || empty($instagram) || empty($email) || empty($senha) || empty($conf_senha) || empty($telefone)||empty($descricao)) {
+	$_SESSION['erro-campo'] = true;
+	header("location:cadastro_ongs.php");
+	exit(); 
 
 }
-<<<<<<< HEAD
-
-
-
-?>
-=======
-   elseif (strlen($cnpj) < 14){
+ 	 elseif (strlen($cnpj) < 14){
     	$_SESSION['error-cnpj'] = true;
     	header("location:cadastro_ongs.php");
     }
@@ -52,12 +38,12 @@ $stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nome
 		header("location:cadastro_ongs.php");
 		exit();
 		}
-	elseif(validar($padrao_nome, $nome) === false){
-		$_SESSION['erro-nome-char'] = true;
+	elseif(validar($padrao_nome, $nomeong) === false){
+		$_SESSION['erro-nome-ong'] = true;
 		header("location:cadastro_ongs.php");
 		exit();
 	}
-	elseif(strlen($$padrao_facebook,$facebook){
+	elseif(validar($padrao_facebook, $facebook) === false){
 		$_SESSION['erro-facebook'] = true;
 		header("location:cadastro_ongs.php");
 		exit();
@@ -77,4 +63,35 @@ $stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nome
 		header("location:cadastro_ongs.php");
 		exit();
 	}
->>>>>>> e4b26dead2dd36f45fd528b29cdcf95cbfccb214
+
+  $pdo = dbConnect();
+
+$verificandoExistencia = $pdo->prepare("
+		SELECT COUNT(*) AS TOTAL FROM IPET_USUARIO_ONG
+		WHERE ONG_USUARIO = ?;
+	");
+$verificandoExistencia->execute([$usuario]);
+$row = $verificandoExistencia->fetchAll();
+
+
+	if($row[0]['TOTAL'] == 1) {
+	$_SESSION['usuario_existe'] = true;
+	header('Location: cadastro_ongs.php');
+	exit();
+}
+elseif ($row[0]['TOTAL']  != 1) {
+	
+$stmt = $pdo->prepare("
+     INSERT INTO ipet_usuarios_ong (ONG_CNPJ, ONG_USUARIO, ONG_FACEBOOK, ONG_INSTAGRAM, ONG_EMAIL, ONG_TELEFONE, ONG_NOME, ONG_SENHA,ONG_DESCRICAO)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+");
+$stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nomeong, $senha, $descricao]);
+
+	$_SESSION['status_cadastro'] = true;
+	header('location: cadastro_ongs.php');
+
+	exit();
+
+}
+
+?>

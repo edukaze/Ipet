@@ -81,5 +81,20 @@
 						<div class="erro-campo">
 							<p>ONG já cadastrata</p>
 						</div>
-					<?php unset($_SESSION['usuario_existe']); ?>
+					<?php unset($_SESSION['error-cnpj']); ?>
+					<?php elseif(isset($_SESSION['cnpj-erro'])): ?>
+						<div class="erro-campo">
+							<p>insira um CNPJ válido</p>
+						</div>
+					<?php unset($_SESSION['error-cnpj']); ?>
+					<?php elseif(isset($_SESSION['erro-instagram'])): ?>
+						<div class="erro-campo">
+							<p>insira um instagram válido</p>
+						</div>
+					<?php unset($_SESSION['erro-instagram']); ?>
+					<?php elseif(isset($_SESSION['erro-nome-ong'])): ?>
+						<div class="erro-campo">
+							<p>campo nome ONG inválido</p>
+						</div>
+					<?php unset($_SESSION['erro-nome-ong']); ?>
 				<?php endif ?>
