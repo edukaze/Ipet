@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['anonimo'])) {
+	session_destroy();
+	header('location: cadastro_ongs');
+}
 include 'banco.php';
 
 $nomeong = $_POST['o-nome-ong'];

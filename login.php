@@ -1,4 +1,15 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+
+
+if (!isset($_SESSION['anonimo'])) {
+	session_destroy();
+	$_SESSION['anonimo'] = true;
+	header('location:index.php');
+}
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
