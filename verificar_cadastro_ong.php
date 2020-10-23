@@ -44,7 +44,7 @@ if (empty($nomeong)|| empty($cnpj) || empty($usuario) || empty($facebook) || emp
 		header("location:cadastro_ongs.php");
 		exit();
 		}
-	elseif(validar($padrao_nome, $nomeong) === false){
+	elseif(validar($padrao_nome_ong, $nomeong) === false){
 		$_SESSION['erro-nome-ong'] = true;
 		header("location:cadastro_ongs.php");
 		exit();

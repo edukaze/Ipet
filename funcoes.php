@@ -6,6 +6,8 @@ $padrao_nome_ong = "/^[a-zA-Z0-9]+$/";
 $padao_sobrenome = "/^[a-zA-Z]+$/";
 $padrao_facebook = "/^facebook\.com\/[a-zA-Z0-9_\.\-]+$/";
 $padrao_instagram = "/^instagram\.com\/[a-zA-Z0-9_\.\-]+$/";
+$padrao_especie = "/^[a-zA-Z]+$/";
+$padrao_raca = "/^[a-zA-Z]+$/";
 
 
 function validar($padrao, $var)

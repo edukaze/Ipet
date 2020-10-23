@@ -9,6 +9,24 @@ $raca = $_POST['a-raca'];
 $porte = $_POST['a-porte'];
 $genero = $_POST['a-genero'];
 $descricao = $_POST['a-descricao'];
+include 'funcoes.php';
+
+if (empty($nome) ||  empty($especie) || empty($raca) || empty($porte) || empty($genero) || empty($descricao)){
+	$_SESSION['erro-campo'] = true;
+	header("location:cadastro_animais.php");
+	exit(); 
+}
+elseif (strlen($nome) > 20) {
+	$_SESSION['erro-nome'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+
+elseif (validar($padrao_nome, $nome) === false) {
+	$_SESSION['erro-nome'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
 
 $pdo = dbConnect();
 
