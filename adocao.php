@@ -27,22 +27,10 @@ $rowTotal = $stmt->rowCount();
 <head>
 	<title>Adote</title>
 	<link rel="stylesheet" type="text/css" href="css/cadastro_adocao.css"/>
-	
+	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
-<body>
 
-	<?php if ($rowTotal > 0): ?>
-		<?php foreach ($animais as  $animal): ?>
-			<div class="animais">
-		<p><?= $animal['ANI_NOME']?></p>
-		<p><?= $animal['ANI_ESPECIE']?></p>
-		<p><?= $animal['ANI_RAÇA']?></p>
-		<p><?= $animal['ANI_PORTE']?></p>
-		<p><?= $animal['ANI_GENERO']?></p>
-		<p><?= $animal['ANI_DESCRICAO']?></p>
-			</div>
-<?php endforeach; ?>
-	<?php endif; ?>
+<body>
 
 	<!-- navbar -->
 	<header id="header">
@@ -88,103 +76,29 @@ $rowTotal = $stmt->rowCount();
 	<section class="adc">
 		<div class="box">
 			<div class="box1">
-				<div class="box2">
-					<dl>
-						<dt>Nome</dt>
-						<dd> Html Basico</dd>
-						<dt>Espécie</dt>
-						<dd> PHP Básico</dd>
-						<dt>Raça</dt>
-						<dd> PHP Básico</dd>
-						<dt>Porte</dt>
-						<dd> PHP Básico</dd>
-						<dt>Gênero</dt>
-						<dd> PHP Básico</dd>
-						<dt>Descrição</dt>
-						<dd> PHP Básico</dd>
-					</dl>
-				</div>
-				<div class="box2">
-					<dl>
-						<dt>Nome</dt>
-						<dd> Html Basico</dd>
-						<dt>Espécie</dt>
-						<dd> PHP Básico</dd>
-						<dt>Raça</dt>
-						<dd> PHP Básico</dd>
-						<dt>Porte</dt>
-						<dd> PHP Básico</dd>
-						<dt>Gênero</dt>
-						<dd> PHP Básico</dd>
-						<dt>Descrição</dt>
-						<dd> PHP Básico</dd>
-					</dl>
-				</div>
-				<div class="box2">
-					<dl>
-						<dt>Nome</dt>
-						<dd> Html Basico</dd>
-						<dt>Espécie</dt>
-						<dd> PHP Básico</dd>
-						<dt>Raça</dt>
-						<dd> PHP Básico</dd>
-						<dt>Porte</dt>
-						<dd> PHP Básico</dd>
-						<dt>Gênero</dt>
-						<dd> PHP Básico</dd>
-						<dt>Descrição</dt>
-						<dd> PHP Básico</dd>
-					</dl>
-				</div>
-				<div class="box2">
-					<dl>
-						<dt>Nome</dt>
-						<dd> Html Basico</dd>
-						<dt>Espécie</dt>
-						<dd> PHP Básico</dd>
-						<dt>Raça</dt>
-						<dd> PHP Básico</dd>
-						<dt>Porte</dt>
-						<dd> PHP Básico</dd>
-						<dt>Gênero</dt>
-						<dd> PHP Básico</dd>
-						<dt>Descrição</dt>
-						<dd> PHP Básico</dd>
-					</dl>
-				</div>
-				<div class="box2">
-					<dl>
-						<dt>Nome</dt>
-						<dd> Html Basico</dd>
-						<dt>Espécie</dt>
-						<dd> PHP Básico</dd>
-						<dt>Raça</dt>
-						<dd> PHP Básico</dd>
-						<dt>Porte</dt>
-						<dd> PHP Básico</dd>
-						<dt>Gênero</dt>
-						<dd> PHP Básico</dd>
-						<dt>Descrição</dt>
-						<dd> PHP Básico</dd>
-					</dl>
-				</div>
+
+				<?php if ($rowTotal > 0): ?>
+					<?php foreach ($animais as  $animal): ?>
 
 				<div class="box2">
 					<dl>
 						<dt>Nome</dt>
-						<dd> Html Basico</dd>
-						<dt>Espécie</dt>
-						<dd> PHP Básico</dd>
-						<dt>Raça</dt>
-						<dd> PHP Básico</dd>
-						<dt>Porte</dt>
-						<dd> PHP Básico</dd>
-						<dt>Gênero</dt>
-						<dd> PHP Básico</dd>
-						<dt>Descrição</dt>
-						<dd> PHP Básico</dd>
+                        <dd><?= $animal['ANI_NOME']?></dd>
+                        <dt>Espécie</dt>
+                        <dd><?= $animal['ANI_ESPECIE']?></dd>
+                        <dt>Raça</dt>
+                        <dd><?= $animal['ANI_RAÇA']?></dd>
+                        <dt>Porte</dt>
+                        <dd><?= $animal['ANI_PORTE']?></dd>
+                        <dt>Gênero</dt>
+                        <dd><?= $animal['ANI_GENERO']?></dd>
+                        <dt>Descrição</dt>
+                        <dd><?= $animal['ANI_DESCRICAO']?></dd>
 					</dl>
 				</div>
+				<?php endforeach; ?>
+				<?php endif; ?>
+
 			</div>
 		</div>
 	</section>

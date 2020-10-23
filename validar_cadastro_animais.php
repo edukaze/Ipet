@@ -1,13 +1,6 @@
 <?php
 session_start();
 
-
-
-if (!isset($_SESSION['anonimo'])) {
-	session_destroy();
-	header('location:index.php');
-}
-
 include('banco.php');
 
 $nome = $_POST['a-nome'];
