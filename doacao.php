@@ -1,5 +1,13 @@
 <?php 
 session_start();
+
+if (isset($_SESSION['anonimo'])) {
+    header("location:login.php");
+}
+    elseif (isset($_SESSION['anonimo'])) {
+    header("location:login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
