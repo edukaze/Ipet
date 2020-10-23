@@ -1,6 +1,7 @@
 <?php 
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -58,44 +59,44 @@ session_start();
 							<div class="fild">
 								<div class="controle">
 									<p><label for="nome-ani">Nome</label></p>
-										<input type="text" name="a-nome" id="nome-ong" size="35" placeholder="Ex: Tobe">
+										<input type="text" name="a-nome" id="nome-ong" size="26" placeholder="Ex: Tobby">
 								</div>
 							</div>
 							<div class="fild">
 								<div class="controle">
 									<p><label for="especie">Espécie</label></p>
-									 	<input type="text" name="a-especie" id="cnpj" size="35" placeholder="Ex: Cão, gato, coelho">
+									 	<input type="text" name="a-especie" id="cnpj" size="26" placeholder="Ex: Cão, gato, coelho">
 									</div>
 								</div>
 							<div class="fild">
 								<div class="controle">
 									<p><label for="raca">Raça</label></p>
-								 		<input type="text" name="a-raca"  size="35" placeholder="Ex: Pinscher">
+								 		<input type="text" name="a-raca"  size="26" placeholder="Ex: Pinscher">
 								</div>
 							</div>
 							<div class="fild">
 								<div class="controle">
 									<p><label for="porte">Porte</label></p>
-										<input type="text" name="a-porte"  size="35" placeholder="P | M | G">
+										<input type="text" name="a-porte"  size="26" placeholder="P | M | G">
 								</div>
 							</div>
 
 							<div class="fild">
 								<div class="controle">
 									<p><label for="genero">Gênero</label></p>
-										<input type="text" name="a-genero"  size="35" placeholder="F | M">
+										<input type="text" name="a-genero"  size="26" placeholder="F | M">
 								</div>
 							</div>
 
 							<div class="fild">
 								<div class="controle">
 									<p><label for="descricao">Descrição</label></p>
-										<input type="text" name="a-descricao" size="35" placeholder="Faça uma breve descrição do pet">
+										<input type="text" name="a-descricao" size="26" placeholder="Faça uma breve descrição do pet">
 								</div>
 							</div>
 
 							<div class="botao">
-								<input type="submit" value="Cadastrar">
+								<input type="submit" value="Enviar">
 							</div>
 						</form>
 					</div>
@@ -104,10 +105,6 @@ session_start();
 		</div>
 	</section>
 
-	<div class="botao-volta">
-		<a href="index.php">Voltar</a>
-	</div>
-
 	<script type="text/javascript">
 		// Essa função é para o menu responsivo
 		function toggle(){
@@ -115,5 +112,6 @@ session_start();
 			header.classList.toggle("active");
 		}
 	</script>
+
 </body>
 </html>

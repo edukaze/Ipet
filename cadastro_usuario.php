@@ -41,48 +41,48 @@ if (!isset($_SESSION['anonimo'])) {
 		<div class="fild">
 			<div class="controle">
 			<p><label for="nome">Nome </label></p>
-				<input type="text" name="u-nome" id="nome" size="35" placeholder="Digite seu primeiro nome">
+				<input type="text" name="u-nome" id="nome" size="24" placeholder="Digite seu primeiro nome">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">
 			<p><label for="sobrenome">Sobrenome </label></p>
-				<input type="text" name="u-sobrenome" id="sobrenome" size="35" placeholder="Digite seu sobrenome">
+				<input type="text" name="u-sobrenome" id="sobrenome" size="24" placeholder="Digite seu sobrenome">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">
 			<p><label for="usuario"> Usuário </label></p>
-				<input type="text" name="u-usuario" id="usuario" size="35" placeholder="Digite um usuário">
+				<input type="text" name="u-usuario" id="usuario" size="24" placeholder="Digite um usuário">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">	
 			<p><label for="email">Email </label> </p>
-				<input type="email" name="u-email" id="email" size="35" placeholder="Digite seu email">
+				<input type="email" name="u-email" id="email" size="24" placeholder="Digite seu email">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">	
 			<p><label for="senha">Senha </label></p>
-				<input type="password" name="u-senha" id="senha" size="35" placeholder="Digite uma senha">
+				<input type="password" name="u-senha" id="senha" size="24" placeholder="Digite uma senha">
 			</div>
 		</div>
 
 		<div class="fild">
 			<div class="controle">
 			<p><label for="conf_senha">Confirme a senha </label></p>
-				<input type="password" name="u-conf-senha" id="conf_senha" size="35" placeholder="Digite novamente a senha">
+				<input type="password" name="u-conf-senha" id="conf_senha" size="24" placeholder="Digite novamente a senha">
 			</div>
 		</div>
 		<div class="fild">
 			<div class="controle">	
 			<p><label for="contato">Contato </label></p>
-				<input type="tel" name="u-contato" id="contato" size="35" placeholder="(00) 0 0000-0000" onkeypress="ipet(this)">
+				<input type="tel" name="u-contato" id="contato" size="24" placeholder="(00) 0 0000-0000" onkeypress="ipet(this)">
 			</div>
 		</div>
 

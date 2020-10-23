@@ -42,13 +42,13 @@ if (!isset($_SESSION['anonimo'])) {
 					<div class="fild">
 						<div class="controle">
 							<p><label for="usuario">Usuário: </label></p>
-							<input type="usuario" name="t-usuario" id="usuario" size="20" placeholder="Digite seu usuario">
+							<input type="usuario" name="t-usuario" id="usuario" size="12" placeholder="Digite seu usuario">
 						</div>
 					</div>
 					<div class="fild">
 						<div class="controle">
 							<p><label for="Senha">Senha: </label></p>
-							<input type="password" name="t-senha" id="senha" size="20" placeholder="Digite sua senha">
+							<input type="password" name="t-senha" id="senha" size="12" placeholder="Digite sua senha">
 						</div>
 					</div>
 					<div class="botao">

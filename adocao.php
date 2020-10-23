@@ -26,7 +26,7 @@ $rowTotal = $stmt->rowCount();
 <html>
 <head>
 	<title>Adote</title>
-	<link rel="stylesheet" type="text/css" href="css/cadastro_adocao.css">
+	<link rel="stylesheet" type="text/css" href="css/cadastro_adocao.css"/>
 	
 </head>
 <body>

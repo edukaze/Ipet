@@ -1,10 +1,19 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*
+{
 	margin: 0;
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
 
+html
+{
+	scroll-behavior: smooth; 
+}
+
 body {
+	min-height: 800px;
 	background-image: url('/img/background.png');
   	background-attachment: fixed;
   	background-repeat: no-repeat;
@@ -13,11 +22,12 @@ body {
 
 .conteiner-box {
 	margin: auto;
-	padding-top: 90px;
-	margin-bottom: -10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	height: 360px;
-	width:  410px;
+	width:  420px;
 }
+
 header
 {
 	background: #fff;
@@ -31,12 +41,22 @@ header
 	z-index: 1000; 
 	transition: 0.6s;
 }
+
+/*
+header.sticky 
+{
+	padding: 5px 40px;
+	background:  #fff;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+} */
+
 header .logo img
 {
 	padding: 0px 60px;
 	max-width: 70px;
 	/*filter: invert(1);*/
 }
+
 header ul
 {
 	margin:0px 30px;
@@ -45,25 +65,30 @@ header ul
 	justify-content: center;
 	align-items: center;
 }
+
 header ul ul{
 	position: absolute;
 	top: 50px;
 	display: none;
 }
+
 header ul li:hover > ul{
 	display: block;
 }
+
 header ul ul li.cadastro_user
 {
 	float: none;
 	display: list-item;
 	position: relative;
 }
+
 header ul li
 {
 	position: relative;
 	list-style: none;
 }
+
 header ul li a 
 {
 	display: block;
@@ -77,6 +102,7 @@ header ul li a
 	transition: 0.3s;
 	text-transform: uppercase;
 }
+
 header ul li a.cadastro
 {
 	text-decoration: none;
@@ -86,12 +112,14 @@ header ul li a.cadastro
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 30px;
 }
+
 header ul li a.cadastro:hover
 {
 	color: #f27300;
     background: #fff;
     border: 1px solid #f27300;
 }
+
 header ul li a.cadastro_user
 {
 	background-color: #1690fb;
@@ -100,10 +128,13 @@ header ul li a.cadastro_user
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 5px;
 }
+
 header ul li a:hover
 {
 	color: #f27300;
 }
+
+
 .text-area {
 	background-color: #ecf0f3;
 	border: solid  #ecf0f3 1px;
@@ -190,7 +221,7 @@ input {
 	background-color: #ecf0f3;
 	font-size: 10pt;
 	color: #495057;
-  	padding: 3px 13px 3px 5px;
+  	padding: 3px 0px 3px 5px;
   	border: none;
   	outline: none;
   	border-bottom: 1px solid #495057;
@@ -229,36 +260,14 @@ input[type=submit]:hover {
 }
 
 
-.botao-volta {
-	letter-spacing: 1px;
-	position: absolute;
-	margin: auto;
-    display: block;
-	text-align: center;
-	margin-left: 48%;
-	margin-top: 13%;
-	margin-bottom: 20px;
-}
 
-.botao-volta a {
-	color: #495057;
-	font-size: 15px; 
-	text-decoration: none;
-	margin-top: 2px;
-	margin-left: 10px;
-	text-shadow: 13px 13px 20px #cbced1,
-				-13px -13px 20px #ffffff;
-}
-
-.botao-volta a:hover {
-	color: #f27300;
-}
 .toggle /*para o menu responsivo*/
 {
 	display: none;
 }
+
 @media (max-width: 992px){
-	.toggle /*O meu reponsivo começa aqui*/
+	.toggle /*O menu reponsivo começa aqui*/
 	{
 		display: block;
 		position: relative;

@@ -88,6 +88,7 @@ header ul li a.cadastro
 	padding: 3px 25px;
 	color: #fff;
 	background: #1690fb;
+	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 30px;
 }
@@ -102,6 +103,7 @@ header ul li a.cadastro_user
 	background-color: #1690fb;
 	width: 100px;
 	text-align: center;
+	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 5px;
 }
@@ -118,6 +120,7 @@ header.sticky ul li a.cadastro
 	text-decoration: none;
 	padding: 3px 25px;
 	color: #fff;
+	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 30px;
 }
@@ -219,6 +222,7 @@ p
 	display: inline-block;
 	padding: 10px 30px;
 	background: #1690fb;
+	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	text-decoration: none;
 	color: #fff;

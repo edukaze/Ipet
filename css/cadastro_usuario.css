@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -142,7 +144,7 @@ section {
 input[type=submit] {
 	color: #fff; 
 	font-size: 13pt;
-	padding: 3% 37%;
+	padding: 3% 34%;
 	border-radius: 3px;
 	border: none;
   	cursor: pointer;
@@ -175,7 +177,7 @@ input[type=submit]:hover {
 .botao-volta {
 	letter-spacing: 1px;
 	text-align: center;
-	margin-top: 220px;
+	margin-top: 26%;
 	margin-bottom: 20px;
 }
 

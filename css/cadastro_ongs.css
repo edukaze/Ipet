@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -166,7 +168,7 @@ input#descricao {
 input[type=submit] {
 	color: #fff; 
 	font-size: 13pt;
-	padding: 3% 37%;
+	padding: 3% 34%;
 	border-radius: 3px;
 	border: none;
   	cursor: pointer;
@@ -201,10 +203,10 @@ input[type=submit]:hover {
 	position: absolute;
 	margin: auto;
 	padding-top: 135px;
-    margin-left: 607px;
+    margin-left: 46%;
     display: block;
 	text-align: center;
-	margin-top: 185px;
+	margin-top: 22%;
 	margin-bottom: 20px;
 }
 

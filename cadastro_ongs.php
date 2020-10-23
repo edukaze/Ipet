@@ -41,14 +41,14 @@ if (!isset($_SESSION['anonimo'])) {
 							<div class="fild">
 								<div class="controle">
 									<p><label for="nome-ong">ONG </label></p>
-										<input type="text" name="o-nome-ong" id="nome-ong" size="35" placeholder="Digite o nome da ONG">
+										<input type="text" name="o-nome-ong" id="nome-ong" size="24" placeholder="Digite o nome da ONG">
 									</div>
 								</div>
 
 								<div class="fild">
 									<div class="controle">
 										<p><label for="cnpj">CNPJ </label></p>
-											<input type="text" name="o-cnpj" id="cnpj" size="35" placeholder="00.000.000/0000-00">
+											<input type="text" name="o-cnpj" id="cnpj" size="24" placeholder="00.000.000/0000-00">
 										</div>
 									</div>
 
@@ -56,28 +56,28 @@ if (!isset($_SESSION['anonimo'])) {
 									<div class="fild">
 										<div class="controle">
 											<p><label for="facebook">Facebook </label></p>
-												<input type="text" name="o-facebook" id="facebook" size="35" placeholder="facebook.com/minhaong">
+												<input type="text" name="o-facebook" id="facebook" size="24" placeholder="facebook.com/minhaong">
 											</div>
 										</div>
 
 										<div class="fild">
 											<div class="controle">
 												<p><label for="instagram">Instagram </label></p>
-													<input type="text" name="o-instagram" id="instagram" size="35" placeholder="instagram.com/minhaong">
+													<input type="text" name="o-instagram" id="instagram" size="24" placeholder="instagram.com/minhaong">
 												</div>
 											</div>
 
 											<div class="fild">
 												<div class="controle">
 													<p><label for="email">Email </label></p>
-														<input type="text" name="o-email" id="email" size="35" placeholder="minhaong@email.com">
+														<input type="text" name="o-email" id="email" size="24" placeholder="minhaong@email.com">
 													</div>
 												</div>
 
 												<div class="fild">
 													<div class="controle">
 														<p><label for="telefone">Telefone </label></p>
-															<input type="text" name="o-telefone" id="telefone" size="35" placeholder="(00) 00000-0000" onkeypress="ipet(this)">
+															<input type="text" name="o-telefone" id="telefone" size="24" placeholder="(00) 00000-0000" onkeypress="ipet(this)">
 														</div>
 													</div>
 
@@ -85,27 +85,27 @@ if (!isset($_SESSION['anonimo'])) {
 													<div class="fild">
 														<div class="controle">
 															<p><label for="usuario">Usuário </label></p>
-																<input type="text" name="o-usuario" id="usuario" size="35" placeholder="Digite um usuario">
+																<input type="text" name="o-usuario" id="usuario" size="24" placeholder="Digite um usuario">
 															</div>
 														</div>
 														<div class="fild">
 															<div class="controle">	
 																<p><label for="senha">Senha </label></p>
-																	<input type="password" name="o-senha" id="senha" size="35" placeholder="Digite uma senha">
+																	<input type="password" name="o-senha" id="senha" size="24" placeholder="Digite uma senha">
 																</div>
 															</div>
 
 															<div class="fild">
 																<div class="controle">
 																	<p><label for="conf_senha"> Confirme a senha </label></p>
-																		<input type="password" name="o-conf-senha" id="conf_senha" size="35" placeholder="Digite novamente a senha">
+																		<input type="password" name="o-conf-senha" id="conf_senha" size="24" placeholder="Digite novamente a senha">
 																	</div>
 																</div>
 
 																<div class="fild">
 																	<div class="controle">
 																		<p><label for="descricao">Descrição</label></p>
-																			<input type="text" name="o-descricao" id="descricao" size="35" placeholder="Descreva sua ONG">
+																			<input type="text" name="o-descricao" id="descricao" size="24" placeholder="Descreva sua ONG">
 																		</div>
 																	</div>
 
