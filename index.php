@@ -1,6 +1,16 @@
 <?php 
 session_start();
 
+
+if (isset($_SESSION['id_usuario'])) {
+
+}
+	elseif (isset($_SESSION['nome_ong']) && isset($_SESSION['id_ong'])) {
+	unset($_SESSION['anonimo']);
+	}
+	else{
+		$_SESSION['anonimo'] = true;
+	}
 ?>
 <!DOCTYPE html>
 <html>

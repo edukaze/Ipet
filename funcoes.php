@@ -1,7 +1,4 @@
 <?php 
-session_start();
-?>
-<?php 
 $padrao_numero = "/^\([0-9]{2}\) [9]{1}[0-9]{4}\-[0-9]{4}$/";
 $padrao_email= "/^[a-zA-Z0-9_\.\-]+@[a-z0-9_\.\-]*[a-z0-9_\.\-]+\.[a-z]{2,4}$/";
 $padrao_nome = "/^[a-zA-Z]+$/";

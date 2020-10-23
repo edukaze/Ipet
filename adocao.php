@@ -1,4 +1,13 @@
 <?php 
+session_start();
+
+if (isset($_SESSION['anonimo'])) {
+	header("location:login.php");
+}
+	elseif (isset($_SESSION['anonimo'])) {
+	header("location:login.php");
+}
+
 include 'banco.php';
 $pdo = dbConnect();
 
@@ -9,7 +18,7 @@ $stmt->execute();
 $animais =  $stmt->fetchAll();
 
 $rowTotal = $stmt->rowCount();
-var_dump($rowTotal);
+
 
  ?>
 
