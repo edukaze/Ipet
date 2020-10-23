@@ -27,6 +27,52 @@ elseif (validar($padrao_nome, $nome) === false) {
 	header("location:cadastro_animais.php");
 	exit();
 }
+elseif(strlen($especie) > 20){
+	$_SESSION['erro-especie'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+elseif(validar($padrao_especie,$especie) === false){
+	$_SESSION['erro-especie'] = true;
+	header("location:cadastro_animais.php");
+	exit(); 
+}
+elseif(strlen($raca) > 20){
+	$_SESSION['erro-raca'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+elseif (validar($padrao_raca,$raca) === false) {
+	$_SESSION['erro-raca'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+
+
+elseif(strlen($porte) > 1){
+	$_SESSION['erro-porte'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+
+elseif(strlen($porte != "P" || !="M" || !="G")){
+	$_SESSION['erro-porte'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+
+elseif(strlen($genero != "M" || != "F")){
+	$_SESSION['erro-genero'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+
+elseif(strlen($descricao) > 100){
+	$_SESSION['erro-descricao'] = true;
+	header("location:cadastro_animais.php");
+	exit();
+}
+
 
 $pdo = dbConnect();
 
