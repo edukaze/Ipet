@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
+.clear
+{
+	clear: both;
+}
 html
 {
 	scroll-behavior: smooth; 
@@ -161,6 +165,41 @@ header.sticky ul li a
 .overlay h2 span
 {
 	color: #f27300;
+}
+.box
+{
+	width: 90%;
+	margin: 0 auto;
+	padding: 0 2px;
+}
+section.adc
+{
+	padding: 30px 90px;
+}
+section.adc > .box
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+.box1
+{
+	padding: 20px;
+}
+.box2
+{
+	float: left;
+	width: 200px;
+	height: 450px;
+	border: 1px solid gray;
+}
+.box2 dt, dd
+{
+	text-align: center;
+	padding: 5px;
+}
+.box2 dt
+{
+	font-weight: bold;
 }
 .toggle /*para o menu responsivo*/
 {
