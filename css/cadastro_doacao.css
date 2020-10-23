@@ -13,12 +13,96 @@ body {
 
 .conteiner-box {
 	margin: auto;
-	padding-top: 50px;
+	padding-top: 90px;
 	margin-bottom: -10px;
 	height: 360px;
 	width:  410px;
 }
-
+header
+{
+	background: #fff;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	padding: 40px 0px;
+	z-index: 1000; 
+	transition: 0.6s;
+}
+header .logo img
+{
+	padding: 0px 60px;
+	max-width: 70px;
+	/*filter: invert(1);*/
+}
+header ul
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header ul ul{
+	position: absolute;
+	top: 50px;
+	display: none;
+}
+header ul li:hover > ul{
+	display: block;
+}
+header ul ul li.cadastro_user
+{
+	float: none;
+	display: list-item;
+	position: relative;
+}
+header ul li
+{
+	position: relative;
+	list-style: none;
+}
+header ul li a 
+{
+	display: block;
+	line-height: 60px;
+	position: relative;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #000;
+	letter-spacing: 2px;
+	font-weight: 300;
+	transition: 0.3s;
+	text-transform: uppercase;
+}
+header ul li a.cadastro
+{
+	text-decoration: none;
+	padding: 3px 25px;
+	color: #fff;
+	background: #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 30px;
+}
+header ul li a.cadastro:hover
+{
+	color: #f27300;
+    background: #fff;
+    border: 1px solid #f27300;
+}
+header ul li a.cadastro_user
+{
+	background-color: #1690fb;
+	width: 100px;
+	text-align: center;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 5px;
+}
+header ul li a:hover
+{
+	color: #f27300;
+}
 .text-area {
 	background-color: #ecf0f3;
 	border: solid  #ecf0f3 1px;
@@ -167,4 +251,88 @@ input[type=submit]:hover {
 
 .botao-volta a:hover {
 	color: #f27300;
+}
+
+@media (max-width: 992px){
+	.toggle /*O meu reponsivo começa aqui*/
+	{
+		display: block;
+		position: relative;
+		right: 30px;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+	.toggle:before 
+	{
+		content: '';
+		position: absolute;
+		top: 4px;
+		width: 100%;
+		height: 2px;
+		background: #000;
+		z-index: 1;
+		box-shadow: 0 10px 0 #000;
+		transition: 0.5s;
+	}
+	.toggle:after 
+	{
+		content: '';
+		position: absolute;
+		bottom: 4px;
+		width: 100%;
+		height: 2px;
+		background: #000;
+		z-index: 1;
+		transition: 0.5s;
+	}
+	header,
+	header.sticky
+	{
+		padding: 20px 0px;
+		background: #fff;
+	}
+	header .logo
+	{
+		color: #000;
+	}
+	header ul 
+	{
+		position: absolute;
+		top: 100px;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		text-align: center;
+		overflow: auto;
+		background: #fff;
+		visibility: hidden;
+		opacity: 0;
+	}
+	header.active ul 
+	{
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+	header.active ul li a
+	{
+		display: inline-block;
+		font-size: 20px;
+	}
+	header.active ul li a:hover
+	{
+		color: #f27300;
+		padding: 5px 20px;
+	}
+	header,
+	header ul li a
+	{
+	  
+		color: #000;
+	}
+	header .logo img /*E acaba aqui*/
+	{
+		filter: inherit;
+	}
 }
