@@ -41,14 +41,10 @@ body {
 	margin-top: 5px;
 	text-align: center;
 	font-size: 11pt;
-	background-color: rgba(255,0,0,0.8);
 	width: 275px;
 	height: 15px;
-	box-shadow: 1px 1px 1px 1px #B22222;
-	padding-left: 10px;
+	padding-left: 5px;
 	margin-left: 60px;
-	border:solid #800000 2px;
-	border-radius: 6px;
 	color:#800000;
 	margin-bottom: 0px;
 }
