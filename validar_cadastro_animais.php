@@ -83,7 +83,7 @@ $stmt = $pdo->prepare("
 
 $stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao]);
 
-header('location: doacao.php');
+header('location: adocao.php');
 var_dump($pdo);
 
 ?>

@@ -11,15 +11,18 @@ if (isset($_SESSION['anonimo'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-	<title>Cadastro Animais</title>
+	<title>IPET</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/cadastro_doacao.css">
-	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 	<!-- navbar -->
 	<header id="header">
 		<a href="" class="logo"><img src="img/iPettt.png"></a>
@@ -53,67 +56,67 @@ if (isset($_SESSION['anonimo'])) {
 		</ul>
 		<div class="toggle" onclick="toggle()"></div>
 	</header>
-	
-	<section>
-		<div class="formario_login">
-			<div class="conteiner-box">
-				<div class="text-area">
-					<div class="icone">
-						<img src="img/iPettt.png" alt="">
-					</div>
-					<?php include 'condicional-cadastro.php'; ?>
-					<div class="formulario2">
-						<form action="validar_cadastro_animais.php" method="POST">
-							<div class="fild">
-								<div class="controle">
-									<p><label for="nome-ani">Nome</label></p>
-										<input type="text" name="a-nome" id="nome-ong" size="26" placeholder="Ex: Tobby">
-								</div>
-							</div>
-							<div class="fild">
-								<div class="controle">
-									<p><label for="especie">Espécie</label></p>
-									 	<input type="text" name="a-especie" id="cnpj" size="26" placeholder="Ex: Cão, gato, coelho">
-									</div>
-								</div>
-							<div class="fild">
-								<div class="controle">
-									<p><label for="raca">Raça</label></p>
-								 		<input type="text" name="a-raca"  size="26" placeholder="Ex: Pinscher">
-								</div>
-							</div>
-							<div class="fild">
-								<div class="controle">
-									<p><label for="porte">Porte</label></p>
-										<input type="text" name="a-porte"  size="26" placeholder="P | M | G">
-								</div>
-							</div>
 
-							<div class="fild">
-								<div class="controle">
-									<p><label for="genero">Gênero</label></p>
-										<input type="text" name="a-genero"  size="26" placeholder="F | M">
-								</div>
-							</div>
-
-							<div class="fild">
-								<div class="controle">
-									<p><label for="descricao">Descrição</label></p>
-										<input type="text" name="a-descricao" size="26" placeholder="Faça uma breve descrição do pet">
-								</div>
-							</div>
-
-							<div class="botao">
-								<input type="submit" value="Enviar">
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+	<section class="banner-dc" id="home">
+		<div class="overlay">
+			<!-- <h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2> -->
 		</div>
 	</section>
 
+	<section  class="bg-color" style=" background-color: #F7F8F9;">
+        <div class="container-fluid h-100">
+            <div class="row form-cadastro justify-content-center p-4">
+                <div class="col-md-3 align-self-center area-form">
+
+		<div class="row justify-content-center mb-4">
+		</div>
+		<span class="small d-block text-center" style="font-size: 20px;">Faça sua Doação</span>
+
+		<span class="small d-block text-center" style="font-size: 20px;">Insira os dados do Pet</span>
+		
+		<?php include 'condicional-cadastro.php'; ?>
+		
+		<form action="validar_cadastro_animais.php" method="POST">
+		    <div class="input-group mt-2">
+		        <input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
+		    </div>
+		    <div class="input-group mt-2">
+		        <input type="text" class="form-control outline-secondary" name="a-especie" placeholder="Espécie">
+		    </div>
+		    <div class="input-group mt-2">
+		        <input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça">
+		    </div>
+		    <div class="input-group mt-2">
+		        <input type="text" class="form-control outline-secondary" name="a-porte" placeholder="Porte">
+		    </div>
+		    <div class="input-group mt-2">
+		        <input type="text" class="form-control outline-secondary" name="a-genero" placeholder="Genero">
+		    </div>
+		    <div class="input-group mt-2">
+		        <textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
+		    </div>
+
+		    <div class="row">
+		        <div class="col-md-6">
+		            <input type="submit" class="btn btn-info btn-block mt-2" value="Enviar" >
+		            <?php print_r($stmt->errorInfo()); ?>
+		        </div>
+		    </div>
+		</form>
+	</section>
+
+	<footer class="footer-dc">
+		<p>Igarassu-PE</p>
+		<a href="https://github.com/edukaze/iPET" target="_black"><i class="fab fa-github"></i></a>
+		<a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view?usp=sharing" class="pdf" target="_black"><i class="far fa-file-pdf"></i></a>
+	</footer>
+
 	<script type="text/javascript">
+		// Deixa o header fixo no site
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("sticky", window.scrollY > 0);
+		})
 		// Essa função é para o menu responsivo
 		function toggle(){
 			var header = document.querySelector("header");
@@ -122,4 +125,4 @@ if (isset($_SESSION['anonimo'])) {
 	</script>
 
 </body>
-</html>
+</html> 
