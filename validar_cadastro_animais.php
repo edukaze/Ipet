@@ -16,40 +16,6 @@ if (empty($nome) ||  empty($especie) || empty($raca) || empty($porte) || empty($
 	header("location:doacao.php");
 	exit(); 
 }
-elseif (strlen($nome) > 20) {
-	$_SESSION['erro-nome'] = true;
-	header("location:doacao.php");
-	exit();
-}
-
-elseif (validar($padrao_nome, $nome) === false) {
-	$_SESSION['erro-nome'] = true;
-	header("location:doacao.php");
-	exit();
-}
-/*elseif(strlen($especie) > 20){
-	$_SESSION['erro-especie'] = true;
-	header("location:doacao.php");
-	exit();
-}
-elseif(validar($padrao_especie,$especie) === false){
-	$_SESSION['erro-especie'] = true;
-	header("location:doacao.php");
-	exit(); 
-}*/
-
-elseif (validar($padrao_raca,$raca) === false) {
-	$_SESSION['erro-raca'] = true;
-	header("location:doacao.php");
-	exit();
-}
-
-
-elseif(strlen($porte) > 1){
-	$_SESSION['erro-porte'] = true;
-	header("location:doacao.php");
-	exit();
-}
 
 $pdo = dbConnect();
 
@@ -63,7 +29,7 @@ $stmt = $pdo->prepare("
 
 $stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $chaveUsu]);
 print_r($stmt->errorInfo());
-header("location:doacao.php");
+header("location:adocao.php");
 	}
 	elseif (isset($_SESSION['nome_ong'])) {
 $chaveOng = $_SESSION['id_ong'];
@@ -75,7 +41,7 @@ $stmt = $pdo->prepare("
 
 $stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $chaveOng]);
 print_r($stmt->errorInfo());
-header("location:doacao.php");
+header("location:adocao.php");
 	}
 
 ?>

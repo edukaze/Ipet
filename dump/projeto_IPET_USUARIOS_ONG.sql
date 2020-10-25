@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: projeto
+-- Host: localhost    Database: projeto
 -- ------------------------------------------------------
--- Server version	8.0.21
+-- Server version	8.0.21-0ubuntu0.20.04.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,18 +16,18 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ipet_usuarios_ong`
+-- Table structure for table `IPET_USUARIOS_ONG`
 --
 
-DROP TABLE IF EXISTS `ipet_usuarios_ong`;
+DROP TABLE IF EXISTS `IPET_USUARIOS_ONG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ipet_usuarios_ong` (
+CREATE TABLE `IPET_USUARIOS_ONG` (
   `ONG_ID` int NOT NULL AUTO_INCREMENT,
   `ONG_NOME` varchar(30) NOT NULL,
   `ONG_CNPJ` varchar(20) NOT NULL,
   `ONG_EMAIL` varchar(50) NOT NULL,
-  `ONG_TELEFONE` varchar(12) NOT NULL,
+  `ONG_TELEFONE` varchar(15) NOT NULL,
   `ONG_INSTAGRAM` varchar(100) DEFAULT NULL,
   `ONG_FACEBOOK` varchar(100) DEFAULT NULL,
   `ONG_USUARIO` varchar(20) NOT NULL,
@@ -38,12 +38,12 @@ CREATE TABLE `ipet_usuarios_ong` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ipet_usuarios_ong`
+-- Dumping data for table `IPET_USUARIOS_ONG`
 --
 
-LOCK TABLES `ipet_usuarios_ong` WRITE;
-/*!40000 ALTER TABLE `ipet_usuarios_ong` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ipet_usuarios_ong` ENABLE KEYS */;
+LOCK TABLES `IPET_USUARIOS_ONG` WRITE;
+/*!40000 ALTER TABLE `IPET_USUARIOS_ONG` DISABLE KEYS */;
+/*!40000 ALTER TABLE `IPET_USUARIOS_ONG` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-19 21:46:22
+-- Dump completed on 2020-10-24 23:06:17

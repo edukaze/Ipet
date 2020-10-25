@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: projeto
+-- Host: localhost    Database: projeto
 -- ------------------------------------------------------
--- Server version	8.0.21
+-- Server version	8.0.21-0ubuntu0.20.04.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ipet_like`
+-- Table structure for table `IPET_LIKE`
 --
 
-DROP TABLE IF EXISTS `ipet_like`;
+DROP TABLE IF EXISTS `IPET_LIKE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ipet_like` (
+CREATE TABLE `IPET_LIKE` (
   `LIK_ID` int NOT NULL AUTO_INCREMENT,
   `LIK_NOR_CODIGO` int DEFAULT NULL,
   `LIK_ONG_ID` int DEFAULT NULL,
@@ -31,19 +31,19 @@ CREATE TABLE `ipet_like` (
   KEY `LIK_NOR_FK` (`LIK_NOR_CODIGO`),
   KEY `LIK_ONG_FK` (`LIK_ONG_ID`),
   KEY `LIK_ANI_FK` (`LIK_ANI_CODIGO`),
-  CONSTRAINT `LIK_ANI_FK` FOREIGN KEY (`LIK_ANI_CODIGO`) REFERENCES `ipet_animais` (`ANI_CODIGO`),
-  CONSTRAINT `LIK_NOR_FK` FOREIGN KEY (`LIK_NOR_CODIGO`) REFERENCES `ipet_usuario_normal` (`NOR_CODIGO`),
-  CONSTRAINT `LIK_ONG_FK` FOREIGN KEY (`LIK_ONG_ID`) REFERENCES `ipet_usuarios_ong` (`ONG_ID`)
+  CONSTRAINT `LIK_ANI_FK` FOREIGN KEY (`LIK_ANI_CODIGO`) REFERENCES `IPET_ANIMAIS` (`ANI_CODIGO`),
+  CONSTRAINT `LIK_NOR_FK` FOREIGN KEY (`LIK_NOR_CODIGO`) REFERENCES `IPET_USUARIO_NORMAL` (`NOR_CODIGO`),
+  CONSTRAINT `LIK_ONG_FK` FOREIGN KEY (`LIK_ONG_ID`) REFERENCES `IPET_USUARIOS_ONG` (`ONG_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ipet_like`
+-- Dumping data for table `IPET_LIKE`
 --
 
-LOCK TABLES `ipet_like` WRITE;
-/*!40000 ALTER TABLE `ipet_like` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ipet_like` ENABLE KEYS */;
+LOCK TABLES `IPET_LIKE` WRITE;
+/*!40000 ALTER TABLE `IPET_LIKE` DISABLE KEYS */;
+/*!40000 ALTER TABLE `IPET_LIKE` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-22 23:13:28
+-- Dump completed on 2020-10-24 23:06:18
