@@ -189,7 +189,7 @@ section.adc > .box
 {
 	float: left;
 	width: 200px;
-	height: 450px;
+	height: 70%;
 	border: 1px solid gray;
 }
 .box2 dt, dd

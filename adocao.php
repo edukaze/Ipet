@@ -82,6 +82,10 @@ $rowTotal = $stmt->rowCount();
 
 				<div class="box2">
 					<dl>
+						<dt>Chave Normal usu</dt>
+                        <dd><?= $animal['ANI_NOR_CODIGO']?></dd>
+						<dt>Chave ong</dt>
+                        <dd><?= $animal['ANI_ONG_ID']?></dd>
 						<dt>Nome</dt>
                         <dd><?= $animal['ANI_NOME']?></dd>
                         <dt>Espécie</dt>

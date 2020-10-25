@@ -39,11 +39,6 @@ if (empty($nomeong)|| empty($cnpj) || empty($usuario) || empty($facebook) || emp
 		header("location:cadastro_ongs.php");
 		exit(); 
 	}
-	elseif (strlen($nome) > 20) {
-		$_SESSION['erro-nome'] = true;
-		header("location:cadastro_ongs.php");
-		exit();
-		}
 	elseif(validar($padrao_nome_ong, $nomeong) === false){
 		$_SESSION['erro-nome-ong'] = true;
 		header("location:cadastro_ongs.php");
@@ -85,10 +80,10 @@ $row = $verificandoExistencia->fetchAll();
 	header('Location: cadastro_ongs.php');
 	exit();
 }
-elseif ($row[0]['TOTAL']  != 1) {
+elseif ($row[0]['TOTAL']  == 0) {
 	
 $stmt = $pdo->prepare("
-     INSERT INTO ipet_usuarios_ong (ONG_CNPJ, ONG_USUARIO, ONG_FACEBOOK, ONG_INSTAGRAM, ONG_EMAIL, ONG_TELEFONE, ONG_NOME, ONG_SENHA,ONG_DESCRICAO)
+     INSERT INTO IPET_USUARIOS_ONG (ONG_CNPJ, ONG_USUARIO, ONG_FACEBOOK, ONG_INSTAGRAM, ONG_EMAIL, ONG_TELEFONE, ONG_NOME, ONG_SENHA,ONG_DESCRICAO)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
 ");
 $stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nomeong, $senha, $descricao]);

@@ -16,6 +16,10 @@ if (empty($nome) ||  empty($especie) || empty($raca) || empty($porte) || empty($
 	header("location:doacao.php");
 	exit(); 
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> faa16c347711becaaba4bf4d1fe7a8eb31fbc163
 
 $pdo = dbConnect();
 

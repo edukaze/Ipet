@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: projeto
+-- Host: localhost    Database: projeto
 -- ------------------------------------------------------
--- Server version	8.0.21
+-- Server version	8.0.21-0ubuntu0.20.04.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ipet_animais`
+-- Table structure for table `IPET_ANIMAIS`
 --
 
-DROP TABLE IF EXISTS `ipet_animais`;
+DROP TABLE IF EXISTS `IPET_ANIMAIS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ipet_animais` (
+CREATE TABLE `IPET_ANIMAIS` (
   `ANI_CODIGO` int NOT NULL AUTO_INCREMENT,
   `ANI_NOME` varchar(30) NOT NULL,
   `ANI_ESPECIE` varchar(30) NOT NULL,
@@ -32,24 +32,21 @@ CREATE TABLE `ipet_animais` (
   `ANI_DESCRICAO` text NOT NULL,
   `ANI_ONG_ID` int DEFAULT NULL,
   `ANI_NOR_CODIGO` int DEFAULT NULL,
-  `ANI_ESP_ID` int DEFAULT NULL,
   PRIMARY KEY (`ANI_CODIGO`),
   KEY `ANI_ONG_FK` (`ANI_ONG_ID`),
   KEY `ANI_NOR_FK` (`ANI_NOR_CODIGO`),
-  KEY `ANI_ESP_FK` (`ANI_ESP_ID`),
-  CONSTRAINT `ANI_ESP_FK` FOREIGN KEY (`ANI_ESP_ID`) REFERENCES `ipet_especie` (`ESP_ID`),
-  CONSTRAINT `ANI_NOR_FK` FOREIGN KEY (`ANI_NOR_CODIGO`) REFERENCES `ipet_usuario_normal` (`NOR_CODIGO`),
-  CONSTRAINT `ANI_ONG_FK` FOREIGN KEY (`ANI_ONG_ID`) REFERENCES `ipet_usuarios_ong` (`ONG_ID`)
+  CONSTRAINT `ANI_NOR_FK` FOREIGN KEY (`ANI_NOR_CODIGO`) REFERENCES `IPET_USUARIO_NORMAL` (`NOR_CODIGO`),
+  CONSTRAINT `ANI_ONG_FK` FOREIGN KEY (`ANI_ONG_ID`) REFERENCES `IPET_USUARIOS_ONG` (`ONG_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ipet_animais`
+-- Dumping data for table `IPET_ANIMAIS`
 --
 
-LOCK TABLES `ipet_animais` WRITE;
-/*!40000 ALTER TABLE `ipet_animais` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ipet_animais` ENABLE KEYS */;
+LOCK TABLES `IPET_ANIMAIS` WRITE;
+/*!40000 ALTER TABLE `IPET_ANIMAIS` DISABLE KEYS */;
+/*!40000 ALTER TABLE `IPET_ANIMAIS` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -61,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-25  0:02:16
+-- Dump completed on 2020-10-24 23:06:17
