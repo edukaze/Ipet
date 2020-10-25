@@ -99,7 +99,6 @@ if (isset($_SESSION['anonimo'])) {
 		    <div class="row">
 		        <div class="col-md-6">
 		            <input type="submit" class="btn btn-info btn-block mt-2" value="Enviar" >
-		            <?php print_r($stmt->errorInfo()); ?>
 		        </div>
 		    </div>
 		</form>

@@ -13,77 +13,69 @@ include 'funcoes.php';
 
 if (empty($nome) ||  empty($especie) || empty($raca) || empty($porte) || empty($genero) || empty($descricao)){
 	$_SESSION['erro-campo'] = true;
-	header("location:cadastro_animais.php");
+	header("location:doacao.php");
 	exit(); 
 }
 elseif (strlen($nome) > 20) {
 	$_SESSION['erro-nome'] = true;
-	header("location:cadastro_animais.php");
+	header("location:doacao.php");
 	exit();
 }
 
 elseif (validar($padrao_nome, $nome) === false) {
 	$_SESSION['erro-nome'] = true;
-	header("location:cadastro_animais.php");
+	header("location:doacao.php");
 	exit();
 }
-elseif(strlen($especie) > 20){
+/*elseif(strlen($especie) > 20){
 	$_SESSION['erro-especie'] = true;
-	header("location:cadastro_animais.php");
+	header("location:doacao.php");
 	exit();
 }
 elseif(validar($padrao_especie,$especie) === false){
 	$_SESSION['erro-especie'] = true;
-	header("location:cadastro_animais.php");
+	header("location:doacao.php");
 	exit(); 
-}
-elseif(strlen($raca) > 20){
-	$_SESSION['erro-raca'] = true;
-	header("location:cadastro_animais.php");
-	exit();
-}
+}*/
+
 elseif (validar($padrao_raca,$raca) === false) {
 	$_SESSION['erro-raca'] = true;
-	header("location:cadastro_animais.php");
+	header("location:doacao.php");
 	exit();
 }
 
 
 elseif(strlen($porte) > 1){
 	$_SESSION['erro-porte'] = true;
-	header("location:cadastro_animais.php");
+	header("location:doacao.php");
 	exit();
 }
-
-elseif(strlen($porte != "P" || !="M" || !="G")){
-	$_SESSION['erro-porte'] = true;
-	header("location:cadastro_animais.php");
-	exit();
-}
-
-elseif(strlen($genero != "M" || != "F")){
-	$_SESSION['erro-genero'] = true;
-	header("location:cadastro_animais.php");
-	exit();
-}
-
-elseif(strlen($descricao) > 100){
-	$_SESSION['erro-descricao'] = true;
-	header("location:cadastro_animais.php");
-	exit();
-}
-
 
 $pdo = dbConnect();
 
+if (isset($_SESSION['nome'])) {
+$chaveUsu = $_SESSION['id_usuario'];
+	
 $stmt = $pdo->prepare("
-    INSERT INTO IPET_ANIMAIS (ANI_NOME, ANI_ESPECIE, ANI_RAÇA, ANI_PORTE, ANI_GENERO, ANI_DESCRICAO)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT  INTO IPET_ANIMAIS (ANI_NOME, ANI_ESPECIE, ANI_RAÇA, ANI_PORTE, ANI_GENERO, ANI_DESCRICAO, ANI_NOR_CODIGO)
+    VALUES (?, ?, ?, ?, ?, ?, ?);
 ");
 
-$stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao]);
+$stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $chaveUsu]);
+print_r($stmt->errorInfo());
+header("location:doacao.php");
+	}
+	elseif (isset($_SESSION['nome_ong'])) {
+$chaveOng = $_SESSION['id_ong'];
+	
+$stmt = $pdo->prepare("
+    INSERT  INTO IPET_ANIMAIS (ANI_NOME, ANI_ESPECIE, ANI_RAÇA, ANI_PORTE, ANI_GENERO, ANI_DESCRICAO, ANI_ONG_ID)
+    VALUES (?, ?, ?, ?, ?, ?, ?);
+");
 
-header('location: adocao.php');
-var_dump($pdo);
+$stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $chaveOng]);
+print_r($stmt->errorInfo());
+header("location:doacao.php");
+	}
 
 ?>
