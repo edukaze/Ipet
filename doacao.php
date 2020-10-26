@@ -76,7 +76,7 @@ if (isset($_SESSION['anonimo'])) {
 		
 		<?php include 'condicional-cadastro.php'; ?>
 		
-		<form action="validar_cadastro_animais.php" method="POST">
+		<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
 		    <div class="input-group mt-2">
 		        <input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
 		    </div>
@@ -91,6 +91,9 @@ if (isset($_SESSION['anonimo'])) {
 		    </div>
 		    <div class="input-group mt-2">
 		        <input type="text" class="form-control outline-secondary" name="a-genero" placeholder="Genero">
+		    </div>
+		    <div class="input-group mt-2">
+		        <input type="file" class="form-control outline-secondary" name="imagem" placeholder="Genero">
 		    </div>
 		    <div class="input-group mt-2">
 		        <textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
