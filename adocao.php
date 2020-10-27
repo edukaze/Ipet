@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['anonimo'])) {
 	header("location:login.php");
 }
-	elseif (isset($_SESSION['anonimo'])) {
+elseif (isset($_SESSION['anonimo'])) {
 	header("location:login.php");
 }
 
@@ -25,7 +25,7 @@ $animais =  $stmt->fetchAll();
 $rowTotal = $stmt->rowCount();
 
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -51,71 +51,72 @@ $rowTotal = $stmt->rowCount();
 			<li><a href="doacao.php"  onclick="toggle()">Doação</a></li>
 			<li><a href="#"  onclick="toggle()">Ongs</a></li>
 			<?php if(isset($_SESSION['nome'])): ?>
-			<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome'];?> </a>
-		<ul>
-			<li><a href="edicao_animal.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
-			<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
-		</ul>
-			</li>
-				<?php elseif (isset($_SESSION['nome_ong'])): ?>
-				<li><a href="edicao_animal.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome_ong']; ?></a>
+				<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome'];?> </a>
 					<ul>
-						<li><a href="edicao_animal.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
-						
+						<li><a href="edicao.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
 						<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
 					</ul>
 				</li>
-				<?php else: ?>
-					<?php unset($_SESSION['nome']); ?>
-					<?php unset($_SESSION['nome_ong']); ?>
-					<li><a href="login.php"  onclick="toggle()" class="cadastro">cadastro</a></li>
-				<?php endif ?>
-		</ul>
-		<div class="toggle" onclick="toggle()"></div>
-	</header>
+				<?php elseif (isset($_SESSION['nome_ong'])): ?>
+					<li><a href="edicao_animal.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome_ong']; ?></a>
+						<ul>
+							<li><a href="edicao_animal.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
 
-		<!-- banner -->
-	<section class="banner" id="home">
-		<div class="overlay">
-			<!-- <h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2> -->
-		</div>
-	</section>
+							<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
+						</ul>
+					</li>
+					<?php else: ?>
+						<?php unset($_SESSION['nome']); ?>
+						<?php unset($_SESSION['nome_ong']); ?>
+						<li><a href="login.php"  onclick="toggle()" class="cadastro">cadastro</a></li>
+					<?php endif ?>
+				</ul>
+				<div class="toggle" onclick="toggle()"></div>
+			</header>
 
-	<section class="adc">
-		<div class="box">
-			<div class="box1">
-
-				<?php if ($rowTotal > 0): ?>
-					<?php foreach ($animais as  $animal): ?>
-
-				<div class="box2">
-					<dl>
-						<dt>Chave Normal usu</dt>
-                        <dd><?= $animal['ANI_NOR_CODIGO']?></dd>
-						<dt>Chave ong</dt>
-                        <dd><?= $animal['ANI_ONG_ID']?></dd>
-						<dt>Nome</dt>
-                        <dd><?= $animal['ANI_NOME']?></dd>
-                        <dt>Espécie</dt>
-                        <dd><?= $animal['ANI_ESPECIE']?></dd>
-                        <dt>Raça</dt>
-                        <dd><?= $animal['ANI_RAÇA']?></dd>
-                        <dt>Porte</dt>
-                        <dd><?= $animal['ANI_PORTE']?></dd>
-                        <dt>Gênero</dt>
-                        <dd><?= $animal['ANI_GENERO']?></dd>
-                        <dt>Descrição</dt>
-                        <dd><?= $animal['ANI_DESCRICAO']?></dd>
-					</dl>
+			<!-- banner -->
+			<section class="banner" id="home">
+				<div class="overlay">
+					<!-- <h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2> -->
 				</div>
-				<?php endforeach; ?>
-				<?php endif; ?>
+			</section>
 
-			</div>
-		</div>
-	</section>
+			<section class="adc">
+				<div class="box">
+					<div class="box1">
 
-	<script type="text/javascript">
+						<?php if ($rowTotal > 0): ?>
+							<?php foreach ($animais as  $animal): ?>
+
+								<div class="box2">
+									<dl>
+										<dt>Nome</dt>
+										<dd><?= $animal['ANI_NOME']?></dd>
+										<dd><img src="imagens/1/bbb.jpeg"></dd>
+										<dt>Chave Normal usu</dt>
+										<dd><?= $animal['ANI_NOR_CODIGO']?></dd>
+										<dt>Chave ong</dt>
+										<dd><?= $animal['ANI_ONG_ID']?></dd>
+										<dt>Espécie</dt>
+										<dd><?= $animal['ANI_ESPECIE']?></dd>
+										<dt>Raça</dt>
+										<dd><?= $animal['ANI_RAÇA']?></dd>
+										<dt>Porte</dt>
+										<dd><?= $animal['ANI_PORTE']?></dd>
+										<dt>Gênero</dt>
+										<dd><?= $animal['ANI_GENERO']?></dd>
+										<dt>Descrição</dt>
+										<dd><?= $animal['ANI_DESCRICAO']?></dd>
+									</dl>
+								</div>
+							<?php endforeach; ?>
+						<?php endif; ?>
+
+					</div>
+				</div>
+			</section>
+
+			<script type="text/javascript">
 		// Deixa o header fixo no site
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");

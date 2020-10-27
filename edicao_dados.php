@@ -30,7 +30,7 @@ $stmt = $pdo->prepare($query);
 $stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $_SESSION['ani-codigo'], $_SESSION['ani-nome']]);
 
 unset($_SESSION['ani-codigo']);
-print_r($stmt->errorInfo());
-//header('location:adocao.php');
+//print_r($stmt->errorInfo());
+header('location:adocao.php');
 
 ?>

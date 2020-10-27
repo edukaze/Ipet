@@ -298,3 +298,15 @@ section.adc > .box
 		font-size: 30px;
 	}*/
 }
+
+
+.box2 img {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px;
+  width: 150px;
+}
+
+.box2 img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
