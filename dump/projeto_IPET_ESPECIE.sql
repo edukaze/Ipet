@@ -16,6 +16,25 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `IPET_ESPECIE`
+--
+
+DROP TABLE IF EXISTS `IPET_ESPECIE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `IPET_ESPECIE` (
+  `ESP_ID` int NOT NULL AUTO_INCREMENT,
+  `ESP_CACHORRO` varchar(8) DEFAULT NULL,
+  `ESP_GATO` varchar(4) DEFAULT NULL,
+  `ESP_COELHO` varchar(6) DEFAULT NULL,
+  `ESP_HAMSTER` varchar(7) DEFAULT NULL,
+  `ESP_PASSARO` varchar(7) DEFAULT NULL,
+  `ESP_OUTRO` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`ESP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `IPET_ESPECIE`
 --
 
@@ -33,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-26 20:35:10
+-- Dump completed on 2020-10-26 21:59:00
