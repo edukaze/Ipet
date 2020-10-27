@@ -39,12 +39,15 @@ if (isset($_SESSION['id_usuario'])) {
 			<?php if(isset($_SESSION['nome'])): ?>
 			<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome'];?> </a>
 		<ul>
+			<li><a href="edicao_animal.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
 			<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
 		</ul>
 			</li>
 				<?php elseif (isset($_SESSION['nome_ong'])): ?>
-				<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome_ong']; ?></a>
+				<li><a href="edicao_animal.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome_ong']; ?></a>
 					<ul>
+						<li><a href="edicao_animal.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
+						
 						<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
 					</ul>
 				</li>

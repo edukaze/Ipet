@@ -55,6 +55,11 @@ header ul ul{
 	top: 50px;
 	display: none;
 }
+header ul ul ul{
+	position: absolute;
+	top: 50px;
+	display: none;
+}
 header ul li:hover > ul{
 	display: block;
 }
@@ -78,8 +83,8 @@ header ul li a
 	text-decoration: none;
 	color: #000;
 	letter-spacing: 2px;
-	font-weight: 300;
-	transition: 0.3s;
+	font-weight: 80px;
+	transition: 0.7s;
 	text-transform: uppercase;
 }
 header ul li a.cadastro
@@ -101,7 +106,7 @@ header ul li a.cadastro:hover
 header ul li a.cadastro_user
 {
 	background-color: #1690fb;
-	width: 100px;
+	width: 80px;
 	text-align: center;
 	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
