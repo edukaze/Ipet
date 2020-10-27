@@ -12,10 +12,15 @@ include 'banco.php';
 $pdo = dbConnect();
 
 $stmt = $pdo->prepare("
-	SELECT * FROM IPET_ANIMAIS;
+	SELECT * FROM IPET_ANIMAIS
+	LEFT JOIN IPET_USUARIO_NORMAL ON ANI_NOR_CODIGO = NOR_CODIGO
+	LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID;
 	");
+
 $stmt->execute();
 $animais =  $stmt->fetchAll();
+
+var_dump($animais);
 
 $rowTotal = $stmt->rowCount();
 
