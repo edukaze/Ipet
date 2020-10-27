@@ -189,11 +189,12 @@ section.adc > .box
 {
 	float: left;
 	width: 200px;
-	height: 70%;
+	height: 100%;
 	border: 1px solid gray;
 }
 .box2 dt, dd
 {
+	line-height:20px;
 	text-align: center;
 	padding: 5px;
 }

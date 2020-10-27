@@ -20,7 +20,7 @@ $stmt = $pdo->prepare("
 $stmt->execute();
 $animais =  $stmt->fetchAll();
 
-var_dump($animais);
+// var_dump($animais);
 
 $rowTotal = $stmt->rowCount();
 
