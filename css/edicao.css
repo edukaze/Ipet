@@ -21,7 +21,7 @@ body
 header
 {
 	background: #fff;
-	position: fixed;
+	/*position: fixed;*/
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -134,37 +134,19 @@ header.sticky ul li a
 {
 	color: #000;
 }
-.banner
+section.titulo
 {
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
-	background-image: url("../img/bg4.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	min-height: 50vh;
+	background: #f27300; 
 }
-.overlay
+.titulo h1
 {
-	width: 100%;
-	height: 100vh;
-	background: rgba(0,0,0,.1);
-}
-.banner .overlay h2
-{
-	padding-top: 180px;
-	color: #fff;
-	font-size: 60px;
-	text-transform: uppercase;
+	font-size: 50px;
+	padding-top: 130px;
 	text-align: center;
-	line-height: 1em;
-}
-.overlay h2 span
-{
-	color: #f27300;
+	color: #000;
 }
 .box
 {
@@ -172,18 +154,18 @@ header.sticky ul li a
 	margin: 0 auto;
 	padding: 0 2px;
 }
-section.adc
+section.edc
 {
 	padding: 30px 90px;
 }
-section.adc > .box
+section.edc > .box
 {
 	display: flex;
 	flex-wrap: wrap;
 }
 .box1
 {
-	padding: 30px;
+	padding: 50px;
 }
 .box2
 {
@@ -196,16 +178,56 @@ section.adc > .box
 {
 	line-height:20px;
 	text-align: center;
-	padding: 5px;
+	padding-top: 15px;
 }
 .box2 dt
 {
 	font-weight: bold;
 }
+.box2 a
+{
+	margin: 28px 27px;
+	text-decoration: none;
+	padding: 3px 25px;
+	color: #fff;
+	background: #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 30px;
+}
+.box2 a:hover
+{
+	color: #000;
+}
 .toggle /*para o menu responsivo*/
 {
 	display: none;
 }
+.footer-dc{
+	width: 100%;
+	height: 20px;
+}
+.footer-dc
+{
+	width: 100%;
+	height: 20px;
+}
+.footer-dc p{
+	display: inline-block;
+	float: left;
+	margin: 10px;
+}
+.footer-dc a{
+	color: #000;
+	float: right;
+	display: inline-block;
+	text-decoration: none;
+	padding: 16px;
+}
+a:hover{
+	text-decoration: none;
+	color: #000;
+}
+
 
 @media (max-width: 992px){
 	.toggle /*O meu reponsivo começa aqui*/
@@ -288,13 +310,8 @@ section.adc > .box
 	{
 		filter: inherit;
 	}
-	.banner
+	.titulo
 	{
-		background-position: ;
+		z-index: -1;
 	}
-/*	.banner .overlay h2
-	{
-	    padding-top: 130px;
-		font-size: 30px;
-	}*/
 }
