@@ -41,7 +41,7 @@ if (!isset($_SESSION['anonimo'])) {
 		<div class="fild">
 			<div class="controle">
 			<p><label for="nome">Nome </label></p>
-				<input type="text" name="u-nome" id="nome" size="24" placeholder="Digite seu primeiro nome">
+				<input type="text" name="u-nome" id="nome" size="24" placeholder="Digite seu primeiro nome" value="<?= $_SESSION['cadastro_usuario']['u-nome'] ?? '' ?>">
 			</div>
 		</div>
 

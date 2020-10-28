@@ -15,12 +15,15 @@ $email = $_POST['u-email'];
 $senha = $_POST['u-senha'];
 $conf_senha = $_POST['u-conf-senha'];
 $contato = $_POST['u-contato'];
+
+$_SESSION['cadastro_usuario'] = $_POST;
+
 include 'funcoes.php';
 
 if (empty($nome) ||  empty($sobrenome) || empty($usuario) || empty($email) || empty($senha) || empty($conf_senha) || empty($contato)){
 	$_SESSION['erro-campo'] = true;
 	header("location:cadastro_usuario.php");
-	exit(); 
+	exit();
 }
 elseif (validar($padrao_numero, $contato) === false) {
 	$_SESSION['erro-contato'] = true;
@@ -63,7 +66,7 @@ elseif($senha != $conf_senha){
 	exit();
 }
 
-
+unset($_SESSION['cadastro_usuario']);
 
 $pdo = dbConnect();
 
