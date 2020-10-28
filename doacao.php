@@ -8,6 +8,10 @@ elseif (isset($_SESSION['anonimo'])) {
 	header("location:login.php");
 }
 
+include 'banco.php';
+
+$pdo = dbConnect();
+
 ?>
 
 <!DOCTYPE html>
@@ -76,20 +80,28 @@ elseif (isset($_SESSION['anonimo'])) {
 							<span class="small d-block text-center" style="font-size: 20px;">Faça sua Doação</span>
 
 							<span class="small d-block text-center" style="font-size: 20px;">Insira os dados do Pet</span>
-							
+
 							<?php include 'condicional-cadastro.php'; ?>
-							
+
 							<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
 								<div class="input-group mt-2">
 									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
 								</div>
 								<div class="input-group mt-2">
+									<?php
+									$stmt = $pdo->prepare('select * from IPET_ESPECIE order by ESPECIE');
+									$stmt->execute();
+									$especies = $stmt->fetchAll();
+									?>
 									<select name="a-especie" class="form-control outline-secondary" >
-										<option value="cachorro">Cachorro</option>
+										<?php foreach ($especies as $especie): ?>
+											<option value="<?= $especie['ESP_ID'] ?>"><?= $especie['ESPECIE'] ?></option>
+										<?php endforeach ?>
+										<!-- <option value="cachorro">Cachorro</option>
 										<option value="gato">Gato</option>
 										<option value="hamster">Hamister</option>
 										<option value="passaro">Passáro</option>
-										<option value="outro">Outro</option>
+										<option value="outro">Outro</option> -->
 									</div>
 									<div class="input-group mt-2">
 										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça">
