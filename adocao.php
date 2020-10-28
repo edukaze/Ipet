@@ -87,12 +87,18 @@ $rowTotal = $stmt->rowCount();
 
 						<?php if ($rowTotal > 0): ?>
 							<?php foreach ($animais as  $animal): ?>
+								<?php
+								$imagem = 'imagens/1/bbb.jpeg';
+								if (is_file("imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'])) {
+									$imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
+								}
+								?>
 
 								<div class="box2">
 									<dl>
 										<dt>Nome</dt>
 										<dd><?= $animal['ANI_NOME']?></dd>
-										<dd><img src="imagens/1/bbb.jpeg"></dd>
+										<dd><img src="<?= $imagem ?>"></dd>
 										<dt>Chave Normal usu</dt>
 										<dd><?= $animal['ANI_NOR_CODIGO']?></dd>
 										<dt>Chave ong</dt>
