@@ -9,13 +9,20 @@ if (isset($_SESSION['anonimo'])) {
     header("location:login.php");
 }
 
+$id = $_GET['id'] ?? false;
+if ($id === false) {
+	header('location: edicao.php');
+	exit();
+}
+
+
 $pdo = dbConnect();
 
 $query = "SELECT * FROM IPET_ANIMAIS WHERE ANI_CODIGO=?";
 
 $stmt = $pdo->prepare($query);
 
-$stmt->execute();
+$stmt->execute([$id]);
 
 ?>
 
