@@ -22,7 +22,7 @@ $chaveEspecie = $query->fetchAll();
 
 $chaveEspecie = $chaveEspecie[0]['ESP_ID'];
 
-var_dump($chaveEspecie);
+
 
 include 'funcoes.php';
 
@@ -35,7 +35,6 @@ if (empty($nome) ||  empty($especie) || empty($raca) || empty($porte) || empty($
 
 if (isset($_SESSION['nome'])) {
 $chaveUsu = $_SESSION['id_usuario'];
-$ultimo_id = $chaveUsu;
 	
 $stmt = $pdo->prepare("
     INSERT  INTO IPET_ANIMAIS (ANI_NOME, ANI_ESPECIE, ANI_RAÇA, ANI_PORTE, ANI_GENERO, ANI_DESCRICAO, ANI_NOR_CODIGO, ANI_IMAGEM, ANI_ESP_ID)
@@ -44,8 +43,13 @@ $stmt = $pdo->prepare("
 
 $stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $chaveUsu,$nome_imagem, $chaveEspecie]);
 
+$ultimo_id = $pdo->lastInsertId();
+
+var_dump($ultimo_id);
 include 'validar_imagem.php';
 print_r($stmt->errorInfo());
+
+
 header("location:adocao.php");
 	}
 	elseif (isset($_SESSION['nome_ong'])) {
