@@ -89,14 +89,17 @@ $pdo = dbConnect();
 								</div>
 								<div class="input-group mt-2">
 									<?php
-									$stmt = $pdo->prepare('select * from IPET_ESPECIE order by ESPECIE');
+									$stmt = $pdo->prepare('SELECT * FROM IPET_ESPECIE order by ESP_ESPECIE');
 									$stmt->execute();
 									$especies = $stmt->fetchAll();
+								
 									?>
 									<select name="a-especie" class="form-control outline-secondary" >
 										<?php foreach ($especies as $especie): ?>
-											<option value="<?= $especie['ESP_ID'] ?>"><?= $especie['ESPECIE'] ?></option>
+										
+											<option value="<?= $especie['ESP_ESPECIE'] ?>"> <?= $especie['ESP_ESPECIE'] ?></option>
 										<?php endforeach ?>
+
 										<!-- <option value="cachorro">Cachorro</option>
 										<option value="gato">Gato</option>
 										<option value="hamster">Hamister</option>

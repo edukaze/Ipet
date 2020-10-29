@@ -11,26 +11,18 @@ $genero = $_POST['a-genero'];
 $descricao = $_POST['a-descricao'];
 $nome_imagem = $_FILES['imagem']['name'];
 
+$pdo = dbConnect();
+
 $query =  $pdo->prepare("
-	SELECT ESP_ID FROM IPET_ESPECIE
+	SELECT * FROM IPET_ESPECIE
+	WHERE ESP_ESPECIE = ?;
 	");
-$query ->execute();
+$query ->execute([$especie]);
 $chaveEspecie = $query->fetchAll();
-var_dump($especie);
+
+$chaveEspecie = $chaveEspecie[0]['ESP_ID'];
+
 var_dump($chaveEspecie);
-
-	if ($especie = "cachorro") {
-		$insert =  $pdo->prepare("
-			INSERT INTO IPET_ESPECIE(ESP_CACHORRO)
-			VALUES (?);
-			");
-		$insert ->execute([$especie]);
-		$select = $pdo->prepare("
-			SELECT ESP_ID, ESP_CACHORRO FROM IPET_ESPECIE
-			where esp_cachorro= ;
-			")
-	}
-
 
 include 'funcoes.php';
 
@@ -40,8 +32,6 @@ if (empty($nome) ||  empty($especie) || empty($raca) || empty($porte) || empty($
 	exit(); 
 }
 
-
-$pdo = dbConnect();
 
 if (isset($_SESSION['nome'])) {
 $chaveUsu = $_SESSION['id_usuario'];

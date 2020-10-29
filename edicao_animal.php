@@ -24,6 +24,7 @@ $stmt = $pdo->prepare($query);
 
 $stmt->execute([$id]);
 
+$_SESSION['id-animal'] = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
