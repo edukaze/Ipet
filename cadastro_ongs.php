@@ -56,7 +56,7 @@ if (!isset($_SESSION['anonimo'])) {
 							<div class="fild">
 								<div class="controle">
 									<p><label for="facebook">Facebook </label></p>
-									<input type="text" name="o-facebook" id="facebook" size="24" placeholder="facebook.com/minhaong" value="<?= $_SESSION['cadastro_ongs']['0-facebook'] ?? '' ?>">
+									<input type="text" name="o-facebook" id="facebook" size="24" placeholder="facebook.com/minhaong" value="<?= $_SESSION['cadastro_ongs']['o-facebook'] ?? '' ?>">
 								</div>
 							</div>
 
