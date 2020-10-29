@@ -92,7 +92,7 @@ elseif ($row[0]['TOTAL']  == 0) {
 	$stmt->execute([$nome, $sobrenome, $senha, $usuario, $contato, $email]);
 
 	$_SESSION['status_cadastro'] = true;
-	header('Location: cadastro_usuario.php');
+	header('location: login.php');
 	exit;
 
 }
