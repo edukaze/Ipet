@@ -9,7 +9,7 @@ if (!isset($_SESSION['anonimo'])) {
 }
 
 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,69 +19,75 @@ if (!isset($_SESSION['anonimo'])) {
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
 <body>
-<section class="formulario">
-	<div class="formario_login">
-		<div class="conteiner-box">
-			<div class="text-area">
-				<div class="icone">
-					<img src="img/iPettt.png" alt="">
-				</div>
-				<?php if(isset($_SESSION['erro-campo'])): ?>
-					<div class="erro-campo">
-						<p>Por favor preenchar todos os campos.</p>
+	<section class="formulario">
+		<div class="formario_login">
+			<div class="conteiner-box">
+				<div class="text-area">
+					<div class="icone">
+						<img src="img/iPettt.png" alt="">
 					</div>
-				<?php unset($_SESSION['erro-campo']); ?>
-				<?php elseif(isset($_SESSION['nao-autenticado'])): ?>
-					<div class="erro-campo">
-						<p>ERROR: Usuário ou senha inválidos.</p>
-					</div>
-				<?php unset($_SESSION['nao-autenticado']); ?>
-				<?php endif; ?>
-				<div class="formulario1">
-				<form method="POST" action="verificar_login.php">
-					<div class="fild">
-						<div class="controle">
-							<p><label for="usuario">Usuário: </label></p>
-							<input type="usuario" name="t-usuario" id="usuario" size="12" placeholder="Digite seu usuario">
+					<?php if(isset($_SESSION['erro-campo'])): ?>
+						<div class="erro-campo">
+							<p>Por favor preenchar todos os campos.</p>
 						</div>
-					</div>
-					<div class="fild">
-						<div class="controle">
-							<p><label for="Senha">Senha: </label></p>
-							<input type="password" name="t-senha" id="senha" size="12" placeholder="Digite sua senha">
-						</div>
-					</div>
-					<div class="botao">
-						<input type="submit" value="Login">
-					</div>
-	
-	
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="bg">
-	<div class="cadastro-escolha">
-		<p>
-			<br>
-			Não possui conta?<br>
-			Escolha sua forma de cadastro
-		</p>
-		<div class="botoes-escolha">
-			<div class="botao1">
-				<a href="cadastro_usuario.php">USUÁRIO</a>
-			</div>
-			<div class="botao1">
-				<a href="cadastro_ongs.php">ONG</a>
-			</div>
+						<?php unset($_SESSION['erro-campo']); ?>
+						<?php elseif(isset($_SESSION['nao-autenticado'])): ?>
+							<div class="erro-campo">
+								<p>ERROR: Usuário ou senha inválidos.</p>
+							</div>
+							<?php unset($_SESSION['nao-autenticado']); ?>
+							<?php elseif(isset($_SESSION['status_cadastro'])): ?>
+								<div class="campo-certo">
+									<p>Cadastro feito com sucesso!</p>
+								</div>
+								<?php unset($_SESSION['status_cadastro']) ?>
+						<?php endif; ?>
+						
+							<div class="formulario1">
+								<form method="POST" action="verificar_login.php">
+									<div class="fild">
+										<div class="controle">
+											<p><label for="usuario">Usuário: </label></p>
+											<input type="usuario" name="t-usuario" id="usuario" size="12" placeholder="Digite seu usuario">
+										</div>
+									</div>
+									<div class="fild">
+										<div class="controle">
+											<p><label for="Senha">Senha: </label></p>
+											<input type="password" name="t-senha" id="senha" size="12" placeholder="Digite sua senha">
+										</div>
+									</div>
+									<div class="botao">
+										<input type="submit" value="Login">
+									</div>
 
-			<div class="botao-volta">
-				<a href="index.php">Voltar</a>
-			</div>
-		</div>
-	</div>
-</section>
-</body>
-</html>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="bg">
+				<div class="cadastro-escolha">
+					<p>
+						<br>
+						Não possui conta?<br>
+						Escolha sua forma de cadastro
+					</p>
+					<div class="botoes-escolha">
+						<div class="botao1">
+							<a href="cadastro_usuario.php">USUÁRIO</a>
+						</div>
+						<div class="botao1">
+							<a href="cadastro_ongs.php">ONG</a>
+						</div>
+
+						<div class="botao-volta">
+							<a href="index.php">Voltar</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</body>
+		</html>

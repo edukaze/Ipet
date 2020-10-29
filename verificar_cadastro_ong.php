@@ -95,7 +95,7 @@ elseif ($row[0]['TOTAL']  == 0) {
 	$stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nomeong, $senha, $descricao]);
 
 	$_SESSION['status_cadastro'] = true;
-	header('location: cadastro_ongs.php');
+	header('location: login.php');
 
 	exit();
 
