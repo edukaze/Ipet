@@ -12,12 +12,13 @@
 include 'banco.php';
  $r = "SELECT * FROM IPET_USUARIOS_ONG ORDER BY ONG_NOME ASC"; 
 
-$resultado= $dsn->prepare($r); 
+$resultado= $pdo->prepare($r); 
 $resultado->execute();
 
 while ($a = $resultado ->  fetch(PDO::FETCH_ASSOC)) {
 echo "NOME:". $a['ONG_NOME'] . "<br>";
- 	
+echo "DESCRIÇÃO:".$a['ONG_DESCRICAO']."<br>";
+
 
 }
 
