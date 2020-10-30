@@ -81,44 +81,71 @@ $_SESSION['id-animal'] = $_GET['id'];
 	</section>
 
 	<section  class="bg-color" style=" background-color: #F7F8F9;">
-        <div class="container-fluid h-100">
-            <div class="row form-cadastro justify-content-center p-4">
-                <div class="col-md-3 align-self-center area-form">
+				<div class="container-fluid h-100">
+					<div class="row form-cadastro justify-content-center p-4">
+						<div class="col-md-3 align-self-center area-form">
 
-		<div class="row justify-content-center mb-4">
-		</div>
+							<div class="row justify-content-center mb-4">
+							</div>
+							<span class="small d-block text-center" style="font-size: 20px;">Faça sua Alteração aqui</span>
 
-		<span class="small d-block text-center" style="font-size: 20px;">Edite os dados do Pet</span>
-		
-		<?php include 'condicional-cadastro.php'; ?>
-		
-		<form action="edicao_dados.php" method="POST">
-		    <div class="input-group mt-2">
-		        <input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
-		    </div>
-		    <div class="input-group mt-2">
-		        <input type="text" class="form-control outline-secondary" name="a-especie" placeholder="Espécie">
-		    </div>
-		    <div class="input-group mt-2">
-		        <input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça">
-		    </div>
-		    <div class="input-group mt-2">
-		        <input type="text" class="form-control outline-secondary" name="a-porte" placeholder="Porte">
-		    </div>
-		    <div class="input-group mt-2">
-		        <input type="text" class="form-control outline-secondary" name="a-genero" placeholder="Genero">
-		    </div>
-		    <div class="input-group mt-2">
-		        <textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
-		    </div>
+							<span class="small d-block text-center" style="font-size: 20px;">Insira os dados do Pet</span>
 
-		    <div class="row">
-		        <div class="col-md-6">
-		            <input type="submit" class="btn btn-info btn-block mt-2" value="Editar">
-		        </div>
-		    </div>
-		</form>
-	</section>
+							<?php include 'condicional-cadastro.php'; ?>
+
+							<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
+								<div class="input-group mt-2">
+									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
+								</div>
+								<div class="input-group mt-2">
+									<?php
+									$stmt = $pdo->prepare('SELECT * FROM IPET_ESPECIE order by ESP_ESPECIE');
+									$stmt->execute();
+									$especies = $stmt->fetchAll();
+								
+									?>
+									<select name="a-especie" class="form-control outline-secondary" >
+										<?php foreach ($especies as $especie): ?>
+										
+											<option value="<?= $especie['ESP_ESPECIE'] ?>"> <?= $especie['ESP_ESPECIE'] ?></option>
+										<?php endforeach ?>
+
+										<!-- <option value="cachorro">Cachorro</option>
+										<option value="gato">Gato</option>
+										<option value="hamster">Hamister</option>
+										<option value="passaro">Passáro</option>
+										<option value="outro">Outro</option> -->
+									</div>
+									<div class="input-group mt-2">
+										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça">
+									</div>
+									<div class="input-group mt-2">
+										<select name="a-porte" class="form-control outline-secondary" >
+											<option value="p">P</option>
+											<option value="m">M</option>
+											<option value="g">G</option>
+										</select>
+									</div>
+									<div class="input-group mt-2">
+										<select name="a-genero" class="form-control outline-secondary" >
+											<option value="f">F</option>
+											<option value="m">M</option>
+										</select>
+									</div>
+									<div class="input-group mt-2">
+										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem">
+									</div>
+									<div class="input-group mt-2">
+										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
+									</div>
+
+									<div class="row">
+										<div class="col-md-6">
+											<input type="submit" class="btn btn-info btn-block mt-2" value="Enviar" >
+										</div>
+									</div>
+								</form>
+							</section>
 
 	<footer class="footer-dc">
 		<p>Igarassu-PE</p>
