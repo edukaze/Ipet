@@ -39,10 +39,10 @@ $rowTotal = $stmt->rowCount();
 		<a href="" class="logo"><img src="img/iPettt.png"></a>
 		<ul>
 			<li><a href="index.php" onclick="toggle()">Home</a></li>
-			<li><a href="index.php"  onclick="toggle()">Sobre</a></li>
-			<li><a href="index.php"  onclick="toggle()">serviços</a></li>
-			<li><a href="index.php"  onclick="toggle()">Pets</a></li>
-			<li><a href="index.php"  onclick="toggle()">Equipe</a></li>
+			<li><a href="index.php#sobre"  onclick="toggle()">Sobre</a></li>
+			<li><a href="index.php#serviços"  onclick="toggle()">serviços</a></li>
+			<li><a href="index.php#pets"  onclick="toggle()">Pets</a></li>
+			<li><a href="index.php#equipe"  onclick="toggle()">Equipe</a></li>
 			<!-- <li><a href="#contato"  onclick="toggle()">Contato</a></li> -->
 			<li><a href="adocao.php"  onclick="toggle()">Adoção</a></li>
 			<li><a href="doacao.php"  onclick="toggle()">Doação</a></li>
