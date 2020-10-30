@@ -16,14 +16,14 @@ if ($id === false) {
 }
 
 $pdo = dbConnect();
+$_SESSION['id-animal'] = $_GET['id'];
 
 $query = "SELECT * FROM IPET_ANIMAIS WHERE ANI_CODIGO=?";
 
 $stmt = $pdo->prepare($query);
 
 $stmt->execute([$id]);
-
-$_SESSION['id-animal'] = $_GET['id'];
+$edianimais = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -91,10 +91,10 @@ $_SESSION['id-animal'] = $_GET['id'];
 							<span class="small d-block text-center" style="font-size: 20px;">Insira os dados do Pet</span>
 
 							<?php include 'condicional-cadastro.php'; ?>
-
+									<?php foreach ($edianimais as $edianimal): ?>
 							<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
 								<div class="input-group mt-2">
-									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
+									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?=$edianimal['ANI_NOME']?>">
 								</div>
 								<div class="input-group mt-2">
 									<?php
@@ -106,7 +106,7 @@ $_SESSION['id-animal'] = $_GET['id'];
 									<select name="a-especie" class="form-control outline-secondary" >
 										<?php foreach ($especies as $especie): ?>
 										
-											<option value="<?= $especie['ESP_ESPECIE'] ?>"> <?= $especie['ESP_ESPECIE'] ?></option>
+											<option value="<?= $especie['ESP_ESPECIE']?> "> <?= $especie['ESP_ESPECIE'] ?></option>
 										<?php endforeach ?>
 
 										<!-- <option value="cachorro">Cachorro</option>
@@ -116,7 +116,7 @@ $_SESSION['id-animal'] = $_GET['id'];
 										<option value="outro">Outro</option> -->
 									</div>
 									<div class="input-group mt-2">
-										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça">
+										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça" value="<?=$edianimal['ANI_RAÇA']?>">
 									</div>
 									<div class="input-group mt-2">
 										<select name="a-porte" class="form-control outline-secondary" >
@@ -132,7 +132,7 @@ $_SESSION['id-animal'] = $_GET['id'];
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem">
+										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem" value="<?=$edianimal['ANI_IMAGEM']?>">
 									</div>
 									<div class="input-group mt-2">
 										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
@@ -144,8 +144,8 @@ $_SESSION['id-animal'] = $_GET['id'];
 										</div>
 									</div>
 								</form>
+							<?php endforeach; ?>
 							</section>
-
 	<footer class="footer-dc">
 		<p>Igarassu-PE</p>
 		<a href="https://github.com/edukaze/iPET" target="_black"><i class="fab fa-github"></i></a>
