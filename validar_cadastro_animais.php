@@ -56,13 +56,13 @@ header("location:adocao.php");
 	}
 	elseif (isset($_SESSION['nome_ong'])) {
 $chaveOng = $_SESSION['id_ong'];
-$ultimo_id = $chaveOng;	
 $stmt = $pdo->prepare("
     INSERT  INTO IPET_ANIMAIS (ANI_NOME, ANI_ESPECIE, ANI_RAÇA, ANI_PORTE, ANI_GENERO, ANI_DESCRICAO, ANI_ONG_ID, ANI_IMAGEM, ANI_ESP_ID)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
 ");
 
 $stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $chaveOng, $nome_imagem, $chaveEspecie]);
+$ultimo_id = $pdo->lastInsertId();;	
 include 'validar_imagem.php';
 print_r($stmt->errorInfo());
 header("location:adocao.php");

@@ -50,7 +50,7 @@ $pdo = dbConnect();
 				<?php elseif (isset($_SESSION['nome_ong'])): ?>
 					<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome_ong']; ?></a>
 						<ul>
-							<li><a href="perfil.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
+							<li><a href="perfil_ong.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
 							
 							<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
 						</ul>
@@ -85,18 +85,18 @@ $pdo = dbConnect();
 
 							<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
 								<div class="input-group mt-2">
-									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?= $_SESSION['cadastro_animal']['a-nome'] ?? '' ?>">
+									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
 								</div>
 								<div class="input-group mt-2">
 									<?php
 									$stmt = $pdo->prepare('SELECT * FROM IPET_ESPECIE order by ESP_ESPECIE');
 									$stmt->execute();
 									$especies = $stmt->fetchAll();
-
+								
 									?>
-									<select name="a-especie" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-especie'] ?? '' ?>" >
+									<select name="a-especie" class="form-control outline-secondary" >
 										<?php foreach ($especies as $especie): ?>
-
+										
 											<option value="<?= $especie['ESP_ESPECIE'] ?>"> <?= $especie['ESP_ESPECIE'] ?></option>
 										<?php endforeach ?>
 
@@ -107,26 +107,26 @@ $pdo = dbConnect();
 										<option value="outro">Outro</option> -->
 									</div>
 									<div class="input-group mt-2">
-										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça" value="<?= $_SESSION['cadastro_animal']['a-raca'] ?? '' ?>">
+										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça">
 									</div>
 									<div class="input-group mt-2">
-										<select name="a-porte" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-porte'] ?? '' ?>">
+										<select name="a-porte" class="form-control outline-secondary" >
 											<option value="p">P</option>
 											<option value="m">M</option>
 											<option value="g">G</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<select name="a-genero" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-genero'] ?? '' ?>">
+										<select name="a-genero" class="form-control outline-secondary" >
 											<option value="f">F</option>
 											<option value="m">M</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem" value="<?= $_SESSION['cadastro_animal']['imagem'] ?? '' ?>">
+										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem">
 									</div>
 									<div class="input-group mt-2">
-										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição" value="<?= $_SESSION['cadastro_animal']['a-descricao'] ?? '' ?>"></textarea>
+										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
 									</div>
 
 									<div class="row">

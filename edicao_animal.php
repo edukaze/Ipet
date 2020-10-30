@@ -15,7 +15,6 @@ if ($id === false) {
 	exit();
 }
 
-
 $pdo = dbConnect();
 
 $query = "SELECT * FROM IPET_ANIMAIS WHERE ANI_CODIGO=?";

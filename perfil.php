@@ -11,13 +11,14 @@ elseif (isset($_SESSION['anonimo'])) {
 include 'banco.php';
 $pdo = dbConnect();
 
+
 $stmt = $pdo->prepare("
 	SELECT * FROM IPET_ANIMAIS
 	LEFT JOIN IPET_USUARIO_NORMAL ON ANI_NOR_CODIGO = NOR_CODIGO
-	LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID;
+    WHERE NOR_CODIGO = ?;
+	/*LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID;*/
 	");
-
-$stmt->execute();
+$stmt->execute([$_SESSION['id_usuario']]);
 $animais =  $stmt->fetchAll();
 
 // var_dump($animais);
@@ -78,17 +79,21 @@ $rowTotal = $stmt->rowCount();
 				<div class="box">
 					<div class="box1">
 
-						<?php if ($rowTotal > 0): ?>
+						<?php if ($rowTotal > 0 && isset($_SESSION['id_usuario'])): ?>
 							<?php foreach ($animais as  $animal): ?>
-
+								<?php
+								$imagem = 'imagens/1/bbb.jpeg';
+								if (is_file("imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'])) {
+									$imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
+								}
+								?>
 								<div class="box2">
 									<dl>
 										<dt>Chave Normal usu</dt>
 										<dd><?= $animal['ANI_NOR_CODIGO']?></dd>
-										<dt>Chave ong</dt>
-										<dd><?= $animal['ANI_ONG_ID']?></dd>
 										<dt>Nome</dt>
 										<dd><?= $animal['ANI_NOME']?></dd>
+										<dd><img src="<?= $imagem ?>"></dd>
 										<dt>Espécie</dt>
 										<dd><?= $animal['ANI_ESPECIE']?></dd>
 										<dt>Raça</dt>
@@ -104,6 +109,7 @@ $rowTotal = $stmt->rowCount();
 									<a href="edicao_animal.php?id=<?= $animal['ANI_CODIGO'] ?>">Editar</a>
 									<a href="" style="background: red;">Excluir</a>
 								</div>
+								
 
 							<?php endforeach; ?>
 						<?php endif; ?>
