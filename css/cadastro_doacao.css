@@ -1,94 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 *
 {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
-
+.clear
+{
+	clear: both;
+}
 html
 {
 	scroll-behavior: smooth; 
 }
-
-body {
-	min-height: 800px;
-	background-image: url('/img/background.png');
-  	background-attachment: fixed;
-  	background-repeat: no-repeat;
-  	background-size: 100% 100%;
-}
-
-.conteiner-box {
-	margin: auto;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	height: 360px;
-	width:  420px;
-}
-
 header
 {
 	background: #fff;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	display: flex;
 	justify-content: space-between; 
 	align-items: center;
-	padding: 40px 0px;
+	padding: 40px 50px;
 	z-index: 1000; 
 	transition: 0.6s;
 }
-
-/*
 header.sticky 
 {
 	padding: 5px 40px;
 	background:  #fff;
 	border-bottom: 1px solid rgba(0,0,0,.1);
-} */
-
+}
+/*header.sticky .logo img
+{
+	filter: inherit;
+}*/
 header .logo img
 {
-	padding: 0px 60px;
 	max-width: 70px;
 	/*filter: invert(1);*/
 }
-
 header ul
 {
-	margin:0px 30px;
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 header ul ul{
 	position: absolute;
 	top: 50px;
 	display: none;
 }
-
+header ul ul ul{
+	position: absolute;
+	top: 50px;
+	display: none;
+}
 header ul li:hover > ul{
 	display: block;
 }
-
 header ul ul li.cadastro_user
 {
 	float: none;
 	display: list-item;
 	position: relative;
 }
-
 header ul li
 {
 	position: relative;
 	list-style: none;
 }
-
 header ul li a 
 {
 	display: block;
@@ -98,168 +83,98 @@ header ul li a
 	text-decoration: none;
 	color: #000;
 	letter-spacing: 2px;
-	font-weight: 300;
-	transition: 0.3s;
+	font-weight: 80px;
+	transition: 0.7s;
 	text-transform: uppercase;
 }
-
 header ul li a.cadastro
 {
 	text-decoration: none;
 	padding: 3px 25px;
 	color: #fff;
 	background: #1690fb;
+	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 30px;
 }
-
 header ul li a.cadastro:hover
 {
 	color: #f27300;
     background: #fff;
     border: 1px solid #f27300;
 }
-
 header ul li a.cadastro_user
 {
 	background-color: #1690fb;
-	width: 100px;
+	width: 80px;
 	text-align: center;
+	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 5px;
 }
-
 header ul li a:hover
 {
 	color: #f27300;
 }
-
-
-.text-area {
-	background-color: #ecf0f3;
-	border: solid  #ecf0f3 1px;
-	border-radius: 40px;
-	box-shadow: 13px 13px 20px #cbced1,
-				-13px -13px 20px #ffffff; 
+header.sticky ul li a:hover
+{
+	color: #f27300;
 }
-
-.icone img {
-	max-width: 50px;
-	margin: 20px 0px 10px 180px;
-}
-
-.erro-campo p {
-	position: absolute;
-	margin-top: 5px;
-	text-align: center;
-	font-size: 11pt;
-	width: 275px;
-	height: 15px;
-	padding-left: 10px;
-	margin-left: 60px;
-	color:#800000;
-	margin-bottom: 0px;
-	margin-left: 88px;
-}
-
-.erro-campo-grande p {
-	position: absolute;
-	margin-top: 5px;
-	text-align: center;
-	font-size: 11pt;
-	width: 275px;
-	height: 30px;
-	padding-left: 10px;
-	margin-left: 60px;
-	color:#800000;
-	margin-bottom: 0px;
-	margin-left: 88px;
-}
-
-.campo-certo {
-	position: absolute;
-	margin-top: 5px;
-	text-align: center;
-	font-size: 11pt;
-	width: 275px;
-	height: 30px;
-	padding-left: 10px;
-	margin-left: 60px;
-	color:#016306;
-	margin-bottom: 0px;
-	margin-left: 88px;
-}
-
-.campo-certo a {
+header.sticky ul li a.cadastro
+{
 	text-decoration: none;
-	color: #00FFFF;
-}
-
-.formulario2 {
-	margin: 50px 0px 0px 50px;
-}
-
-.controle {
-	font-size: 10pt;
-	color: #495057;
-	margin-bottom: 10px;
-}
-
-input {
-	background-color: #ecf0f3;
-	font-size: 10pt;
-	color: #495057;
-  	padding: 3px 0px 3px 5px;
-  	border: none;
-  	outline: none;
-  	border-bottom: 1px solid #495057;
-  	border-radius: 3px;
-}
-
-p {
-	text-align: left;
-	letter-spacing: 1px;
-}
-
-input[type=submit] {
-	color: #fff; 
-	font-size: 13pt;
-	padding: 3% 37%;
-	border-radius: 3px;
-	border: none;
-  	cursor: pointer;
-  	box-shadow: 13px 13px 20px #cbced1,
-				-13px -13px 20px #ffffff;
-	background: #1690fb;
+	padding: 3px 25px;
+	color: #fff;
 	border: 1px solid #1690fb;
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 30px;
 }
-
-input[type=submit]:hover {
+header.sticky ul li a.cadastro:hover
+{
 	color: #f27300;
-    background: #ecf0f3;
+    background: #fff;
     border: 1px solid #f27300;
 }
-
-.botao {
-	margin: 30px 40px 30px 0px;
-	text-align: center;
-	font-size: 13pt;
+header.sticky .logo, 
+header.sticky ul li a
+{
+	color: #000;
 }
-
-
-
+.bg-color{
+	position: relative;
+	margin-top: 123px;
+}
+.footer
+{
+	position: relative;
+	width: 100%;
+	height: 20px;
+}
+.footer p{
+	display: inline-block;
+	float: left;
+	margin: 10px;
+}
+.footer a{
+	color: #000;
+	float: right;
+	display: inline-block;
+	text-decoration: none;
+	padding: 16px;
+}
+a:hover{
+	text-decoration: none;
+	color: #8caa9c;
+}
 .toggle /*para o menu responsivo*/
 {
 	display: none;
 }
-
 @media (max-width: 992px){
-	.toggle /*O menu reponsivo começa aqui*/
+	.toggle /*O meu reponsivo começa aqui*/
 	{
 		display: block;
 		position: relative;
-		right: 30px;
 		width: 30px;
 		height: 30px;
 		cursor: pointer;
@@ -290,7 +205,7 @@ input[type=submit]:hover {
 	header,
 	header.sticky
 	{
-		padding: 20px 0px;
+		padding: 5px 50px;
 		background: #fff;
 	}
 	header .logo
@@ -300,7 +215,7 @@ input[type=submit]:hover {
 	header ul 
 	{
 		position: absolute;
-		top: 100px;
+		top: 80px;
 		left: 0;
 		width: 100%;
 		height: 100vh;
@@ -336,4 +251,9 @@ input[type=submit]:hover {
 	{
 		filter: inherit;
 	}
+	.banner
+	{
+		background-position: ;
+	}
+	.sec
 }

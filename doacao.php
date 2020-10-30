@@ -24,7 +24,7 @@ $pdo = dbConnect();
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/cadastro_doacao.css">
 </head>
 <body>
 	<!-- navbar -->
@@ -64,11 +64,11 @@ $pdo = dbConnect();
 				<div class="toggle" onclick="toggle()"></div>
 			</header>
 
-			<section class="banner-dc" id="home">
+			<!-- <section class="banner-dc" id="home">
 				<div class="overlay">
-					<!-- <h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2> -->
+					<h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2>
 				</div>
-			</section>
+			</section> -->
 
 			<section  class="bg-color" style=" background-color: #F7F8F9;">
 				<div class="container-fluid h-100">
@@ -77,9 +77,9 @@ $pdo = dbConnect();
 
 							<div class="row justify-content-center mb-4">
 							</div>
-							<span class="small d-block text-center" style="font-size: 20px;">Faça sua Doação</span>
+							<span class="small d-block text-center" style="font-size: 18px;">FAÇA SUA DOAÇÃO</span>
 
-							<span class="small d-block text-center" style="font-size: 20px;">Insira os dados do Pet</span>
+							<span class="small d-block text-center" style="font-size: 18px;">INSIRA OS DADOS DO PET</span>
 
 							<?php include 'condicional-cadastro.php'; ?>
 
@@ -137,7 +137,7 @@ $pdo = dbConnect();
 								</form>
 							</section>
 
-							<footer class="footer-dc">
+							<footer class="footer">
 								<p>Igarassu-PE</p>
 								<a href="https://github.com/edukaze/iPET" target="_black"><i class="fab fa-github"></i></a>
 								<a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view?usp=sharing" class="pdf" target="_black"><i class="far fa-file-pdf"></i></a>
