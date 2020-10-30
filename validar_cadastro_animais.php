@@ -13,6 +13,8 @@ $nome_imagem = $_FILES['imagem']['name'];
 
 $pdo = dbConnect();
 
+$_SESSION['cadastro_animal'] = $_POST;
+
 $query =  $pdo->prepare("
 	SELECT * FROM IPET_ESPECIE
 	WHERE ESP_ESPECIE = ?;

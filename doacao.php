@@ -85,18 +85,18 @@ $pdo = dbConnect();
 
 							<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
 								<div class="input-group mt-2">
-									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome">
+									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?= $_SESSION['cadastro_animal']['a-nome'] ?? '' ?>">
 								</div>
 								<div class="input-group mt-2">
 									<?php
 									$stmt = $pdo->prepare('SELECT * FROM IPET_ESPECIE order by ESP_ESPECIE');
 									$stmt->execute();
 									$especies = $stmt->fetchAll();
-								
+
 									?>
-									<select name="a-especie" class="form-control outline-secondary" >
+									<select name="a-especie" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-especie'] ?? '' ?>" >
 										<?php foreach ($especies as $especie): ?>
-										
+
 											<option value="<?= $especie['ESP_ESPECIE'] ?>"> <?= $especie['ESP_ESPECIE'] ?></option>
 										<?php endforeach ?>
 
@@ -107,26 +107,26 @@ $pdo = dbConnect();
 										<option value="outro">Outro</option> -->
 									</div>
 									<div class="input-group mt-2">
-										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça">
+										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça" value="<?= $_SESSION['cadastro_animal']['a-raca'] ?? '' ?>">
 									</div>
 									<div class="input-group mt-2">
-										<select name="a-porte" class="form-control outline-secondary" >
+										<select name="a-porte" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-porte'] ?? '' ?>">
 											<option value="p">P</option>
 											<option value="m">M</option>
 											<option value="g">G</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<select name="a-genero" class="form-control outline-secondary" >
+										<select name="a-genero" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-genero'] ?? '' ?>">
 											<option value="f">F</option>
 											<option value="m">M</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem">
+										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem" value="<?= $_SESSION['cadastro_animal']['imagem'] ?? '' ?>">
 									</div>
 									<div class="input-group mt-2">
-										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
+										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição" value="<?= $_SESSION['cadastro_animal']['a-descricao'] ?? '' ?>"></textarea>
 									</div>
 
 									<div class="row">
