@@ -25,9 +25,9 @@ if (isset($_SESSION['id_usuario'])) {
 <body>
 	<!-- navbar -->
 	<header id="header">
-		<a href="" class="logo"><img src="img/iPettt.png"></a>
+		<a href="index.php" class="logo"><img src="img/iPettt.png"></a>
 		<ul>
-			<li><a href="#home" onclick="toggle()">Home</a></li>
+			<li><a href="index.php" onclick="toggle()">Home</a></li>
 			<li><a href="#sobre"  onclick="toggle()">Sobre</a></li>
 			<li><a href="#serviços"  onclick="toggle()">serviços</a></li>
 			<li><a href="#pets"  onclick="toggle()">Pets</a></li>
@@ -35,7 +35,7 @@ if (isset($_SESSION['id_usuario'])) {
 			<!-- <li><a href="#contato"  onclick="toggle()">Contato</a></li> -->
 			<li><a href="adocao.php"  onclick="toggle()">Adoção</a></li>
 			<li><a href="doacao.php"  onclick="toggle()">Doação</a></li>
-			<li><a href="#"  onclick="toggle()">Ongs</a></li>
+			<li><a href="lista.php"  onclick="toggle()">Ongs</a></li>
 			<?php if(isset($_SESSION['nome'])): ?>
 			<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome'];?> </a>
 		<ul>

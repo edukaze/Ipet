@@ -39,9 +39,9 @@ $rowTotal = $stmt->rowCount();
 
 	<!-- navbar -->
 	<header id="header">
-		<a href="" class="logo"><img src="img/iPettt.png"></a>
+		<a href="index.php" class="logo"><img src="img/iPettt.png"></a>
 		<ul>
-			<li><a href="#home" onclick="toggle()">Home</a></li>
+			<li><a href="index.php" onclick="toggle()">Home</a></li>
 			<li><a href="#sobre"  onclick="toggle()">Sobre</a></li>
 			<li><a href="#serviços"  onclick="toggle()">serviços</a></li>
 			<li><a href="#pets"  onclick="toggle()">Pets</a></li>
