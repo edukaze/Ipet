@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +7,14 @@
 
 
 <?php 
-
+session_start();
 include 'banco.php';
+
+
+//$resultado= $pdo->prepare('SELECT * FROM IPET_USUARIOS_ONG WHERE ONG_ID'); 
+//$resultado->execute($_SESSION['ONG_ID']);
+//$brasil = $resultado->fetchAll();
+
  $r = "SELECT * FROM IIPET_USUARIOS_ONG"; 
 
 $resultado= $pdo->prepare($r); 
@@ -29,17 +34,3 @@ echo "Usuario:". $go['ONG_USUARIO '] . "<br>";
 <a href="lista.php"></a>
 </body>
 </html>
-
-
-   ONG_ID 
-   ONG_NOME 
-   ONG_CNPJ 
-   ONG_EMAIL 
-   ONG_TELEFONE 
-   ONG_INSTAGRAM
-   ONG_FACEBOOK 
-   ONG_USUARIO 
-   ONG_SENHA 
-   ONG_DESCRICAO 
-
-echo ":". $a['ONG_DESCRICAO']."<br>";
