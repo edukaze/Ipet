@@ -107,7 +107,7 @@ $rowTotal = $stmt->rowCount();
 									</dl>
 									<br>
 									<a href="edicao_animal.php?id=<?= $animal['ANI_CODIGO'] ?>">Editar</a>
-									<a href="" style="background: red;">Excluir</a>
+									<a href="delete.php?id=<?= $animal['ANI_CODIGO'] ?>" style="background: red;">Excluir</a>
 								</div>
 								
 
