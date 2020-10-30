@@ -19,7 +19,7 @@ body {
 	padding-top: 30px;
 	margin-bottom: -10px;
 	height: 370px;
-	width:  410px;
+	width:  390px;
 }
 
 .text-area {
@@ -39,21 +39,18 @@ body {
 	position: absolute;
 	margin-top: 5px;
 	text-align: center;
-	font-size: 11pt;
 	width: 275px;
 	height: 15px;
-	padding-left: 10px;
-	margin-left: 60px;
 	color:#800000;
-	margin-bottom: 0px;
-	margin-left: 88px;
+	font-size: 9pt;
+	margin-left: 70px;
 }
 
 .erro-campo-grande p {
 	position: absolute;
 	margin-top: 5px;
 	text-align: center;
-	font-size: 11pt;
+	font-size: 9pt;
 	width: 275px;
 	height: 30px;
 	padding-left: 10px;
@@ -67,7 +64,7 @@ body {
 	position: absolute;
 	margin-top: 5px;
 	text-align: center;
-	font-size: 11pt;
+	font-size: 9pt;
 	width: 275px;
 	height: 30px;
 	padding-left: 10px;
@@ -79,11 +76,11 @@ body {
 
 .campo-certo a {
 	text-decoration: none;
-	color: #00FFFF;
+	color: #00c90a;
 }
 
 .formulario1 {
-	margin: 50px 0px 0px 50px;
+	margin: 45px 0px 0px 45px;
 }
 
 .controle {
@@ -96,7 +93,7 @@ input {
 	background-color: #ecf0f3;
 	font-size: 10pt;
 	color: #495057;
-  	padding: 3px 13px 3px 5px;
+  	padding: 3px 50px 3px 5px;
   	border: none;
   	outline: none;
   	border-bottom: 1px solid #495057;
@@ -132,7 +129,7 @@ section {
 input[type=submit] {
 	color: #fff; 
 	font-size: 13pt;
-	padding: 3% 34%;
+	padding: 3% 35%;
 	border-radius: 3px;
 	border: none;
   	cursor: pointer;

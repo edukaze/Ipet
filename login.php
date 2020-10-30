@@ -41,20 +41,20 @@ if (!isset($_SESSION['anonimo'])) {
 									<p>Cadastro feito com sucesso!</p>
 								</div>
 								<?php unset($_SESSION['status_cadastro']) ?>
-						<?php endif; ?>
-						
+							<?php endif; ?>
+							
 							<div class="formulario1">
 								<form method="POST" action="verificar_login.php">
 									<div class="fild">
 										<div class="controle">
 											<p><label for="usuario">Usuário: </label></p>
-											<input type="usuario" name="t-usuario" id="usuario" size="12" placeholder="Digite seu usuario">
+											<input type="usuario" name="t-usuario" id="usuario" placeholder="Digite seu usuario">
 										</div>
 									</div>
 									<div class="fild">
 										<div class="controle">
 											<p><label for="Senha">Senha: </label></p>
-											<input type="password" name="t-senha" id="senha" size="12" placeholder="Digite sua senha">
+											<input type="password" name="t-senha" id="senha" placeholder="Digite sua senha">
 										</div>
 									</div>
 									<div class="botao">

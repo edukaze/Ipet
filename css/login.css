@@ -40,7 +40,7 @@ body {
 	position: absolute;
 	margin-top: 5px;
 	text-align: center;
-	font-size: 11pt;
+	font-size: 9pt;
 	width: 275px;
 	height: 15px;
 	padding-left: 5px;
@@ -50,7 +50,7 @@ body {
 }
 
 .formulario1 {
-	margin: 50px 0px 0px 50px;
+	margin: 40px 0px 0px 25px;
 }
 
 .controle {
@@ -66,12 +66,10 @@ p {
 
 input#usuario{
 	padding-left:5px; 
-	padding-right: 80px;
 }
 
 input#senha{
 	padding-left:5px;
-	padding-right: 80px;
 }
 
 input {
@@ -80,7 +78,7 @@ input {
 	font-size: 13pt;
 	color: #495057;
 	outline: none;
-  	padding: 1% 12%;
+  	padding: 1%;
   	border: 1px solid #495057;
   	border-radius: 3px;
 }
@@ -88,7 +86,7 @@ input {
 input[type=submit] {
 	color: #fff; 
 	font-size: 13pt;
-	padding: 3% 42%;
+	padding: 3% 45%;
 	border-radius: 3px;
 	border: none;
   	cursor: pointer;
