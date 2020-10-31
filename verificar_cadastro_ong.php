@@ -42,11 +42,7 @@ elseif(validar($padrao_email,$email) === false){
 	header("location:cadastro_ongs.php");
 	exit(); 
 }
-elseif(validar($padrao_nome_ong, $nomeong) === false){
-	$_SESSION['erro-nome-ong'] = true;
-	header("location:cadastro_ongs.php");
-	exit();
-}
+
 elseif(validar($padrao_facebook, $facebook) === false){
 	$_SESSION['erro-facebook'] = true;
 	header("location:cadastro_ongs.php");
