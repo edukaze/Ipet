@@ -62,7 +62,7 @@ $edianimais = $stmt->fetchAll();
 									<?php foreach ($edianimais as $edianimal): ?>
 							<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
 								<div class="input-group mt-2">
-									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?=$edianimal['ANI_NOME']?>">
+									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?=$edianimal['ANI_NOME']?>" required>
 								</div>
 								<div class="input-group mt-2">
 									<?php
@@ -74,7 +74,7 @@ $edianimais = $stmt->fetchAll();
 									<select name="a-especie" class="form-control outline-secondary" >
 										<?php foreach ($especies as $especie): ?>
 										
-											<option value="<?= $especie['ESP_ESPECIE']?> "> <?= $especie['ESP_ESPECIE'] ?></option>
+											<option value="<?= $especie['ESP_ESPECIE']?> " required> <?= $especie['ESP_ESPECIE']?></option>
 										<?php endforeach ?>
 
 										<!-- <option value="cachorro">Cachorro</option>
@@ -84,26 +84,26 @@ $edianimais = $stmt->fetchAll();
 										<option value="outro">Outro</option> -->
 									</div>
 									<div class="input-group mt-2">
-										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça" value="<?=$edianimal['ANI_RAÇA']?>">
+										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça" value="<?=$edianimal['ANI_RAÇA']?>"required>
 									</div>
 									<div class="input-group mt-2">
 										<select name="a-porte" class="form-control outline-secondary" >
-											<option value="p">P</option>
-											<option value="m">M</option>
-											<option value="g">G</option>
+											<option value="p" required>P</option>
+											<option value="m" required>M</option>
+											<option value="g" required>G</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
 										<select name="a-genero" class="form-control outline-secondary" >
-											<option value="f">F</option>
-											<option value="m">M</option>
+											<option value="f" required>F</option>
+											<option value="m" required>M</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem" value="<?=$edianimal['ANI_IMAGEM']?>">
+										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem" value="<?=$edianimal['ANI_IMAGEM']?>" required>
 									</div>
 									<div class="input-group mt-2">
-										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição"></textarea>
+										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição" required></textarea>
 									</div>
 
 									<div class="row">

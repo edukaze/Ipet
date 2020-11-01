@@ -41,48 +41,48 @@ if (!isset($_SESSION['anonimo'])) {
 							<div class="fild">
 								<div class="controle">
 									<p><label for="nome">Nome </label></p>
-									<input type="text" name="u-nome" id="nome" placeholder="Digite seu primeiro nome" value="<?= $_SESSION['cadastro_usuario']['u-nome'] ?? '' ?>">
+									<input type="text" name="u-nome" id="nome" placeholder="Digite seu primeiro nome" value="<?= $_SESSION['cadastro_usuario']['u-nome'] ?? '' ?>" required>
 								</div>
 							</div>
 
 							<div class="fild">
 								<div class="controle">
 									<p><label for="sobrenome">Sobrenome </label></p>
-									<input type="text" name="u-sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" value="<?= $_SESSION['cadastro_usuario']['u-sobrenome'] ?? '' ?>">
+									<input type="text" name="u-sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" value="<?= $_SESSION['cadastro_usuario']['u-sobrenome'] ?? '' ?>" required>
 								</div>
 							</div>
 
 							<div class="fild">
 								<div class="controle">
 									<p><label for="usuario"> Usuário </label></p>
-									<input type="text" name="u-usuario" id="usuario" placeholder="Digite um usuário" value="<?= $_SESSION['cadastro_usuario']['u-usuario'] ?? '' ?>">
+									<input type="text" name="u-usuario" id="usuario" placeholder="Digite um usuário" value="<?= $_SESSION['cadastro_usuario']['u-usuario'] ?? '' ?>" required>
 								</div>
 							</div>
 
 							<div class="fild">
 								<div class="controle">	
 									<p><label for="email">Email </label> </p>
-									<input type="email" name="u-email" id="email" placeholder="Digite seu email" value="<?= $_SESSION['cadastro_usuario']['u-email'] ?? '' ?>">
+									<input type="email" name="u-email" id="email" placeholder="Digite seu email" value="<?= $_SESSION['cadastro_usuario']['u-email'] ?? '' ?>" required>
 								</div>
 							</div>
 
 							<div class="fild">
 								<div class="controle">	
 									<p><label for="senha">Senha </label></p>
-									<input type="password" name="u-senha" id="senha" placeholder="Digite uma senha">
+									<input type="password" name="u-senha" id="senha" placeholder="Digite uma senha" required>
 								</div>
 							</div>
 
 							<div class="fild">
 								<div class="controle">
 									<p><label for="conf_senha">Confirme a senha </label></p>
-									<input type="password" name="u-conf-senha" id="conf_senha" placeholder="Digite novamente a senha">
+									<input type="password" name="u-conf-senha" id="conf_senha" placeholder="Digite novamente a senha" required> 
 								</div>
 							</div>
 							<div class="fild">
 								<div class="controle">	
 									<p><label for="contato">Contato </label></p>
-									<input type="tel" name="u-contato" id="contato" placeholder="(00) 0 0000-0000" onkeypress="ipet(this)" value="<?= $_SESSION['cadastro_usuario']['u-contato'] ?? '' ?>">
+									<input type="tel" name="u-contato" id="contato" placeholder="(00) 0 0000-0000" onkeypress="ipet(this)" value="<?= $_SESSION['cadastro_usuario']['u-contato'] ?? '' ?>" required>
 								</div>
 							</div>
 
