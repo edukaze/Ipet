@@ -70,7 +70,7 @@ section.edc > .box
 {
 	display: inline-flex;
 	position: absolute;
-	margin: 28px 27px;
+	margin: 258px 7px;
 	text-decoration: none;
 	padding: 3px 25px;
 	color: #fff;
@@ -120,7 +120,6 @@ a:hover{
   width: 150px;
 
 }
-
 .box2 img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }

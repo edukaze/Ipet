@@ -1,12 +1,23 @@
 <?php 
 session_start();
  
+
 include 'banco.php';
+$id = $_GET['id'];
 $pdo = dbConnect();
- $r = "SELECT * FROM IPET_USUARIOS_ONG"; 
+ $r = "SELECT * FROM IPET_USUARIOS_ONG; ";
+ $query = "SELECT * FROM IPET_ANIMAIS
+      WHERE ANI_ONG_ID = ?;";
+
+$animaisong = $pdo->prepare($query);
 
 $preprarandoOgns= $pdo->prepare($r); 
 $preprarandoOgns->execute();
+$animaisong->execute([$id]);
+
+
+$animais =  $animaisong->fetchAll();
+$rowTotal = $animaisong->rowCount();
 
 $ongs = $preprarandoOgns->fetchAll();
 $rowTotal =$preprarandoOgns -> rowCount();
@@ -24,6 +35,7 @@ $rowTotal =$preprarandoOgns -> rowCount();
   <?php  include 'header-diminuido.php'; ?>
 
 
+<?php   var_dump($_GET['id']); ?>
 <?php if ($rowTotal > 0): ?>
                      <?php foreach ($ongs as  $ong): ?>
                         <div class="box2">
@@ -42,9 +54,45 @@ $rowTotal =$preprarandoOgns -> rowCount();
                         </div>
                      <?php endforeach; ?>  
                   <?php endif; ?>
+
+
+
+                  <?php foreach ($animais as  $animal): ?>
+         <?php
+         $imagem = 'imagens/1/bbb.jpeg';
+         if (is_file("imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'])) {
+            $imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
+         }
+         ?>
+
+         <div class="box2">
+            <dl>
+               <dt>Nome</dt>
+               <dd><?= $animal['ANI_NOME']?></dd>
+               <dd><img src="<?= $imagem ?>"></dd>
+               <dt>Chave ong</dt>
+               <dd><?= $animal['ANI_ONG_ID']?></dd>
+               <dt>Espécie</dt>
+               <dd><?= $animal['ANI_ESPECIE']?></dd>
+               <dt>Raça</dt>
+               <dd><?= $animal['ANI_RAÇA']?></dd>
+               <dt>Porte</dt>
+               <dd><?= $animal['ANI_PORTE']?></dd>
+               <dt>Gênero</dt>
+               <dd><?= $animal['ANI_GENERO']?></dd>
+               <dt>Descrição</dt>
+               <dd><?= $animal['ANI_DESCRICAO']?></dd>
+            </dl>
+         </div>
+
+      <?php endforeach; ?>
+                  <section class="adc">
+            <div class="box">
+            </div>
+         </section>
 <div class="box-botao">     
 <div class="botao">    
-   <a href="lista.php">Veja mais ONGs</a>
+   <a href="lista-ongs.php">Veja mais ONGs</a>
 </div>
 </div>
 <?php include 'footer.php'; ?>
@@ -59,6 +107,7 @@ $rowTotal =$preprarandoOgns -> rowCount();
          var header = document.querySelector("header");
          header.classList.toggle("active");
       }
+
    </script>   
 </body>
 </html>
