@@ -25,44 +25,11 @@ $pdo = dbConnect();
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/cadastro_doacao.css">
+	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 </head>
 <body>
 	<!-- navbar -->
-	<header id="header">
-		<a href="index.php" class="logo"><img src="img/iPettt.png"></a>
-		<ul>
-			<li><a href="index.php" onclick="toggle()">Home</a></li>
-			<li><a href="index.php#sobre"  onclick="toggle()">Sobre</a></li>
-			<li><a href="index.php#serviços"  onclick="toggle()">serviços</a></li>
-			<li><a href="index.php#pets"  onclick="toggle()">Pets</a></li>
-			<li><a href="index.php#equipe"  onclick="toggle()">Equipe</a></li>
-			<!-- <li><a href="#contato"  onclick="toggle()">Contato</a></li> -->
-			<li><a href="adocao.php"  onclick="toggle()">Adoção</a></li>
-			<li><a href="doacao.php"  onclick="toggle()">Doação</a></li>
-			<li><a href="lista.php"  onclick="toggle()">Ongs</a></li>
-			<?php if(isset($_SESSION['nome'])): ?>
-				<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome'];?> </a>
-					<ul>
-						<li><a href="perfil.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
-						<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
-					</ul>
-				</li>
-				<?php elseif (isset($_SESSION['nome_ong'])): ?>
-					<li><a href="index.php"  onclick="toggle()" class="cadastro_user"><?php echo $_SESSION['nome_ong']; ?></a>
-						<ul>
-							<li><a href="perfil_ong.php "onclick="toggle()" class="cadastro_user">perfil</a></li>
-							
-							<li><a href="sair.php"  onclick="toggle()" class="cadastro_user">sair</a></li>
-						</ul>
-					</li>
-					<?php else: ?>
-						<?php unset($_SESSION['nome']); ?>
-						<?php unset($_SESSION['nome_ong']); ?>
-						<li><a href="login.php"  onclick="toggle()" class="cadastro">cadastro</a></li>
-					<?php endif ?>
-				</ul>
-				<div class="toggle" onclick="toggle()"></div>
-			</header>
+<?php  include 'header-diminuido.php'; ?>
 
 			<!-- <section class="banner-dc" id="home">
 				<div class="overlay">
@@ -137,11 +104,8 @@ $pdo = dbConnect();
 								</form>
 							</section>
 
-							<footer class="footer">
-								<p>Igarassu-PE</p>
-								<a href="https://github.com/edukaze/iPET" target="_black"><i class="fab fa-github"></i></a>
-								<a href="https://drive.google.com/file/d/1QKOJcK75IwQ1ZFMn5FM0Eh-Dvjp1L7PK/view?usp=sharing" class="pdf" target="_black"><i class="far fa-file-pdf"></i></a>
-							</footer>
+
+							<?php include 'footer.php'; ?>
 
 							<script type="text/javascript">
 		// Deixa o header fixo no site

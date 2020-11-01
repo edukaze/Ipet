@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+html
+{
+	scroll-behavior: smooth; 
+}
+body
+{
+	min-height: 0px;
+}
+header
+{
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	padding: 40px 50px;
+	z-index: 1000; 
+	transition: 0.6s;
+}
+header.sticky 
+{
+	padding: 5px 40px;
+	background:  #fff;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+/*header.sticky .logo img
+{
+	filter: inherit;
+}*/
+header .logo img
+{
+	max-width: 70px;
+	/*filter: invert(1);*/
+}
+header ul
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header ul ul{
+	position: absolute;
+	top: 50px;
+	display: none;
+}
+header ul ul ul{
+	position: absolute;
+	top: 50px;
+	display: none;
+}
+header ul li:hover > ul{
+	display: block;
+}
+header ul ul li.cadastro_user
+{
+	float: none;
+	display: list-item;
+	position: relative;
+}
+header ul li
+{
+	position: relative;
+	list-style: none;
+}
+header ul li a 
+{
+	display: block;
+	line-height: 60px;
+	position: relative;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #000;
+	letter-spacing: 2px;
+	font-weight: 80px;
+	transition: 0.7s;
+	text-transform: uppercase;
+}
+header ul li a.cadastro
+{
+	text-decoration: none;
+	padding: 3px 25px;
+	color: #fff;
+	background: #1690fb;
+	border: 1px solid #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 30px;
+}
+header ul li a.cadastro:hover
+{
+	color: #f27300;
+    background: #fff;
+    border: 1px solid #f27300;
+}
+header ul li a.cadastro_user
+{
+	background-color: #1690fb;
+	width: 80px;
+	text-align: center;
+	border: 1px solid #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 5px;
+}
+header ul li a:hover
+{
+	color: #f27300;
+}
+header.sticky ul li a:hover
+{
+	color: #f27300;
+}
+header.sticky ul li a.cadastro
+{
+	text-decoration: none;
+	padding: 3px 25px;
+	color: #fff;
+	border: 1px solid #1690fb;
+	background-image: linear-gradient(to right, #1690fb, #036CDA);
+	border-radius: 30px;
+}
+header.sticky ul li a.cadastro:hover
+{
+	color: #f27300;
+    background: #fff;
+    border: 1px solid #f27300;
+}
+header.sticky .logo, 
+header.sticky ul li a
+{
+	color: #000;
+}
+.toggle /*para o menu responsivo*/
+{
+	display: none;
+}
+.footer{
+	border-top: 1px solid #000;
+	width: 100%;
+	height: 20px;
+}
+.footer p{
+	display: inline-block;
+	float: left;
+	margin: 10px;
+}
+.footer a{
+	color: #000;
+	float: right;
+	display: inline-block;
+	text-decoration: none;
+	padding: 16px;
+}
+a:hover{
+	text-decoration: none;
+	color: #8caa9c;
+}
+
+
+@media (max-width: 992px){
+	.toggle /*O meu reponsivo começa aqui*/
+	{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+	.toggle:before 
+	{
+		content: '';
+		position: absolute;
+		top: 4px;
+		width: 100%;
+		height: 2px;
+		background: #000;
+		z-index: 1;
+		box-shadow: 0 10px 0 #000;
+		transition: 0.5s;
+	}
+	.toggle:after 
+	{
+		content: '';
+		position: absolute;
+		bottom: 4px;
+		width: 100%;
+		height: 2px;
+		background: #000;
+		z-index: 1;
+		transition: 0.5s;
+	}
+	header,
+	header.sticky
+	{
+		padding: 5px 50px;
+		background: #fff;
+	}
+	header .logo
+	{
+		color: #000;
+	}
+	header ul 
+	{
+		position: absolute;
+		top: 80px;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		text-align: center;
+		overflow: auto;
+		background: #fff;
+		visibility: hidden;
+		opacity: 0;
+	}
+	header.active ul 
+	{
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+	header.active ul li a
+	{
+		display: inline-block;
+		font-size: 20px;
+	}
+	header.active ul li a:hover
+	{
+		color: #f27300;
+		padding: 5px 20px;
+	}
+	header,
+	header ul li a
+	{
+	  
+		color: #000;
+	}
+	header .logo img /*E acaba aqui*/
+	{
+		filter: inherit;
+	}
+	.bg-color
+{
+	position: relative;
+	margin-top: 123px;
+}
+
+a:hover{
+	text-decoration: none;
+	color: #8caa9c;
+}
