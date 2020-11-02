@@ -5,14 +5,15 @@ session_start();
 include 'banco.php';
 $id = $_GET['id'];
 $pdo = dbConnect();
- $r = "SELECT * FROM IPET_USUARIOS_ONG; ";
+ $r = "SELECT * FROM IPET_USUARIOS_ONG
+ WHERE ONG_ID = ?";
  $query = "SELECT * FROM IPET_ANIMAIS
       WHERE ANI_ONG_ID = ?;";
 
 $animaisong = $pdo->prepare($query);
 
 $preprarandoOgns= $pdo->prepare($r); 
-$preprarandoOgns->execute();
+$preprarandoOgns->execute([$id]);
 $animaisong->execute([$id]);
 
 
@@ -20,7 +21,7 @@ $animais =  $animaisong->fetchAll();
 $rowTotal = $animaisong->rowCount();
 
 $ongs = $preprarandoOgns->fetchAll();
-$rowTotal =$preprarandoOgns -> rowCount();
+$rowTotal2 =$preprarandoOgns -> rowCount();
 
 ?>	
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ $rowTotal =$preprarandoOgns -> rowCount();
 
 
 <?php   var_dump($_GET['id']); ?>
-<?php if ($rowTotal > 0): ?>
+<?php if ($rowTotal2 > 0): ?>
                      <?php foreach ($ongs as  $ong): ?>
                  	<section class="voltar">
                  		<a href="lista-ongs.php"> < < </a>
