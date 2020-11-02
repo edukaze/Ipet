@@ -1,19 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-section.titulo
+section.voltar 
 {
-	position: relative;
-	width: 100%;
-	min-height: 50vh;
-	background: #f27300; 
+	margin-top: 130px;
 }
-.titulo h1
+.voltar a 
 {
-	font-size: 50px;
-	padding-top: 130px;
-	text-align: center;
-	color: #000;
+	text-decoration: none;
+ 	color: #000;
+ 	font-size: 50px;
+ 	padding: 30px;
 }
 .box
 {
@@ -27,26 +23,31 @@ section.edc
 }
 section.edc > .box
 {
+	background-image: url(../img/bg3.jpg);
+	background-size: cover;
 	display: flex;
 	flex-wrap: wrap;
+
 }
 .box1
 {
-	padding: 50px;
+	background: #f27300;
+	padding: 19px;
 }
 .box2
 {
+	background: #fff;
 	float: left;
 	width: 310px;
 	height: 100vh;
-	border: 1px solid #000;
-	margin-top: 170px;
+	/*border: 1px solid #000;*/
+	margin-top: 10px;
 }
 .box2 dt, dd
 {
 	line-height:20px;
 	text-align: center;
-	padding-top: 15px;
+	padding-top: 30px;
 }
 .box2 dt
 {
@@ -78,13 +79,27 @@ section.edc > .box
 	background-image: linear-gradient(to right, #1690fb, #036CDA);
 	border-radius: 30px;
 }
-.boxbotao {
-	margin-top: 100px;
-}
+
 .toggle /*para o menu responsivo*/
 {
 	display: none;
 }
+}
+a:hover{
+	text-decoration: none;
+	color: #000;
+}
+.box2 img {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+
+}
+.box2 img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
 .footer-dc{
 	width: 100%;
 	height: 20px;
@@ -105,21 +120,3 @@ section.edc > .box
 	display: inline-block;
 	text-decoration: none;
 	padding: 16px;
-}
-a:hover{
-	text-decoration: none;
-	color: #000;
-}
-
-
-
-.box2 img {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 5px;
-  width: 150px;
-
-}
-.box2 img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}

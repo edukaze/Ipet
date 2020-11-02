@@ -38,24 +38,31 @@ $rowTotal =$preprarandoOgns -> rowCount();
 <?php   var_dump($_GET['id']); ?>
 <?php if ($rowTotal > 0): ?>
                      <?php foreach ($ongs as  $ong): ?>
-                        <div class="box2">
-                           <dl>
-                              <dt>Nome</dt>
-                              <dd><?= $ong['ONG_NOME']?></dd>
-                              <dt>CNPJ</dt>
-                              <dd><?= $ong['ONG_CNPJ']?></dd>
-                              <dt>Facebook</dt>
-                              <dd><a href="https://facebook\.com\<?= $ong['ONG_FACEBOOK']?>">facebook</a></dd>
-                              <dt>Instagram</dt>
-                              <dd><a href="https://instagram\.com\<?=$ong['ONG_INSTAGRAM']?>">Instagram</a></dd>
-                              <dt>descrição</dt>
-                              <dd><?= $ong['ONG_DESCRICAO']?></dd>
-                           </dl>
+                 	<section class="voltar">
+                 		<a href="lista-ongs.php"> < < </a>
+                 	</section>
+                     <section class="edc">
+                     	<div class="box">
+	                		<div class="box1">
+	                   		  <div class="box2">
+	                           <dl>
+	                              <dt>Nome</dt>
+	                              <dd><?= $ong['ONG_NOME']?></dd>
+	                              <dt>CNPJ</dt>
+	                              <dd><?= $ong['ONG_CNPJ']?></dd>
+	                              <dt>Facebook</dt>
+	                              <dd><a href="https://facebook\.com\<?= $ong['ONG_FACEBOOK']?>">facebook</a></dd>
+	                              <dt>Instagram</dt>
+	                              <dd><a href="https://instagram\.com\<?=$ong['ONG_INSTAGRAM']?>">Instagram</a></dd>
+	                              <dt>descrição</dt>
+	                              <dd><?= $ong['ONG_DESCRICAO']?></dd>
+	                           </dl>
+	                          </div>
+	                        </div>
                         </div>
+    				</section>
                      <?php endforeach; ?>  
                   <?php endif; ?>
-
-
 
                   <?php foreach ($animais as  $animal): ?>
          <?php
@@ -65,37 +72,41 @@ $rowTotal =$preprarandoOgns -> rowCount();
          }
          ?>
 
-         <div class="box2">
-            <dl>
-               <dt>Nome</dt>
-               <dd><?= $animal['ANI_NOME']?></dd>
-               <dd><img src="<?= $imagem ?>"></dd>
-               <dt>Chave ong</dt>
-               <dd><?= $animal['ANI_ONG_ID']?></dd>
-               <dt>Espécie</dt>
-               <dd><?= $animal['ANI_ESPECIE']?></dd>
-               <dt>Raça</dt>
-               <dd><?= $animal['ANI_RAÇA']?></dd>
-               <dt>Porte</dt>
-               <dd><?= $animal['ANI_PORTE']?></dd>
-               <dt>Gênero</dt>
-               <dd><?= $animal['ANI_GENERO']?></dd>
-               <dt>Descrição</dt>
-               <dd><?= $animal['ANI_DESCRICAO']?></dd>
-            </dl>
-         </div>
+	         <div class="box1">
+		         <div class="box2">
+		            <dl>
+		               <dt>Nome</dt>
+		               <dd><?= $animal['ANI_NOME']?></dd>
+		               <dd><img src="<?= $imagem ?>"></dd>
+		               <dt>Chave ong</dt>
+		               <dd><?= $animal['ANI_ONG_ID']?></dd>
+		               <dt>Espécie</dt>
+		               <dd><?= $animal['ANI_ESPECIE']?></dd>
+		               <dt>Raça</dt>
+		               <dd><?= $animal['ANI_RAÇA']?></dd>
+		               <dt>Porte</dt>
+		               <dd><?= $animal['ANI_PORTE']?></dd>
+		               <dt>Gênero</dt>
+		               <dd><?= $animal['ANI_GENERO']?></dd>
+		               <dt>Descrição</dt>
+		               <dd><?= $animal['ANI_DESCRICAO']?></dd>
+		            </dl>
+		         </div>
+    	 </div>
+
 
       <?php endforeach; ?>
-                  <section class="adc">
-            <div class="box">
-            </div>
-         </section>
-<div class="box-botao">     
+<!-- <div class="box-botao">     
 <div class="botao">    
    <a href="lista-ongs.php">Veja mais ONGs</a>
 </div>
-</div>
+</div> -->
+
+
+	
 <?php include 'footer.php'; ?>
+
+
 <script type="text/javascript">
       // Deixa o header fixo no site
       window.addEventListener("scroll", function(){
