@@ -71,28 +71,31 @@ $rowTotal =$preprarandoOgns -> rowCount();
             $imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
          }
          ?>
-
-	         <div class="box1">
-		         <div class="box2">
-		            <dl>
-		               <dt>Nome</dt>
-		               <dd><?= $animal['ANI_NOME']?></dd>
-		               <dd><img src="<?= $imagem ?>"></dd>
-		               <dt>Chave ong</dt>
-		               <dd><?= $animal['ANI_ONG_ID']?></dd>
-		               <dt>Espécie</dt>
-		               <dd><?= $animal['ANI_ESPECIE']?></dd>
-		               <dt>Raça</dt>
-		               <dd><?= $animal['ANI_RAÇA']?></dd>
-		               <dt>Porte</dt>
-		               <dd><?= $animal['ANI_PORTE']?></dd>
-		               <dt>Gênero</dt>
-		               <dd><?= $animal['ANI_GENERO']?></dd>
-		               <dt>Descrição</dt>
-		               <dd><?= $animal['ANI_DESCRICAO']?></dd>
-		            </dl>
-		         </div>
-    	 </div>
+         <section class="ong">
+            <div class="box3">
+		         <div class="box4">
+		         	<div class="box5">
+			            <dl>
+			               <dt>Nome</dt>
+			               <dd><?= $animal['ANI_NOME']?></dd>
+			               <dd><img src="<?= $imagem ?>"></dd>
+			               <dt>Chave ong</dt>
+			               <dd><?= $animal['ANI_ONG_ID']?></dd>
+			               <dt>Espécie</dt>
+			               <dd><?= $animal['ANI_ESPECIE']?></dd>
+			               <dt>Raça</dt>
+			               <dd><?= $animal['ANI_RAÇA']?></dd>
+			               <dt>Porte</dt>
+			               <dd><?= $animal['ANI_PORTE']?></dd>
+			               <dt>Gênero</dt>
+			               <dd><?= $animal['ANI_GENERO']?></dd>
+			               <dt>Descrição</dt>
+			               <dd><?= $animal['ANI_DESCRICAO']?></dd>
+			            </dl>
+			        </div>
+			     </div>   
+    		 </div>
+		 </section>
 
 
       <?php endforeach; ?>
