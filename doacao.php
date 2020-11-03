@@ -9,7 +9,6 @@ elseif (isset($_SESSION['anonimo'])) {
 }
 
 include 'banco.php';
-
 $pdo = dbConnect();
 
 ?>
@@ -29,7 +28,7 @@ $pdo = dbConnect();
 </head>
 <body>
 	<!-- navbar -->
-<?php  include 'header-diminuido.php'; ?>
+	<?php  include 'header-diminuido.php'; ?>
 
 			<!-- <section class="banner-dc" id="home">
 				<div class="overlay">
@@ -52,19 +51,25 @@ $pdo = dbConnect();
 
 							<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
 								<div class="input-group mt-2">
-									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?= $_SESSION['cadastro_animal']['a-nome'] ?? '' ?>">
+									<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?= $_SESSION['cadastro_animal']['a-nome'] ?? '' ?>" required>
 								</div>
 								<div class="input-group mt-2">
 									<?php
 									$stmt = $pdo->prepare('SELECT * FROM IPET_ESPECIE order by ESP_ESPECIE');
 									$stmt->execute();
 									$especies = $stmt->fetchAll();
-								
+
 									?>
-									<select name="a-especie" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-especie'] ?? '' ?>" >
+									<select name="a-especie" class="form-control outline-secondary">
 										<?php foreach ($especies as $especie): ?>
-										
-											<option value="<?= $especie['ESP_ESPECIE'] ?>"> <?= $especie['ESP_ESPECIE'] ?></option>
+
+											<option value="<?= $especie['ESP_ESPECIE']?>" 
+												<?php if (($_SESSION['cadastro_animal']['a-especie'] ?? false) == $especie['ESP_ESPECIE']): ?>
+													selected
+												<?php endif ?>
+												> <?= $especie['ESP_ESPECIE'] ?>
+											</option>
+
 										<?php endforeach ?>
 
 										<!-- <option value="cachorro">Cachorro</option>
@@ -74,31 +79,61 @@ $pdo = dbConnect();
 										<option value="outro">Outro</option> -->
 									</div>
 									<div class="input-group mt-2">
-										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça" value="<?= $_SESSION['cadastro_animal']['a-raca'] ?? '' ?>">
+										<input type="text" class="form-control outline-secondary" name="a-raca" placeholder="Raça" value="<?= $_SESSION['cadastro_animal']['a-raca'] ?? '' ?>" required>
 									</div>
 									<div class="input-group mt-2">
-										<select name="a-porte" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-porte'] ?? '' ?>" >
+										<?php
+										$stmt = $pdo->prepare('SELECT ANI_PORTE FROM IPET_ANIMAIS');
+										$stmt->execute();
+										$dados = $stmt->fetchAll();
+
+										?>
+										<select name="a-porte" class="form-control outline-secondary">
 											<option value="p">P</option>
 											<option value="m">M</option>
 											<option value="g">G</option>
+											<?php foreach ($dados as $porte): ?>
+
+												<option value="<?= $porte['ANI_PORTE']?>" 
+													<?php if (($_SESSION['cadastro_animal']['a-porte'] ?? false) == $porte['ANI_PORTE']): ?>
+														selected
+													<?php endif ?>
+													> <?= $porte['ANI_PORTE'] ?>
+												</option>
+											<?php endforeach ?>
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<select name="a-genero" class="form-control outline-secondary" value="<?= $_SESSION['cadastro_animal']['a-genero'] ?? '' ?>" >
+										<?php
+										$stmt = $pdo->prepare('SELECT ANI_GENERO FROM IPET_ANIMAIS');
+										$stmt->execute();
+										$dados = $stmt->fetchAll();
+
+										?>
+										<select name="a-genero" class="form-control outline-secondary">
 											<option value="f">F</option>
 											<option value="m">M</option>
+											<?php foreach ($dados as $genero): ?>
+
+												<option value="<?= $genero['ANI_GENERO']?>" 
+													<?php if (($_SESSION['cadastro_animal']['a-genero'] ?? false) == $genero['ANI_GENERO']): ?>
+														selected
+													<?php endif ?>
+													> <?= $genero['ANI_GENERO'] ?>
+												</option>
+											<?php endforeach ?>
 										</select>
 									</div>
 									<div class="input-group mt-2">
-										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem" value="<?= $_SESSION['cadastro_animal']['imagem'] ?? '' ?>">
+										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem">
 									</div>
 									<div class="input-group mt-2">
-										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição" value="<?= $_SESSION['cadastro_animal']['a-descricao'] ?? '' ?>"></textarea>
+										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição" required></textarea>
 									</div>
 
 									<div class="row">
 										<div class="col-md-6">
-											<input type="submit" class="btn btn-info btn-block mt-2" value="Enviar" >
+											<input type="submit" class="btn btn-info btn-block mt-2" value="Enviar">
 										</div>
 									</div>
 								</form>
