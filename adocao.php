@@ -27,7 +27,7 @@ elseif (isset($_SESSION['anonimo'])) {
 			<!-- banner -->
 			<section class="banner" id="home">
 				<div class="overlay">
-					<!-- <h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2> -->
+					<h2>Visualize os animais<br>disponíveis para adoção<br><br><span>⇣</span></span></h2>
 				</div>
 			</section>
 
