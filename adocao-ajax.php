@@ -19,11 +19,8 @@ $stmt = $pdo->prepare("
 
 $stmt->execute();
 $animais =  $stmt->fetchAll();
-
 // var_dump($animais);
-
 $rowTotal = $stmt->rowCount();
-
 
 ?>
 
@@ -57,6 +54,12 @@ $rowTotal = $stmt->rowCount();
 					<dd><?= $animal['ANI_GENERO']?></dd>
 					<dt>Descrição</dt>
 					<dd><?= $animal['ANI_DESCRICAO']?></dd>
+					<?php if(isset($_SESSION['id_usuario'])): ?>
+						<?php $idUsuario=$_SESSION['id_usuario']; ?>
+					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a></dd>
+					<?php elseif(isset($_SESSION['id_ong'])): ?>
+					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a></dd>
+					<?php endif; ?>
 				</dl>
 			</div>
 		<?php endforeach; ?>
