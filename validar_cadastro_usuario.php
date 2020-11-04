@@ -90,7 +90,6 @@ elseif ($row[0]['TOTAL']  == 0) {
 		VALUES (?, ?, ?, ?, ?, ?);
 		");
 	$stmt->execute([$nome, $sobrenome, $senhaSegura, $usuario, $contato, $email]);
-	$_SESSION['usu-id'] = $pdo->lastInsertId();
 	$_SESSION['status_cadastro'] = true;
 	header('location: login.php');
 	exit;

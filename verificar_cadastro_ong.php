@@ -94,7 +94,6 @@ elseif ($row[0]['TOTAL']  == 0) {
 		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
 		");
 	$stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nomeong, $senhaSegura, $descricao]);
-	$_SESSION['ong-id'] = $pdo->lastInsertId();
 
 	$_SESSION['status_cadastro'] = true;
 	header('location: login.php');

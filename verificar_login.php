@@ -15,10 +15,10 @@ $usuario = $_POST['t-usuario'];
 $senha = $_POST['t-senha'];
 
 $query = $pdo->prepare("
-	SELECT NOR_CODIGO, NOR_SENHA FROM IPET_USUARIO_NORMAL
-	WHERE NOR_CODIGO = ?;
+	SELECT NOR_usuario, NOR_SENHA FROM IPET_USUARIO_NORMAL
+	WHERE NOR_USUARIO = ?;
 	");
-$query->execute([$_SESSION['usu-id']]);
+$query->execute([$usuario]);
 $verifiUsu = $query->fetchAll();
 $senhadb = password_verify($senha, $verifiUsu[0]['NOR_SENHA']);
 
@@ -26,7 +26,7 @@ $queryOng = $pdo->prepare("
 	SELECT ONG_ID, ONG_SENHA FROM IPET_USUARIOS_ONG
 	WHERE ONG_ID = ?;
 	");
-$queryOng->execute([$_SESSION['ong-id']]);
+$queryOng->execute([$usuario);
 $verifiOng = $queryOng->fetchAll();
 $senhadbOng = password_verify($senha,$verifiOng[0]['ONG_ID']);
 
@@ -44,6 +44,7 @@ $stmtOng = $pdo->prepare("
 if ($senhadb) {
 	$stmt -> execute([$usuario]);
 	$row = $stmt->rowCount();
+
 	
 }
 elseif ($senhadbOng) {
