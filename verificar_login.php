@@ -21,8 +21,8 @@ $senha = $_POST['t-senha'];
 		");
 	$query->execute([$usuario]);
 	$verifiUsu = $query->fetchAll();
-	$row = $query->rowCount();
-	if ($row == 1) {
+	$row1 = $query->rowCount();
+	if ($row1 == 1) {
 
 	$senhadb = password_verify($senha, $verifiUsu[0]['NOR_SENHA']);
 	$stmt = $pdo->prepare("
@@ -53,9 +53,9 @@ $queryOng = $pdo->prepare("
 	");
 $queryOng->execute([$usuario]);
 $verifiOng = $queryOng->fetchAll();
-$rowOng = $queryOng->rowCount();
-var_dump($rowOng);
-if ($rowOng == 0) {
+$rowOng1 = $queryOng->rowCount();
+var_dump($rowOng1);
+if ($rowOng1 == 1) {
 	
 $senhadbOng = password_verify($senha,$verifiOng[0]['ONG_ID']);
 
