@@ -26,7 +26,7 @@ $queryOng = $pdo->prepare("
 	SELECT ONG_ID, ONG_SENHA FROM IPET_USUARIOS_ONG
 	WHERE ONG_ID = ?;
 	");
-$queryOng->execute([$usuario);
+$queryOng->execute([$usuario]);
 $verifiOng = $queryOng->fetchAll();
 $senhadbOng = password_verify($senha,$verifiOng[0]['ONG_ID']);
 
