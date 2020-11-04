@@ -14,7 +14,8 @@ $pdo = dbConnect();
 $stmt = $pdo->prepare("
 	SELECT * FROM IPET_ANIMAIS
 	LEFT JOIN IPET_USUARIO_NORMAL ON ANI_NOR_CODIGO = NOR_CODIGO
-	LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID;
+	LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID
+	LEFT JOIN IPET_ESPECIE ON ESP_ID = ANI_ESP_ID
 	");
 
 $stmt->execute();
@@ -40,12 +41,16 @@ $rowTotal = $stmt->rowCount();
 					<dt>Nome</dt>
 					<dd><?= $animal['ANI_NOME']?></dd>
 					<dd><img src="<?= $imagem ?>"></dd>
-					<dt>Chave Normal usu</dt>
-					<dd><?= $animal['ANI_NOR_CODIGO']?></dd>
-					<dt>Chave ong</dt>
-					<dd><?= $animal['ANI_ONG_ID']?></dd>
+
+					<dt>Responsável</dt>
+					<?php if ($animal['ANI_NOR_CODIGO'] != null): ?>
+						<dd><a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_USUARIO']?></a></dd>
+					<?php elseif($animal['ANI_ONG_ID'] != null): ?>
+						<dd><a href="perfil-ong.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a></dd>
+					<?php endif ?>
+
 					<dt>Espécie</dt>
-					<dd><?= $animal['ANI_ESPECIE']?></dd>
+					<dd><?= $animal['ESP_ESPECIE']?></dd>
 					<dt>Raça</dt>
 					<dd><?= $animal['ANI_RAÇA']?></dd>
 					<dt>Porte</dt>
