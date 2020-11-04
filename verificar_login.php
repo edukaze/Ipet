@@ -14,20 +14,45 @@ $pdo = dbConnect();
 $usuario = $_POST['t-usuario'];
 $senha = $_POST['t-senha'];
 
+$query = $pdo->prepare("
+	SELECT NOR_CODIGO, NOR_SENHA FROM IPET_USUARIO_NORMAL
+	WHERE NOR_CODIGO = ?;
+	");
+$query->execute([$_SESSION['usu-id']]);
+$verifiUsu = $query->fetchAll();
+$senhadb = password_verify($senha, $verifiUsu[0]['NOR_SENHA']);
+
+$queryOng = $pdo->prepare("
+	SELECT ONG_ID, ONG_SENHA FROM IPET_USUARIOS_ONG
+	WHERE ONG_ID = ?;
+	");
+$queryOng->execute([$_SESSION['ong-id']]);
+$verifiOng = $queryOng->fetchAll();
+$senhadbOng = password_verify($senha,$verifiOng[0]['ONG_ID']);
+
+var_dump($senhadb);
+
 $stmt = $pdo->prepare("
 	SELECT NOR_USUARIO, NOR_SENHA, NOR_CODIGO FROM IPET_USUARIO_NORMAL 
-	WHERE (NOR_USUARIO = ? AND NOR_SENHA = ?) 
+	WHERE (NOR_USUARIO = ?) 
 	");
+
 $stmtOng = $pdo->prepare("
 	SELECT ONG_USUARIO, ONG_SENHA, ONG_NOME, ONG_ID FROM IPET_USUARIOS_ONG 
-	WHERE (ONG_USUARIO = ? AND ONG_SENHA = ?) 
+	WHERE (ONG_USUARIO = ?) 
 	");
-$stmt -> execute([$usuario, $senha]);
-$stmtOng -> execute([$usuario, $senha]);
+if ($senhadb) {
+	$stmt -> execute([$usuario]);
+	$row = $stmt->rowCount();
+	
+}
+elseif ($senhadbOng) {
+	$stmtOng -> execute([$usuario]);
+	$rowOng = $stmtOng->rowCount();
+}
 
-$row = $stmt->rowCount();
 
-$rowOng = $stmtOng->rowCount();
+
 if ($row == 1) {
 	$usuario_normal = $stmt->fetchAll();
 	unset($_SESSION['anonimo']);

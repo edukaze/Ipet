@@ -15,7 +15,7 @@ $email = $_POST['u-email'];
 $senha = $_POST['u-senha'];
 $conf_senha = $_POST['u-conf-senha'];
 $contato = $_POST['u-contato'];
-
+$senhaSegura = password_hash($senha, PASSWORD_DEFAULT);
 $_SESSION['cadastro_usuario'] = $_POST;
 
 include 'funcoes.php';
@@ -89,8 +89,8 @@ elseif ($row[0]['TOTAL']  == 0) {
 		INSERT INTO IPET_USUARIO_NORMAL (NOR_NOME, NOR_SOBRENOME, NOR_SENHA, NOR_USUARIO, NOR_CONTATO, NOR_EMAIL)
 		VALUES (?, ?, ?, ?, ?, ?);
 		");
-	$stmt->execute([$nome, $sobrenome, $senha, $usuario, $contato, $email]);
-
+	$stmt->execute([$nome, $sobrenome, $senhaSegura, $usuario, $contato, $email]);
+	$_SESSION['usu-id'] = $pdo->lastInsertId();
 	$_SESSION['status_cadastro'] = true;
 	header('location: login.php');
 	exit;

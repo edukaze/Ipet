@@ -14,6 +14,7 @@ $facebook = $_POST['o-facebook'];
 $instagram = $_POST['o-instagram'];
 $email= $_POST['o-email'];
 $senha = $_POST['o-senha'];
+$senhaSegura = password_hash($senha, PASSWORD_DEFAULT);
 $conf_senha = $_POST['o-conf-senha'];
 $telefone = $_POST['o-telefone'];
 $descricao = $_POST['o-descricao'];
@@ -73,7 +74,7 @@ unset($_SESSION['cadastro_ongs']);
 $pdo = dbConnect();
 
 $verificandoExistencia = $pdo->prepare("
-	SELECT COUNT(*) AS TOTAL FROM IPET_USUARIO_ONG
+	SELECT COUNT(*) AS TOTAL FROM IPET_USUARIOS_ONG
 	WHERE ONG_USUARIO = ?;
 	");
 
@@ -92,7 +93,8 @@ elseif ($row[0]['TOTAL']  == 0) {
 		INSERT INTO IPET_USUARIOS_ONG (ONG_CNPJ, ONG_USUARIO, ONG_FACEBOOK, ONG_INSTAGRAM, ONG_EMAIL, ONG_TELEFONE, ONG_NOME, ONG_SENHA,ONG_DESCRICAO)
 		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
 		");
-	$stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nomeong, $senha, $descricao]);
+	$stmt->execute([$cnpj, $usuario, $facebook, $instagram, $email, $telefone, $nomeong, $senhaSegura, $descricao]);
+	$_SESSION['ong-id'] = $pdo->lastInsertId();
 
 	$_SESSION['status_cadastro'] = true;
 	header('location: login.php');
