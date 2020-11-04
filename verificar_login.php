@@ -16,28 +16,20 @@ $senha = $_POST['t-senha'];
 
 
 	$query = $pdo->prepare("
-		SELECT NOR_usuario, NOR_SENHA FROM IPET_USUARIO_NORMAL
-		WHERE NOR_USUARIO = ?;
+		SELECT * FROM IPET_USUARIO_NORMAL
 		");
-	$query->execute([$usuario]);
-	$verifiUsu = $query->fetchAll();
-	$row1 = $query->rowCount();
-	if ($row1 == 1) {
+	$query->execute();
+	$row1 = $query->fetchAll();
+	foreach ($row1 as $row) {
+	
+	if ($row['NOR_USUARIO'] == $usuario) {
 
-	$senhadb = password_verify($senha, $verifiUsu[0]['NOR_SENHA']);
-	$stmt = $pdo->prepare("
-	SELECT NOR_USUARIO, NOR_SENHA, NOR_CODIGO FROM IPET_USUARIO_NORMAL 
-	WHERE (NOR_USUARIO = ?) 
-	");
-if (isset($senhadb)) {
-	$stmt -> execute([$usuario]);
-	$row = $stmt->rowCount();
+	$senhadb = password_verify($senha, $row['NOR_SENHA']);
+if ($senhadb) {
 
-	if ($row == 1) {
-		$usuario_normal = $stmt->fetchAll();
-		$_SESSION['nome'] = $usuario_normal[0]['NOR_USUARIO'];
-		$_SESSION['id_usuario'] = $usuario_normal[0]['NOR_CODIGO'];
-
+		$_SESSION['nome'] = $row['NOR_USUARIO'];
+		$_SESSION['id_usuario'] = $row['NOR_CODIGO'];
+		unset($_SESSION['anonimo']);
 		header('location:index.php');
 		exit();
 	
@@ -45,43 +37,29 @@ if (isset($senhadb)) {
 	}
 
 	}
-
 
 $queryOng = $pdo->prepare("
-	SELECT ONG_ID, ONG_SENHA FROM IPET_USUARIOS_ONG
-	WHERE ONG_ID = ?;
+	SELECT * FROM IPET_USUARIOS_ONG 
 	");
-$queryOng->execute([$usuario]);
+$queryOng->execute();
 $verifiOng = $queryOng->fetchAll();
-$rowOng1 = $queryOng->rowCount();
-var_dump($rowOng1);
-if ($rowOng1 == 1) {
-	
-$senhadbOng = password_verify($senha,$verifiOng[0]['ONG_ID']);
+ 	foreach ($verifiOng as $dado) {
 
-$stmtOng = $pdo->prepare("
-	SELECT ONG_USUARIO, ONG_SENHA, ONG_NOME, ONG_ID FROM IPET_USUARIOS_ONG 
-	WHERE (ONG_USUARIO = ?) 
-	");
-if (isset($senhadbOng)) {
-		$stmtOng -> execute([$usuario]);
-		$rowOng = $stmtOng->rowCount();
-		if ($rowOng == 1) {
-		$usuario_ong = $stmtOng->fetchAll();
+if ($dado['ONG_USUARIO'] == $usuario) {
+	
+$senhadbOng = password_verify($senha,$dado['ONG_SENHA']);
+
+if ($senhadbOng) {
 		unset($_SESSION['anonimo']);
-		$_SESSION['nome_ong'] = $usuario_ong[0]['ONG_NOME'];
-		$_SESSION['id_ong'] = $usuario_ong[0]['ONG_ID'];
+		$_SESSION['nome_ong'] = $dado['ONG_NOME'];
+		$_SESSION['id_ong'] = $dado['ONG_ID'];
 		header('location:index.php');
 		exit();
 		}
 	}
-
 }
-
- else{
-   	$_SESSION['nao-autenticado'] = true;
+	$_SESSION['nao-autenticado'] = true;
    	header("location:login.php");
    	exit();
- }
-
+ 
  ?>
