@@ -23,24 +23,6 @@ if (!isset($_SESSION['anonimo'])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">	
 
-	<link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/site.css">	
-
-	<link rel="stylesheet" type="text/css" href="../dist/components/container.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/header.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/image.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/menu.css">	
-
-	<link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/form.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/input.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/button.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/list.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/message.css">
-	<link rel="stylesheet" type="text/css" href="../dist/components/icon.css">	
-
 	<script src="assets/library/jquery.min.js"></script>
 	<script src="../dist/components/form.js"></script>
 	<script src="../dist/components/transition.js"></script>	
@@ -76,13 +58,13 @@ if (!isset($_SESSION['anonimo'])) {
 							prompt : 'Please enter your user'
 						},
 						{
-							type   : 't-senha',
+							type   : 'usuario',
 							prompt : 'Please enter a valid user'
 						}
 						]
 					},
 					t-senha: {
-						identifier  : 'password',
+						identifier  : 'senha',
 						rules: [
 						{
 							type   : 'empty',
@@ -158,6 +140,6 @@ if (!isset($_SESSION['anonimo'])) {
 						</div>
 					</div>
 	</div>
-	
+
 </body>
 </html>
