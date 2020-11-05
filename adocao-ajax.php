@@ -11,14 +11,27 @@ elseif (isset($_SESSION['anonimo'])) {
 include 'banco.php';
 $pdo = dbConnect();
 
-$stmt = $pdo->prepare("
-	SELECT * FROM IPET_ANIMAIS
-	LEFT JOIN IPET_USUARIO_NORMAL ON ANI_NOR_CODIGO = NOR_CODIGO
-	LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID
-	LEFT JOIN IPET_ESPECIE ON ESP_ID = ANI_ESP_ID
-	");
+if (isset($_SESSION['id_usuario'])) {
+	$sql = "
+		SELECT * FROM IPET_ANIMAIS
+		LEFT JOIN IPET_USUARIO_NORMAL ON ANI_NOR_CODIGO = NOR_CODIGO
+		LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID
+		LEFT JOIN IPET_ESPECIE ON ESP_ID = ANI_ESP_ID
+		LEFT JOIN IPET_LIKE ON LIK_ANI_CODIGO = ANI_CODIGO AND LIK_NOR_CODIGO = ?
+	";
+} else if (isset($_SESSION['id_ong'])) {
+	$sql = "
+		SELECT * FROM IPET_ANIMAIS
+		LEFT JOIN IPET_USUARIO_NORMAL ON ANI_NOR_CODIGO = NOR_CODIGO
+		LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID
+		LEFT JOIN IPET_ESPECIE ON ESP_ID = ANI_ESP_ID
+		LEFT JOIN IPET_LIKE ON LIK_ANI_CODIGO = ANI_CODIGO AND LIK_ONG_ID = ?
+	";
+}
 
-$stmt->execute();
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([$_SESSION['id_usuario'] ?? $_SESSION['id_ong'] ?? 0]);
 $animais =  $stmt->fetchAll();
 // var_dump($animais);
 $rowTotal = $stmt->rowCount();
@@ -61,7 +74,12 @@ $rowTotal = $stmt->rowCount();
 					<dd><?= $animal['ANI_DESCRICAO']?></dd>
 					<?php if(isset($_SESSION['id_usuario'])): ?>
 						<?php $idUsuario=$_SESSION['id_usuario']; ?>
-					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a></dd>
+					<dd>
+						<?php if ($animal['LIK_ID'] != null): ?>
+							já gostei =)
+						<?php endif ?>
+						<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a>
+					</dd>
 					<?php elseif(isset($_SESSION['id_ong'])): ?>
 					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a></dd>
 					<?php endif; ?>
