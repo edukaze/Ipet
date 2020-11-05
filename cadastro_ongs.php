@@ -20,10 +20,6 @@ if (!isset($_SESSION['anonimo'])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">	
 
-	<script src="assets/library/jquery.min.js"></script>
-	<script src="../dist/components/form.js"></script>
-	<script src="../dist/components/transition.js"></script>	
-
 	<style type="text/css">
 		body {
 			background-image: url('/img/form-background.png');

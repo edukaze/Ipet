@@ -18,11 +18,7 @@ if (!isset($_SESSION['anonimo'])) {
 
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">	
-
-	<script src="assets/library/jquery.min.js"></script>
-	<script src="../dist/components/form.js"></script>
-	<script src="../dist/components/transition.js"></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">		
 
 	<style type="text/css">
 		body {
@@ -98,7 +94,7 @@ if (!isset($_SESSION['anonimo'])) {
 							<label>Email</label>
 							<div class="ui left icon input">
 								<i class="envelope icon"></i>
-								<input type="email" name="u-email" placeholder="Email"
+								<input type="email" name="u-email" placeholder="exemplo@email.com"
 								value="<?= $_SESSION['cadastro_usuario']['u-email'] ?? '' ?>" required>
 							</div>
 						</div>

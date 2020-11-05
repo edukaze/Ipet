@@ -21,11 +21,7 @@ if (!isset($_SESSION['anonimo'])) {
 
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">	
-
-	<script src="assets/library/jquery.min.js"></script>
-	<script src="../dist/components/form.js"></script>
-	<script src="../dist/components/transition.js"></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 	<style type="text/css">
 		body {
@@ -128,17 +124,17 @@ if (!isset($_SESSION['anonimo'])) {
 							</div>
 							<input class="ui fluid large blue submit button" type="submit" value="Login">
 						</div>
-							<div class="ui error message"></div>
+						<div class="ui error message"></div>
 					</form>
 
-						<div class="ui message">
-							Não possui conta? Escolha sua forma de cadastro <br>
-							<a href="cadastro_usuario.php">Usuário</a> ou
-							<a href="cadastro_ongs.php">ONG</a> <br>
-							<a href="index.php">Voltar</a>
-						</div>
+					<div class="ui message">
+						Não possui conta? Escolha sua forma de cadastro <br>
+						<a href="cadastro_usuario.php">Usuário</a> ou
+						<a href="cadastro_ongs.php">ONG</a> <br>
+						<a href="index.php">Voltar</a>
 					</div>
-	</div>
+				</div>
+			</div>
 
-</body>
-</html>
+		</body>
+		</html>
