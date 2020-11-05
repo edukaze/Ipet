@@ -47,6 +47,10 @@ $rowTotal = $stmt->rowCount();
 			if (is_file("imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'])) {
 				$imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
 			}
+			$stmt2 = $pdo->prepare("SELECT COUNT(*) AS total FROM IPET_LIKE WHERE LIK_ANI_CODIGO = ?");
+
+			$stmt2->execute([$animal['ANI_CODIGO']]);
+			$likes =  $stmt2->fetch();
 			?>
 
 			<div class="box2">
@@ -78,6 +82,7 @@ $rowTotal = $stmt->rowCount();
 						<?php if ($animal['LIK_ID'] != null): ?>
 							já gostei =)
 						<?php endif ?>
+						<?= $likes['total'] ?> likes
 						<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a>
 					</dd>
 					<?php elseif(isset($_SESSION['id_ong'])): ?>
