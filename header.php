@@ -33,7 +33,7 @@
 				<?php else: ?>
 					<?php unset($_SESSION['nome']); ?>
 					<?php unset($_SESSION['nome_ong']); ?>
-					<li><a href="login.php"  onclick="toggle()" class="cadastro">cadastro</a></li>
+					<li><a href="login.php"  onclick="toggle()" class="cadastro">l o g i n</a></li>
 				<?php endif ?>
 		</ul>
 		<div class="toggle" onclick="toggle()"></div>

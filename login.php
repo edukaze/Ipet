@@ -117,20 +117,19 @@ if (!isset($_SESSION['anonimo'])) {
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="user icon"></i>
-									<input type="text" name="t-usuario" placeholder="Usuário">
+									<input type="text" name="t-usuario" placeholder="Usuário" required>
 								</div>
 							</div>
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="lock icon"></i>
-									<input type="password" name="t-senha" placeholder="Senha">
+									<input type="password" name="t-senha" placeholder="Senha" required>
 								</div>
 							</div>
-							<input class="ui fluid large blue submit button" type="submit" value="Login"></div>
-		
+							<input class="ui fluid large blue submit button" type="submit" value="Login">
+						</div>
 							<div class="ui error message"></div>
-
-						</form>
+					</form>
 
 						<div class="ui message">
 							Não possui conta? Escolha sua forma de cadastro <br>
