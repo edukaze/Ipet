@@ -35,7 +35,7 @@ $rowTotal = $resultado-> rowCount();
 										<dt>descrição</dt>
 										<dd><?= $result['ONG_DESCRICAO']?></dd>
 										<div class="botao">
-										<a href="perfil-ong.php?id=<?= $result['ONG_ID'] ?>">Veja Mais Sobre a gente</a>
+										<a href="perfil-ong-geral.php?id=<?= $result['ONG_ID'] ?>">Veja Mais Sobre a gente</a>
 										</div>
 									</dl>
 								</div>
