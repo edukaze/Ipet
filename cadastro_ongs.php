@@ -39,14 +39,14 @@ if (!isset($_SESSION['anonimo'])) {
 <script type="text/javascript">
 
 	function ipet(telefone){ 
-		if(contato.value.length == 0)
-			contato.value = '(' + contato.value; 
+		if(telefone.value.length == 0)
+			telefone.value = '(' + telefone.value; 
 
-		if(contato.value.length == 3)
-			contato.value = contato.value + ') ';
+		if(telefone.value.length == 3)
+			telefone.value = telefone.value + ') ';
 
-		if(contato.value.length == 10)
-			contato.value = contato.value + '-'; 
+		if(telefone.value.length == 10)
+			telefone.value = telefone.value + '-'; 
 	}
 
 </script>
