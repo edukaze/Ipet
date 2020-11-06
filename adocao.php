@@ -18,6 +18,7 @@ elseif (isset($_SESSION['anonimo'])) {
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>

@@ -84,24 +84,15 @@ $rowTotal = $stmt->rowCount();
 					<?php if(isset($_SESSION['id_usuario'])): ?>
 				
 					<dd>
-						<?php  if(!isset($_SESSION['like'])): ?>
+
 						<a  class="like" href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a>
-
-						<?php  elseif(isset($_SESSION['like'])): ?>
-						<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">Deslike</a>
-					<?php endif; ?>
-
 					</dd>
 					<?php elseif(isset($_SESSION['id_ong'])): ?>
-					<?php   if(!isset($_SESSION['like'])): ?>
 					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like">like</a></dd>
-					<?php   elseif(isset($_SESSION['like'])): ?>
-						<?php var_dump($_SESSION['like']) ?>
-					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">Deslike</a></dd>
 				<?php endif; ?>
 				</dl>
 			</div>
-<?php endif; ?>
+
 		<?php endforeach; ?>
 	<?php endif; ?>
 
@@ -120,20 +111,6 @@ $rowTotal = $stmt->rowCount();
 			})
 		});
 
-		function loadatalike(){
-			$.ajax('like.php',{
-				success: function(data){
-					$('a.like').a(data);
-				}
-			});
-		}
-
-		$('a.like').ready(function() {
-			loadDatalike();
-		});
-
-		setInterval(function() {
-			loadDatalike();
-		}, 1 * 1000);
+		
 
 </script>

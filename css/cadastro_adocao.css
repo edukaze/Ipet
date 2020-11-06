@@ -54,7 +54,8 @@ section.adc
 }
 section.adc > .box
 {
-	display: flex;
+	
+	display: inline-block;
 	flex-wrap: wrap;
 }
 .box1
@@ -63,6 +64,7 @@ section.adc > .box
 }
 .box2
 {
+	display: flex;
 	float: left;
 	width: 310px;
 	height: 100vh;
