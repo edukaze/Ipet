@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <?php
 session_start();
 
@@ -76,21 +77,63 @@ $rowTotal = $stmt->rowCount();
 					<dd><?= $animal['ANI_GENERO']?></dd>
 					<dt>Descrição</dt>
 					<dd><?= $animal['ANI_DESCRICAO']?></dd>
-					<?php if(isset($_SESSION['id_usuario'])): ?>
-						<?php $idUsuario=$_SESSION['id_usuario']; ?>
-					<dd>
 						<?php if ($animal['LIK_ID'] != null): ?>
 							já gostei =)
 						<?php endif ?>
 						<?= $likes['total'] ?> likes
-						<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a>
+					<?php if(isset($_SESSION['id_usuario'])): ?>
+				
+					<dd>
+						<?php  if(!isset($_SESSION['like'])): ?>
+						<a  class="like" href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a>
+
+						<?php  elseif(isset($_SESSION['like'])): ?>
+						<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">Deslike</a>
+					<?php endif; ?>
+
 					</dd>
 					<?php elseif(isset($_SESSION['id_ong'])): ?>
-					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a></dd>
-					<?php endif; ?>
+					<?php   if(!isset($_SESSION['like'])): ?>
+					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like">like</a></dd>
+					<?php   elseif(isset($_SESSION['like'])): ?>
+						<?php var_dump($_SESSION['like']) ?>
+					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>">Deslike</a></dd>
+				<?php endif; ?>
 				</dl>
 			</div>
+<?php endif; ?>
 		<?php endforeach; ?>
 	<?php endif; ?>
 
 </div>
+<script type="text/javascript">
+
+	$('a.like').on('click', function(evt){
+		evt.preventDefault();
+		console.log('')
+		var href = $(evt.target).attr('href');
+		$.ajax(href, {
+			success: function(data){
+				$('a.like').a(data);
+	
+				}
+			})
+		});
+
+		function loadatalike(){
+			$.ajax('like.php',{
+				success: function(data){
+					$('a.like').a(data);
+				}
+			});
+		}
+
+		$('a.like').ready(function() {
+			loadDatalike();
+		});
+
+		setInterval(function() {
+			loadDatalike();
+		}, 1 * 1000);
+
+</script>

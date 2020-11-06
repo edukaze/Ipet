@@ -14,21 +14,48 @@ $verificar->execute([$get]);
 $row = $verificar->fetchAll();
 
 
+	
 if (isset($_SESSION['id_usuario'])) {
 
-	if ($row[0]['TOTAL'] == 0) {
+$verificar2 = $pdo->prepare("
+	SELECT COUNT(*) AS TOTAL FROM IPET_LIKE
+	WHERE LIK_NOR_CODIGO = ? AND LIK_ANI_CODIGO = ?;
+	");
+$verificar2->execute([$_SESSION['id_usuario'], $get]);
+$row2 = $verificar2->fetchAll();
+
+	if ($row[0]['TOTAL'] == 0 || $row2[0]['TOTAL'] == 0) {
 	
 	$stmt = $pdo->prepare("
-		INSERT INTO IPET_LIKE(LIK_NOR_CODIGO , LIK_ANI_CODIGO)
+		INSERT INTO IPET_LIKE(LIK_NOR_CODIGO , LIK_ANI_CODIGO) 
 		VALUES (?,?);
 		");
 	$stmt->execute([$_SESSION['id_usuario'], $get]);
+	$_SESSION['like'] = true;
 	header('location:adocao.php');
 	exit();
 	}
+
+	elseif ($row[0]['TOTAL'] == 1  || $row2[0]['TOTAL'] == 1) {
+	$query = "DELETE FROM IPET_LIKE WHERE LIK_ANI_CODIGO=? AND LIK_NOR_CODIGO = ?" ;
+	$stmt3 = $pdo->prepare($query);
+	$stmt3->execute([$get, $_SESSION['id_usuario']]);
+	unset($_SESSION['like']);
+	header('location:adocao.php');
+	exit();
+		
+	}
 }
+
 elseif (isset($_SESSION['id_ong'])) {
-	if ($row[0]['TOTAL'] == 0) {
+$verificar2 = $pdo->prepare("
+	SELECT COUNT(*) AS TOTAL FROM IPET_LIKE
+	WHERE LIK_ONG_ID = ? AND LIK_ANI_CODIGO = ?;
+	");
+$verificar2->execute([$_SESSION['id_ong'], $get]);
+$row2 = $verificar2->fetchAll();
+
+	if ($row[0]['TOTAL'] == 0 || $row2[0]['TOTAL'] == 0) {
 	
 	$stmt = $pdo->prepare("
 		INSERT INTO IPET_LIKE(LIK_ONG_ID, LIK_ANI_CODIGO)
@@ -37,12 +64,16 @@ elseif (isset($_SESSION['id_ong'])) {
 	$stmt->execute([$_SESSION['id_ong'], $get]);
 	header('location:adocao.php');
 	exit();
-	}		
+	}
+			elseif ($row[0]['TOTAL'] == 1  || $row2[0]['TOTAL'] == 1) {
+		$query = "DELETE FROM IPET_LIKE WHERE LIK_ANI_CODIGO=? AND LIK_ONG_ID = ?" ;
+		$stmt3 = $pdo->prepare($query);
+		$stmt3->execute([$get, $_SESSION['id_ong']]);
+		header('location:adocao.php');
+		exit();
+		
+	}	
 }
- if($row[0]['TOTAL'] == 1) {
-$query = "DELETE FROM IPET_LIKE WHERE LIK_ANI_CODIGO=?";
-$stmt = $pdo->prepare($query);
-$stmt->execute([$get]);
-header('location:adocao.php');
-exit();
-}
+
+var_dump($row[0]['TOTAL']);
+
