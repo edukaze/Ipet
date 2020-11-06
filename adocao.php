@@ -69,7 +69,7 @@ elseif (isset($_SESSION['anonimo'])) {
 
 		setInterval(function() {
 			loadData();
-		}, 5 * 1000);
+		}, 5 * 60 * 1000);
 	</script>
 </body>
 </html>

@@ -1,4 +1,12 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+	.liked {
+		background: green;
+	}
+	.normal {
+		background: red;
+	}
+</style>
 <?php
 session_start();
 
@@ -77,19 +85,14 @@ $rowTotal = $stmt->rowCount();
 					<dd><?= $animal['ANI_GENERO']?></dd>
 					<dt>Descrição</dt>
 					<dd><?= $animal['ANI_DESCRICAO']?></dd>
-						<?php if ($animal['LIK_ID'] != null): ?>
-							já gostei =)
-						<?php endif ?>
-						<?= $likes['total'] ?> likes
-					<?php if(isset($_SESSION['id_usuario'])): ?>
-				
-					<dd>
 
-						<a  class="like" href="like.php?ani=<?= $animal['ANI_CODIGO']?>">like</a>
+					<dd>
+						<div class="like-div">
+							<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
+
+							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>">like</a>
+						</div>
 					</dd>
-					<?php elseif(isset($_SESSION['id_ong'])): ?>
-					<dd><a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like">like</a></dd>
-				<?php endif; ?>
 				</dl>
 			</div>
 
@@ -99,18 +102,19 @@ $rowTotal = $stmt->rowCount();
 </div>
 <script type="text/javascript">
 
-	$('a.like').on('click', function(evt){
+	$(document).on('click', 'a.like', function(evt){
 		evt.preventDefault();
-		console.log('')
+		console.log('like')
 		var href = $(evt.target).attr('href');
 		$.ajax(href, {
 			success: function(data){
-				$('a.like').a(data);
-	
-				}
-			})
-		});
+				// $('a.like').a(data);
+				$(evt.target).parents('.like-div').html(data);
 
-		
+			}
+		})
+	});
+
+
 
 </script>
