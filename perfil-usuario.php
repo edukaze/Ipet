@@ -36,7 +36,6 @@ $rowTotal2 =$smtm -> rowCount();
 	<?php  include 'header-diminuido.php' ?>
 
 
-	<?php   var_dump($_GET['id']); ?>
 	<?php if ($rowTotal2 > 0): ?>
 		<?php foreach ($usuario as  $usuarios): ?>
 			<section class="voltar">

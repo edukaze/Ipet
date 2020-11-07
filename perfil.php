@@ -43,7 +43,7 @@ $rowTotal = $stmt->rowCount();
 				<h1>MEU(S) PET(S)</h1>
 			</section>
 
-
+			<h3>altera informações do perfil <a href="alterar-perfil.php?id=<?= $_SESSION['id_usuario']?>">Alterar</a></h3>
 			<section class="edc">
 				<div class="box">
 					<div class="box1">
