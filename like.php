@@ -72,5 +72,5 @@ $likes = $row[0]['TOTAL'] + ($like ? 1 : -1);
 
 <?= $likes ?> like<?= $likes > 1 ? 's' : '' ?>
 
-<a href="like.php?ani=<?= $_GET['ani']?>" class="like <?= $like ? 'liked' : 'normal' ?>">like</a>
+<a href="like.php?ani=<?= $_GET['ani']?>" class="like <?= $like ? 'liked' : 'normal' ?>"></a>
 

@@ -1,10 +1,16 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <style>
 	.liked {
-		background: green;
+		background-image: url(../img/likecheio.ico);
+		height: 30px;
+		width: 30px;
+		display: flex;
 	}
 	.normal {
-		background: red;
+		background-image: url(../img/like.ico);
+		height: 30px;
+		width: 30px;
+		display: flex;
 	}
 </style>
 <?php
@@ -70,7 +76,7 @@ $rowTotal = $stmt->rowCount();
 
 					<dt>Responsável</dt>
 					<?php if ($animal['ANI_NOR_CODIGO'] != null): ?>
-						<dd><a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_USUARIO']?></a></dd>
+						<dd><a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_NOME']?></a></dd>
 					<?php elseif($animal['ANI_ONG_ID'] != null): ?>
 						<dd><a href="perfil-ong.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a></dd>
 					<?php endif ?>
@@ -90,7 +96,7 @@ $rowTotal = $stmt->rowCount();
 						<div class="like-div">
 							<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
 
-							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>">like</a>
+							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a>
 						</div>
 					</dd>
 				</dl>
