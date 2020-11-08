@@ -10,14 +10,14 @@ $stmt = $pdo->prepare("
 	");
 $stmt->execute([$_GET['id']]); 
 $usuario =$stmt->fetchAll();
- ?>
+?>
 
 
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Edição Perfil</title>
- 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edição Perfil</title>
+	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
@@ -26,25 +26,25 @@ $usuario =$stmt->fetchAll();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
- </head>
- <style type="text/css">
-		body {
-			background-image: url('/img/background.png');
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-		body > .grid {
-			height: 100%;
-		}
-		.image {
-			margin-top: -100px;
-		}
-		.column {
-			max-width: 450px;
-		}
-	</style>
-	<script type="text/javascript">
+</head>
+<style type="text/css">
+	body {
+		background-image: url('/img/background.png');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	body > .grid {
+		height: 100%;
+	}
+	.image {
+		margin-top: -100px;
+	}
+	.column {
+		max-width: 450px;
+	}
+</style>
+<script type="text/javascript">
 
 	function ipet(contato){ 
 		if(contato.value.length == 0)
@@ -58,21 +58,21 @@ $usuario =$stmt->fetchAll();
 	}
 
 </script>
- <body>
- 	<div class="ui middle aligned center aligned grid">
+<body>
+	<div class="ui middle aligned center aligned grid">
 		<div class="column">
 			<?php if(isset($_SESSION['upadate'])): ?>
-						<div class="campo-certo">
-							<p>Alterações Feitas com sucesso</p>
-						</div>
-						<?php unset($_SESSION['upadate']) ?>
-				<?php endif; ?>
+				<div class="campo-certo">
+					<p>Alterações feitas com sucesso</p>
+				</div>
+				<?php unset($_SESSION['upadate']) ?>
+			<?php endif; ?>
 			<?php include 'condicional-cadastro.php'; ?>
 
 			<div class="ui message">
 				
 				<form class="ui form" action="validar_alteracao.php" method="POST">
-					<h4 class="ui dividing header">Altera Dados do Usuário</h4>
+					<h4 class="ui dividing header">Alterar dados do usuário</h4>
 					<br>
 					<div class="field">
 						<div class="two fields">
@@ -82,7 +82,7 @@ $usuario =$stmt->fetchAll();
 									<div class="ui left icon input">
 										<i class="user icon"></i>
 										<input type="text" name="u-usuario" placeholder="Crie um usuário"
-										value="<?= $usuario[0]['NOR_USUARIO']?>" required>
+										value="<?= $_SESSION['cadastro_usuario']['u-usuario'] ?? '' ?>" required>
 									</div>
 								</div>
 							</div>
@@ -100,10 +100,21 @@ $usuario =$stmt->fetchAll();
 					</div>
 
 					<div class="field">
+						<div class="required field">
+							<label>Email</label>
+							<div class="ui left icon input">
+								<i class="envelope icon"></i>
+								<input type="email" name="u-email" placeholder="exemplo@email.com"
+								value="<?= $_SESSION['cadastro_usuario']['u-email'] ?? '' ?>" required>
+							</div>
+						</div>
+					</div>
+
+					<div class="field">
 						<div class="two fields">
 							<div class="field">
 								<div class="required field">
-									<label> Nova Senha</label>
+									<label>Nova senha</label>
 									<div class="ui left icon input">
 										<i class="lock icon"></i>
 										<input type="password" name="u-senha" placeholder="Crie uma senha"
@@ -113,7 +124,7 @@ $usuario =$stmt->fetchAll();
 							</div>
 							<div class="field">
 								<div class="required field">
-									<label>Confirme Nova Senha</label>
+									<label>Confirme a nova senha</label>
 									<div class="ui left icon input">
 										<i class="lock icon"></i>
 										<input type="password" name="u-conf-senha" id="conf_senha" placeholder="Confirme a senha" required>
@@ -123,7 +134,7 @@ $usuario =$stmt->fetchAll();
 						</div>
 					</div>
 
-					<input class="ui fluid large blue submit button" type="submit" value="alterar"></div>
+					<input class="ui fluid large blue submit button" type="submit" value="Alterar"></div>
 
 					<a href="perfil-usuario.php">Voltar</a>
 
@@ -132,6 +143,6 @@ $usuario =$stmt->fetchAll();
 			</div>
 		</div>
 	</div>
- 
- </body>
- </html>
+
+</body>
+</html>
