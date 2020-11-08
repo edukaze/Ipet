@@ -4,11 +4,14 @@ include 'banco.php';
 
 $pdo = dbConnect();
 $stmt = $pdo->prepare("
-	SELECT NOR_CODIGO, NOR_USUARIO, NOR_CONTATO, NOR_EMAIL FROM IPET_USUARIO_NORMAL
-	WHERE NOR_CODIGO = ?
+	SELECT ONG_ID, ONG_USUARIO, ONG_TELEFONE, ONG_EMAIL, ONG_INSTAGRAM, ONG_FACEBOOK FROM IPET_USUARIOS_ONG
+	WHERE ONG_ID = ?;
 	");
-$stmt->execute([$_SESSION['id_usuario']]); 
-$usuario =$stmt->fetchAll();
+$stmt->execute([$_SESSION['id_ong']]); 
+
+
+$usuario = $stmt->fetchAll();
+
 ?>
 
 
@@ -75,58 +78,90 @@ $usuario =$stmt->fetchAll();
 					<br>
 					<div class="field">
 						<div class="two fields">
-							<div class="field">
-									<label>Usuário</label>
-									<div class="ui left icon input">
-										<i class="user icon"></i>
-										<input type="text" name="u-usuario" placeholder="Crie um usuário"
-										value="<?= $usuario[0]['NOR_USUARIO'] ?>" required>
-									</div>
+					
+					<div class="field">
+					
+							<label>Usuário</label>
+							<div class="ui left icon input">
+								<i class="user icon"></i>
+								<input type="text" name="o-usuario" id="usuario" placeholder="Digite um usuario"
+								value="<?= $usuario[0]['ONG_USUARIO']?>" required>
 							</div>
-							<div class="field">
+					</div>
+								<div class="field">
+							
 									<label>Contato</label>
 									<div class="ui left icon input">
 										<i class="mobile alternate icon"></i>
-										<input type="tel" name="u-contato" id="contato" placeholder="(00) 0 0000-0000"
-										onkeypress="ipet(this)" value="<?= $usuario[0]['NOR_CONTATO']?>">
+										<input type="text" name="o-telefone" id="telefone" placeholder="(00) 00000-0000" onkeypress="ipet(this)" value="<?= $usuario[0]['ONG_TELEFONE']?>" required>
 									</div>
+							
 							</div>
 						</div>
 					</div>
-
-					<div class="field">
+						<div class="field">
+					
 							<label>Email</label>
 							<div class="ui left icon input">
 								<i class="envelope icon"></i>
-								<input type="email" name="u-email" placeholder="exemplo@email.com"
-								value="<?= $usuario[0]['NOR_EMAIL'] ?>" >
+								<input type="text" name="o-email" id="email" placeholder="minhaong@email.com"
+								value="<?= $usuario[0]['ONG_EMAIL'] ?>" required>
 							</div>
+						
 					</div>
 
 					<div class="field">
 						<div class="two fields">
 							<div class="field">
-								
-									<label>Nova senha</label>
+						
+									<label>Facebook</label>
 									<div class="ui left icon input">
-										<i class="lock icon"></i>
-										<input type="password" name="u-senha" placeholder="Crie uma senha">
+										<i class="facebook icon"></i>
+										<input type="text" name="o-facebook" id="facebook" placeholder="facebook.com/minhaong"
+										value="<?=$usuario[0]['ONG_FACEBOOK']?>" required>
 									</div>
 								
 							</div>
 							<div class="field">
-									<label>Confirme a nova senha</label>
+							
+									<label>Instagram</label>
+									<div class="ui left icon input">
+										<i class="instagram icon"></i>
+										<input type="text" name="o-instagram" id="instagram" placeholder="instagram.com/minhaong"
+										value="<?= $usuario[0]['ONG_INSTAGRAM']?>" required>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+
+
+
+				<div class="field">
+						<div class="two fields">
+							<div class="field">
+		
+									<label>Nova senha</label>
 									<div class="ui left icon input">
 										<i class="lock icon"></i>
-										<input type="password" name="u-conf-senha" id="conf_senha" placeholder="Confirme a senha" >
+										<input type="password" name="o-senha" id="senha" placeholder="Crie uma senha" required>
 									</div>
+															</div>
+							<div class="field">
+								
+									<label>Confirme Nova Senha</label>
+									<div class="ui left icon input">
+										<i class="lock icon"></i>
+										<input type="password" name="o-conf-senha" id="conf_senha" placeholder="Confirme a senha" required>
+									</div>
+								
 							</div>
 						</div>
 					</div>
 
 					<input class="ui fluid large blue submit button" type="submit" value="Alterar"></div>
 
-					<a href="perfil.php">Voltar</a>
+					<a href="perfil_ong.php">Voltar</a>
 
 				</form>
 

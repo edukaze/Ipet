@@ -15,7 +15,7 @@ $pdo = dbConnect();
 $stmt = $pdo->prepare("
 	 SELECT * FROM IPET_ANIMAIS
     LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID
-     WHERE ONG_ID = 1;
+     WHERE ONG_ID = ?;
 	");
 
 $stmt->execute([$_SESSION['id_ong']]);
@@ -41,7 +41,7 @@ $rowTotal = $stmt->rowCount();
 				<h1>MEU(S) PET(S)</h1>
 			</section>
 
-
+			<h3>altera informações do perfil <a href="alterar-perfil-ong.php?id=<?= $_SESSION['id_ong']?>">Alterar</a></h3>
 			<section class="edc">
 				<div class="box">
 					<div class="box1">
