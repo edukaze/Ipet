@@ -35,7 +35,7 @@ elseif (isset($_SESSION['anonimo'])) {
 			</section>
 
 			<section class="adc">
-				<div class="box">
+				<div class="ui grid">
 				</div>
 			</section>
 
@@ -60,7 +60,7 @@ elseif (isset($_SESSION['anonimo'])) {
 			$.ajax('adocao-ajax.php', {
 				success: function(data) {
 					console.log('atualizando...');
-					$('.box').html(data);
+					$('.ui.grid').html(data);
 				}
 			})
 		}

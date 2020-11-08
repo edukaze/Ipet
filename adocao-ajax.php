@@ -1,19 +1,19 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <style>
-	.liked {
-		background-image: url(../img/likecheio.ico);
-		height: 30px;
-		width: 30px;
-		display: flex;
-	}
 	.normal {
 		background-image: url(../img/like.ico);
-		height: 30px;
-		width: 30px;
-		display: flex;
+		height: 32px;
+		width: 32px;
 	}
-	.ui.card {
-		box-shadow: 13px 13px 20px #cbced1;
+	.liked {
+		position: absolute;
+		background-image: url(../img/likecheio.ico);
+		height: 32px;
+		width: 32px;
+	}
+	.like-div {
+		position: relative;
+		margin: 0;
 	}
 </style>
 
@@ -57,7 +57,7 @@ $rowTotal = $stmt->rowCount();
 
 ?>
 
-<!-- <div class="box1"> -->
+<div class="ui four cards">
 
 	<?php if ($rowTotal > 0): ?>
 		<?php foreach ($animais as  $animal): ?>
@@ -72,23 +72,16 @@ $rowTotal = $stmt->rowCount();
 			$likes =  $stmt2->fetch();
 			?>
 
-		<div class="ui four column grid">
-			<div class="row">
-
 				<div class="ui card">
 					<div class="image">
 						<img src="<?= $imagem ?>">
 					</div>
 
 					<div class="extra content">
-						<span class="left floated like">
-							<i class="like icon"></i>
-							Like
-						</span>
-						<span class="right floated star">
-							<i class="star icon"></i>
-							Favorite
-						</span>
+						<div class="like-div">
+							<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
+							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a>
+						</div>
 					</div>
 
 					<div class="content">
@@ -109,26 +102,21 @@ $rowTotal = $stmt->rowCount();
 								Espécie: <?= $animal['ESP_ESPECIE']?> <br>
 								Raça: <?= $animal['ANI_RAÇA']?> <br>
 								Porte: <?= $animal['ANI_PORTE']?> | Gênero: <?= $animal['ANI_GENERO']?> <br>
-								Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
-
 							</div>
 						</div>
 
-						<div class="extra content">
-							<div class="like-div">
-								<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
-								<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a>
+							<div class="extra content">
+								<div class="descriptin">
+									Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
+								</div>
 							</div>
-						</div>
 
 				</div><!-- .ui.card -->
-			</div><!-- .row -->
-		</div><!-- .ui four column grid -->
 
 		<?php endforeach; ?>
 	<?php endif; ?>
 
-<!-- </div>.box -->
+</div><!-- .ui.four -->
 
 <script type="text/javascript">
 
