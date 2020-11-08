@@ -4,6 +4,7 @@
 		background-image: url(../img/like.ico);
 		height: 32px;
 		width: 32px;
+		position: absolute;
 	}
 	.liked {
 		position: absolute;
@@ -14,6 +15,10 @@
 	.like-div {
 		position: relative;
 		margin: 0;
+	}
+	p{
+		text-indent: 3em;
+		padding-top: 7px;
 	}
 </style>
 
@@ -79,8 +84,9 @@ $rowTotal = $stmt->rowCount();
 
 					<div class="extra content">
 						<div class="like-div">
-							<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
-							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a>
+							
+							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a> 
+							<p><?= $likes['total'] ?></p>
 						</div>
 					</div>
 
