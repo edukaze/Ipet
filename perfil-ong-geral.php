@@ -40,7 +40,7 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 <?php if ($rowTotal2 > 0): ?>
                      <?php foreach ($ongs as  $ong): ?>
                  	<section class="voltar">
-                 		<a href="lista-ongs.php"> < < </a>
+                 		<a href="adocao.php"> < < </a>
                  	</section>
                      <section class="edc">
                      	<div class="box">

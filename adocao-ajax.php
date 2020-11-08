@@ -80,7 +80,7 @@ $rowTotal = $stmt->rowCount();
 					<?php if ($animal['ANI_NOR_CODIGO'] != null): ?>
 						<dd><a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_NOME']?></a></dd>
 					<?php elseif($animal['ANI_ONG_ID'] != null): ?>
-						<dd><a href="perfil-ong.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a></dd>
+						<dd><a href="perfil-ong-geral.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a></dd>
 					<?php endif ?>
 						<div class="six wide tablet eight wide computer column">
 					<dt>Espécie</dt>
