@@ -2,6 +2,7 @@
 session_start();
 include 'banco.php';
 
+
 if (isset($_SESSION['anonimo'])) {
 	header("location:login.php");
 }
@@ -14,7 +15,6 @@ if ($id === false) {
 	header('location: edicao.php');
 	exit();
 }
-
 $pdo = dbConnect();
 $_SESSION['id-animal'] = $_GET['id'];
 
@@ -38,6 +38,7 @@ $edianimais = $stmt->fetchAll();
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css//cadastro_doacao.css">
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png"/>
+
 </head>
 <body>
 	<!-- navbar -->
@@ -61,7 +62,7 @@ $edianimais = $stmt->fetchAll();
 
 					<?php include 'condicional-cadastro.php'; ?>
 					<?php foreach ($edianimais as $edianimal): ?>
-						<form action="validar_cadastro_animais.php" method="POST" enctype="multipart/form-data">
+						<form action="edicao_dados.php" method="POST" enctype="multipart/form-data">
 							<div class="input-group mt-2">
 								<input type="text" class="form-control outline-secondary" name="a-nome" placeholder="Nome" value="<?=$edianimal['ANI_NOME']?>" required>
 							</div>
@@ -75,7 +76,12 @@ $edianimais = $stmt->fetchAll();
 								<select name="a-especie" class="form-control outline-secondary" >
 									<?php foreach ($especies as $especie): ?>
 										
-										<option value="<?= $especie['ESP_ESPECIE']?> " required> <?= $especie['ESP_ESPECIE']?></option>
+										<option value="<?= $especie['ESP_ESPECIE']?>" 
+												<?php if (($edianimal['ANI_ESPECIE']) == $especie['ESP_ESPECIE']): ?>
+													selected
+												<?php endif ?>
+												> <?= $especie['ESP_ESPECIE'] ?>
+											</option>
 									<?php endforeach ?>
 
 										<!-- <option value="cachorro">Cachorro</option>

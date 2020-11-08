@@ -8,29 +8,67 @@ $raca = $_POST['a-raca'];
 $porte = $_POST['a-porte'];
 $genero = $_POST['a-genero'];
 $descricao = $_POST['a-descricao'];
+$nome_imagem = $_FILES['imagem']['name'];
 
 $pdo = dbConnect();
-$query = "SELECT * FROM IPET_ANIMAIS LEFT JOIN IPET_USUARIOS_ONG ON ANI_ONG_ID = ONG_ID;";
+if (isset($_SESSION['id_usuario'])) {
+	
+$query = "SELECT * FROM IPET_ANIMAIS  WHERE ANI_CODIGO = ?;";
 
 $stmt = $pdo->prepare($query);
 
-$stmt->execute();
+$stmt->execute([$_SESSION['id-animal']]);
 $chaveAni = $stmt->fetchAll();
+//var_dump($chaveAni);
 
-$_SESSION['ani-codigo'] = $chaveAni[0]['ANI_CODIGO'];
+$codigoAni = $chaveAni[0]['ANI_CODIGO'];
+var_dump($codigoAni);
 $_SESSION['ani-nome'] = $chaveAni[0]['ANI_NOME'];
 
-var_dump($chaveAni);
-
-
-$query = "UPDATE IPET_ANIMAIS SET ANI_NOME=?, ANI_ESPECIE=?, ANI_RAÇA=?, ANI_PORTE=?, ANI_GENERO=?, ANI_DESCRICAO=? WHERE ANI_CODIGO=? AND ANI_NOME=?";
+$query = "UPDATE IPET_ANIMAIS SET ANI_NOME=?, ANI_ESPECIE=?, ANI_RAÇA=?, ANI_PORTE=?, ANI_GENERO=?, ANI_DESCRICAO=?, ANI_IMAGEM =? WHERE ANI_CODIGO=?";
 
 $stmt = $pdo->prepare($query);
 
-$stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao, $_SESSION['ani-codigo'], $_SESSION['ani-nome']]);
+$stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao,$nome_imagem, $codigoAni]);
+$ultimo_id =$codigoAni;
 
-unset($_SESSION['ani-codigo']);
+unlink('imagens/'.$ultimo_id);
+//var_dump($ultimo_id);
+include 'validar_imagem.php';
+//var_dump($stmt);
+
 //print_r($stmt->errorInfo());
-header('location:adocao.php');
+
+header('location:perfil.php');
+}
+elseif (isset($_SESSION['id_ong'])){
+
+	$query = "SELECT * FROM IPET_ANIMAIS  WHERE ANI_CODIGO= ?;";
+
+$stmt = $pdo->prepare($query);
+
+$stmt->execute([$_SESSION['id-animal']]);
+$chaveAni = $stmt->fetchAll();
+
+
+$codigoAni = $chaveAni[0]['ANI_CODIGO'];
+var_dump($codigoAni);
+$_SESSION['ani-nome'] = $chaveAni[0]['ANI_NOME'];
+
+$query = "UPDATE IPET_ANIMAIS SET ANI_NOME=?, ANI_ESPECIE=?, ANI_RAÇA=?, ANI_PORTE=?, ANI_GENERO=?, ANI_DESCRICAO=?, ANI_IMAGEM =? WHERE ANI_CODIGO=?";
+$stmt = $pdo->prepare($query);
+$stmt->execute([$nome, $especie, $raca, $porte, $genero, $descricao,$nome_imagem, $codigoAni]);
+$ultimo_id =$codigoAni;
+
+
+unlink('imagens/'.$ultimo_id.'/');
+
+include 'validar_imagem.php';
+//var_dump($stmt);
+print_r($stmt->errorInfo());
+
+header('location:perfil_ong.php');
+}
+unset($_SESSION['cadastro_animal']);
 
 ?>

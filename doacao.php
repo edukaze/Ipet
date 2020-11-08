@@ -71,22 +71,22 @@ $pdo = dbConnect();
 									</div>
 									<div class="input-group mt-2">
 										<select name="a-porte" class="form-control outline-secondary">
-											<option value="p" <?= ($_SESSION['cadastro_animal']['a-porte'] == 'p') ? 'selected' : '' ?>>P</option>
-											<option value="m" <?= ($_SESSION['cadastro_animal']['a-porte'] == 'm') ? 'selected' : '' ?>>M</option>
-											<option value="g" <?= ($_SESSION['cadastro_animal']['a-porte'] == 'g') ? 'selected' : '' ?>>G</option>
+											<option value="p" <?= (isset($_SESSION['cadastro_animal']['a-porte']) == 'p') ? 'selected' : '' ?>>P</option>
+											<option value="m" <?= (isset($_SESSION['cadastro_animal']['a-porte']) == 'm') ? 'selected' : '' ?>>M</option>
+											<option value="g" <?= (isset($_SESSION['cadastro_animal']['a-porte']) == 'g') ? 'selected' : '' ?>>G</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
 										<select name="a-genero" class="form-control outline-secondary">
-											<option value="f" <?= ($_SESSION['cadastro_animal']['a-genero'] == 'f') ? 'selected' : '' ?>>F</option>
-											<option value="m" <?= ($_SESSION['cadastro_animal']['a-genero'] == 'm') ? 'selected' : '' ?>>M</option>
+											<option value="f" <?= (isset($_SESSION['cadastro_animal']['a-genero']) == 'f') ? 'selected' : '' ?>>F</option>
+											<option value="m" <?= (isset($_SESSION['cadastro_animal']['a-genero']) == 'm') ? 'selected' : '' ?>>M</option>
 										</select>
 									</div>
 									<div class="input-group mt-2">
 										<input type="file" class="form-control outline-secondary" name="imagem" placeholder="Imagem">
 									</div>
 									<div class="input-group mt-2">
-										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição" required=""><?php echo $_SESSION['cadastro_animal']['a-descricao'] ?></textarea>
+										<textarea class="form-control outline-secondary" name="a-descricao" placeholder="Descrição" required=""><?php echo isset($_SESSION['cadastro_animal']['a-descricao']) ?></textarea>
 									</div>
 
 									<div class="row">
