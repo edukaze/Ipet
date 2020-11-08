@@ -69,7 +69,6 @@ elseif($senha != $conf_senha){
 	exit();
 }
 
-unset($_SESSION['cadastro_ongs']);
 
 $pdo = dbConnect();
 
@@ -101,5 +100,7 @@ elseif ($row[0]['TOTAL']  == 0) {
 	exit();
 
 }
+
+unset($_SESSION['cadastro_ongs']);
 
 ?>

@@ -66,7 +66,6 @@ elseif($senha != $conf_senha){
 	exit();
 }
 
-unset($_SESSION['cadastro_usuario']);
 
 $pdo = dbConnect();
 
@@ -74,6 +73,7 @@ $verificandoExistencia = $pdo->prepare("
 	SELECT COUNT(*) AS TOTAL FROM IPET_USUARIO_NORMAL
 	WHERE NOR_USUARIO = ?;
 	");
+
 $verificandoExistencia->execute([$usuario]);
 $row = $verificandoExistencia->fetchAll();
 
@@ -95,5 +95,7 @@ elseif ($row[0]['TOTAL']  == 0) {
 	exit;
 
 }
+
+unset($_SESSION['cadastro_usuario']);
 
 ?>
