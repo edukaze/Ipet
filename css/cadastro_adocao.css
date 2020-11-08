@@ -6,7 +6,6 @@
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
-
 .banner
 {
 	position: relative;
@@ -46,11 +45,10 @@
 {
 	width: 90%;
 	margin: 0 auto;
-	padding: 0 2px;
 }
 section.adc
 {
-	padding: 30px 90px;
+	padding: 30px;
 }
 section.adc > .box
 {
@@ -58,16 +56,14 @@ section.adc > .box
 	display: inline-block;
 	flex-wrap: wrap;
 }
-.box1
-{
-	padding: 30px;
-}
 .box2
-{
+{	
+	margin: 1%;
 	display: flex;
 	float: left;
-	width: 600px;
-	border: 3px solid #000;
+	width: 400px;
+	height: 600px;
+	border: 1px solid #000;
 }
 .box2 dt, dd, a
 {
@@ -81,18 +77,15 @@ section.adc > .box
 	font-weight: bold;
 	font-size: 16pt;
 }
-
-
 .box2 img {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 5px;
-  height: 150px;
-  width: 200px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 5px;
+	height: 200px;
+	width: 200px;
 }
-
 .box2 img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 .like-div{
 	position: absolute;

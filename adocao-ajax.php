@@ -67,7 +67,7 @@ $rowTotal = $stmt->rowCount();
 			$stmt2->execute([$animal['ANI_CODIGO']]);
 			$likes =  $stmt2->fetch();
 			?>
-			<div class="ui centered grid">
+			<div class="ui four">
 				<div class="computer only row">
 			<div class="box2">
 				<div class="column"><dl>
