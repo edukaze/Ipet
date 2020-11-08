@@ -67,22 +67,25 @@ $rowTotal = $stmt->rowCount();
 			$stmt2->execute([$animal['ANI_CODIGO']]);
 			$likes =  $stmt2->fetch();
 			?>
-			
+			<div class="ui centered grid">
+				<div class="computer only row">
 			<div class="box2">
-				<dl>
+				<div class="column"><dl>
 					<dt>Nome</dt>
 					<dd><?= $animal['ANI_NOME']?></dd>
 					<dd><img src="<?= $imagem ?>"></dd>
-
+				</div>
+				 <div class="six wide tablet eight wide computer column">
 					<dt>Responsável</dt>
 					<?php if ($animal['ANI_NOR_CODIGO'] != null): ?>
 						<dd><a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_NOME']?></a></dd>
 					<?php elseif($animal['ANI_ONG_ID'] != null): ?>
 						<dd><a href="perfil-ong.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a></dd>
 					<?php endif ?>
-
+						<div class="six wide tablet eight wide computer column">
 					<dt>Espécie</dt>
 					<dd><?= $animal['ESP_ESPECIE']?></dd>
+						</div>
 					<dt>Raça</dt>
 					<dd><?= $animal['ANI_RAÇA']?></dd>
 					<dt>Porte</dt>
@@ -97,11 +100,11 @@ $rowTotal = $stmt->rowCount();
 							<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
 
 							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a>
-						</div>
+							</div>
 					</dd>
 				</dl>
 			</div>
-
+		</div>
 		<?php endforeach; ?>
 	<?php endif; ?>
 
