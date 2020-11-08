@@ -12,7 +12,11 @@
 		width: 30px;
 		display: flex;
 	}
+	.ui.card {
+		box-shadow: 13px 13px 20px #cbced1;
+	}
 </style>
+
 <?php
 session_start();
 
@@ -53,7 +57,7 @@ $rowTotal = $stmt->rowCount();
 
 ?>
 
-<div class="box1">
+<!-- <div class="box1"> -->
 
 	<?php if ($rowTotal > 0): ?>
 		<?php foreach ($animais as  $animal): ?>
@@ -67,48 +71,65 @@ $rowTotal = $stmt->rowCount();
 			$stmt2->execute([$animal['ANI_CODIGO']]);
 			$likes =  $stmt2->fetch();
 			?>
-			<div class="ui four">
-				<div class="computer only row">
-			<div class="box2">
-				<div class="column"><dl>
-					<dt>Nome</dt>
-					<dd><?= $animal['ANI_NOME']?></dd>
-					<dd><img src="<?= $imagem ?>"></dd>
-				</div>
-				 <div class="six wide tablet eight wide computer column">
-					<dt>Responsável</dt>
-					<?php if ($animal['ANI_NOR_CODIGO'] != null): ?>
-						<dd><a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_NOME']?></a></dd>
-					<?php elseif($animal['ANI_ONG_ID'] != null): ?>
-						<dd><a href="perfil-ong-geral.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a></dd>
-					<?php endif ?>
-						<div class="six wide tablet eight wide computer column">
-					<dt>Espécie</dt>
-					<dd><?= $animal['ESP_ESPECIE']?></dd>
-						</div>
-					<dt>Raça</dt>
-					<dd><?= $animal['ANI_RAÇA']?></dd>
-					<dt>Porte</dt>
-					<dd><?= $animal['ANI_PORTE']?></dd>
-					<dt>Gênero</dt>
-					<dd><?= $animal['ANI_GENERO']?></dd>
-					<dt>Descrição</dt>
-					<dd><?= $animal['ANI_DESCRICAO']?></dd>
 
-					<dd>
-						<div class="like-div">
-							<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
+		<div class="ui four column grid">
+			<div class="row">
 
-							<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a>
+				<div class="ui card">
+					<div class="image">
+						<img src="<?= $imagem ?>">
+					</div>
+
+					<div class="extra content">
+						<span class="left floated like">
+							<i class="like icon"></i>
+							Like
+						</span>
+						<span class="right floated star">
+							<i class="star icon"></i>
+							Favorite
+						</span>
+					</div>
+
+					<div class="content">
+						<div class="header"><?= $animal['ANI_NOME']?></div>
+						<div class="summary">
+							Responsável:
+							<?php if ($animal['ANI_NOR_CODIGO'] != null): ?>
+								<a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_NOME']?></a>
+								<?php elseif($animal['ANI_ONG_ID'] != null): ?>
+									<a href="perfil-ong-geral.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a>
+								<?php endif ?>
 							</div>
-					</dd>
-				</dl>
-			</div>
-		</div>
+					</div>
+
+						<div class="extra content">
+							<div class="description">
+								DESCRIÇÃO <br>
+								Espécie: <?= $animal['ESP_ESPECIE']?> <br>
+								Raça: <?= $animal['ANI_RAÇA']?> <br>
+								Porte: <?= $animal['ANI_PORTE']?> | Gênero: <?= $animal['ANI_GENERO']?> <br>
+								Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
+
+							</div>
+						</div>
+
+						<div class="extra content">
+							<div class="like-div">
+								<?= $likes['total'] ?> like<?= $likes['total'] > 1 ? 's' : '' ?>
+								<a href="like.php?ani=<?= $animal['ANI_CODIGO']?>" class="like <?= ($animal['LIK_ID'] != null) ? 'liked' : 'normal' ?>"></a>
+							</div>
+						</div>
+
+				</div><!-- .ui.card -->
+			</div><!-- .row -->
+		</div><!-- .ui four column grid -->
+
 		<?php endforeach; ?>
 	<?php endif; ?>
 
-</div>
+<!-- </div>.box -->
+
 <script type="text/javascript">
 
 	$(document).on('click', 'a.like', function(evt){
@@ -123,7 +144,5 @@ $rowTotal = $stmt->rowCount();
 			}
 		})
 	});
-
-
 
 </script>
