@@ -30,6 +30,10 @@ $pdo = dbConnect();
 	<!-- navbar -->
 	<?php  include 'header-diminuido.php'; ?>
 
+	<section class="banner">
+		<div class="overlay"></div>
+	</section>
+
 			<section  class="bg-color" style=" background-color: #F7F8F9;">
 				<div class="container-fluid h-100">
 					<div class="row form-cadastro justify-content-center p-4">

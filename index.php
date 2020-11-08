@@ -114,8 +114,79 @@ if (isset($_SESSION['id_usuario'])) {
 		</div>
 	</section>
 
+	<section class="sec" id="pets">
+		<div class="content">
+			<div class="mxw800p">
+				<h3>Animais que você pode doar ou adotar</h3>
+				<p>Esses são alguns dos muitos outros animais que você pode doar ou adotar.</p>
+			</div>
+			<div  class="teamBx">
+				<div class="member">
+					<div class="imgBx">
+						<img src="img/dog.jpg">
+					</div>
+					<div class="details">
+						<div>
+							<h2>Cachorro</h2>
+						</div>
+					</div>
+				</div>
+				<div class="member">
+					<div class="imgBx">
+						<img src="img/gato.jpg">
+					</div>
+					<div class="details">
+						<div>
+							<h2>Gato</h2>
+						</div>
+					</div>
+				</div>
+				<div class="member">
+					<div class="imgBx">
+						<img src="img/coelho.jpg">
+					</div>
+					<div class="details">
+						<div>
+							<h2>Coelho</h2>
+						</div>
+					</div>
+				</div>
+				<div class="member">
+					<div class="imgBx">
+						<img src="img/hamster.jpg">
+					</div>
+					<div class="details">
+						<div>
+							<h2>Hamster</h2>
+						</div>
+					</div>
+				</div>
+				<div class="member">
+					<div class="imgBx">
+						<img src="img/tartaruga.jpg">
+					</div>
+					<div class="details">
+						<div>
+							<h2>Tartaruga</h2>
+						</div>
+					</div>
+				</div>
+				<div class="member">
+					<div class="imgBx">
+						<img src="img/passaro.jpg">
+					</div>
+					<div class="details">
+						<div>
+							<h2>Pássaro</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- pets -->
-	<section class="sec work" id="pets">
+<!-- 	<section class="sec work" id="pets">
 		<div class="content">
 			<div class="mxw800p">
 				<h3>Animais que você pode doar ou adotar</h3>
@@ -148,7 +219,7 @@ if (isset($_SESSION['id_usuario'])) {
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- equipe -->
 	<section class="sec" id="equipe">
