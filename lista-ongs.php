@@ -19,6 +19,7 @@ $rowTotal = $resultado-> rowCount();
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/lista_ongs.css"/>
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
+	
 </head>
 <body>
 	<?php  include 'header-diminuido.php'; ?>

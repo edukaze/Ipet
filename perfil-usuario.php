@@ -31,6 +31,9 @@ $rowTotal2 =$smtm -> rowCount();
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/perfil-ong.css"/>
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
+
+	   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
 <body>
 	<?php  include 'header-diminuido.php' ?>
@@ -67,31 +70,37 @@ $rowTotal2 =$smtm -> rowCount();
 			$imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
 		}
 		?>
-		<section class="usuarios">
-			<div class="box3">
-				<div class="box4">
-					<div class="box5">
-						<dl>
-							<dt>Nome</dt>
-							<dd><?= $animal['ANI_NOME']?></dd>
-							<dd><img src="<?= $imagem ?>"></dd>
-							<dt>Espécie</dt>
-							<dd><?= $animal['ANI_ESPECIE']?></dd>
-							<dt>Raça</dt>
-							<dd><?= $animal['ANI_RAÇA']?></dd>
-							<dt>Porte</dt>
-							<dd><?= $animal['ANI_PORTE']?></dd>
-							<dt>Gênero</dt>
-							<dd><?= $animal['ANI_GENERO']?></dd>
-							<dt>Descrição</dt>
-							<dd><?= $animal['ANI_DESCRICAO']?></dd>
-						</dl>
-					<?php endforeach ?>
-				</div>
-			</div>   
-		</div>
-	</section>
-	<script type="text/javascript">
+		      <section class="usuarios">
+    	<div class="ui grid">
+		         		<div class="ui card">
+								<div class="image">
+							<img src="<?= $imagem ?>">
+								</div>
+
+			            <div class="content">
+			               <div class="header"><?= $animal['ANI_NOME']?></div>
+			    				<div class="extra content">
+							<div class="description">
+			              		DESCRIÇÃO <br>
+								Espécie: <?= $animal['ANI_ESPECIE']?> <br>
+								Raça: <?= $animal['ANI_RAÇA']?> <br>
+								Porte: <?= $animal['ANI_PORTE']?> <br> Gênero: <?= $animal['ANI_GENERO']?> <br>
+			            	</div>
+						</div>
+
+							<div class="extra content">
+								<div class="descriptin">
+									Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
+								</div>
+							</div>
+			        	</div>
+			     	</div>   
+    		
+    		</div>
+		 </section>
+
+
+      <?php endforeach; ?>	<script type="text/javascript">
       // Deixa o header fixo no site
       window.addEventListener("scroll", function(){
       	var header = document.querySelector("header");

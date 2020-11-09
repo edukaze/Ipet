@@ -31,6 +31,9 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
    <meta charset="utf-8">
    <link rel="stylesheet" type="text/css" href="css/perfil-ong.css"/>
    <link rel="icon" type="imagem/png" href="/img/iPettt.png" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
 </head>
 <body>
   <?php  include 'header-diminuido.php'; ?>
@@ -73,29 +76,30 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
          }
          ?>
          <section class="ong">
-            <div class="box3">
-		         <div class="box4">
-		         	<div class="box5">
-			            <dl>
-			               <dt>Nome</dt>
-			               <dd><?= $animal['ANI_NOME']?></dd>
-			               <dd><img src="<?= $imagem ?>"></dd>
-			               <dt>Chave ong</dt>
-			               <dd><?= $animal['ANI_ONG_ID']?></dd>
-			               <dt>Espécie</dt>
-			               <dd><?= $animal['ANI_ESPECIE']?></dd>
-			               <dt>Raça</dt>
-			               <dd><?= $animal['ANI_RAÇA']?></dd>
-			               <dt>Porte</dt>
-			               <dd><?= $animal['ANI_PORTE']?></dd>
-			               <dt>Gênero</dt>
-			               <dd><?= $animal['ANI_GENERO']?></dd>
-			               <dt>Descrição</dt>
-			               <dd><?= $animal['ANI_DESCRICAO']?></dd>
-			            </dl>
+    	<div class="ui grid">
+		       <div class="ui four cards">
+		         		<div class="ui card">
+								<div class="image">
+							<img src="<?= $imagem ?>">
+								</div>
+			            <div class="content">
+			               <div class="header"><?= $animal['ANI_NOME']?></div>
+			    				<div class="extra content">
+							<div class="description">
+			              		DESCRIÇÃO <br>
+								Espécie: <?= $animal['ANI_ESPECIE']?> <br>
+								Raça: <?= $animal['ANI_RAÇA']?> <br>
+								Porte: <?= $animal['ANI_PORTE']?>  Gênero: <?= $animal['ANI_GENERO']?> <br>
+			            	</div>
+						</div>
+							<div class="extra content">
+								<div class="descriptin">
+									Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
+								</div>
+							</div>
 			        </div>
 			     </div>   
-    		 </div>
+    		</div>
 		 </section>
 
 

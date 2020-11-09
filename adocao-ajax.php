@@ -97,6 +97,7 @@ $rowTotal = $stmt->rowCount();
 							<?php if ($animal['ANI_NOR_CODIGO'] != null): ?>
 								<a href="perfil-usuario.php?id=<?= $animal['NOR_CODIGO'] ?>"><?= $animal['NOR_NOME']?></a>
 								<?php elseif($animal['ANI_ONG_ID'] != null): ?>
+									<?php $_SESSION['ong'] = true; ?>
 									<a href="perfil-ong-geral.php?id=<?= $animal['ONG_ID'] ?>"><?= $animal['ONG_NOME']?></a>
 								<?php endif ?>
 							</div>
