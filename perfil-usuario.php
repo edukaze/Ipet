@@ -45,7 +45,8 @@ $rowTotal2 =$smtm -> rowCount();
 			</section>
 
 			<section class="edc">
-				<div class="box">			
+				<div class="box">
+				<div class="ui four">		
 						<div class="ui card">
 						  <div class="content">
 						    <div class="header"><?= $usuarios['NOR_NOME']?></div>
@@ -74,6 +75,7 @@ $rowTotal2 =$smtm -> rowCount();
 						</div>
 					</div>
 				</div>
+				</div>	
 			</section>
 			
 		<?php endforeach ?>  

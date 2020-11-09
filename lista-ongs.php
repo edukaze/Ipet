@@ -26,9 +26,7 @@ $rowTotal = $resultado-> rowCount();
 <body>
 	<?php  include 'header-diminuido.php'; ?>
 			<section class="adc">
-				<div class="box">
-					<div class="box1">
-
+				<div class="ui four cards">
 						<?php if ($rowTotal > 0): ?>
 							<?php foreach ($resultados as  $result): ?>
 								<div class="ui card">
@@ -53,6 +51,8 @@ $rowTotal = $resultado-> rowCount();
 								</div>
 							<?php endforeach; ?>  
 						<?php endif; ?> 
+					</div>
+				</section>
 
 <script type="text/javascript">
 		// Deixa o header fixo no site

@@ -110,8 +110,8 @@ a:hover{
 }
 section.ong
 {
-	padding: 30px 35px;
-	display: inline-table;
+	padding: 30px 0px;
+	display: flex;
 }
 section.ong > .box3
 {

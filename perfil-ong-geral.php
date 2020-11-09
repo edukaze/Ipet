@@ -33,7 +33,12 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
    <link rel="icon" type="imagem/png" href="/img/iPettt.png" />
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
+	<style>
+		.ui.four.cards {
+    margin-left: 3.25em;
+    margin-right: 3.25em;
+}
+	</style>
 </head>
 <body>
   <?php  include 'header-diminuido.php'; ?>
@@ -49,6 +54,7 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
                      <section class="edc">
                      	<div class="box">
 
+             
 						<div class="ui card">
 						  <div class="content">
 						    <div class="header"><?= $ong['ONG_NOME']?></div>
@@ -81,6 +87,7 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 							</div>
 						</div>
 					</div>
+			
 				</div>
     				</section>
                      <?php endforeach; ?>  

@@ -57,11 +57,9 @@ $rowTotal = $stmt->rowCount();
 		<h1>MEU(S) PET(S)</h1>
 	</section>
 
-	<h3>Alterar informações do perfil <a href="alterar-perfil-ong.php?id=<?= $_SESSION['id_ong']?>">Alterar</a></h3>
+	<h3>Alterar informações do perfil  <br><button class="ui inverted secondary button"><a href="alterar-perfil-ong.php?id=<?= $_SESSION['id_ong']?>">Alterar</a></button></h3>
 	<section class="edc">
-		<div class="box">
-			<div class="box1">
-
+		<div class="ui four cards">
 
 				<?php if ($rowTotal > 0): ?>
 					<?php foreach ($animais as  $animal): ?>
@@ -112,14 +110,15 @@ $rowTotal = $stmt->rowCount();
 							 <div class="column"><button class="ui red button" _msthash="1608854" _msttexthash="114907"><a href="delete.php?id=<?= $animal['ANI_CODIGO'] ?>">EXCLUIR</a></button></div>
 							 <div class="column"><button class="ui blue button" _msthash="1612989" _msttexthash="46332"><a href="edicao_animal.php?id=<?= $animal['ANI_CODIGO'] ?>">EDITAR</a></button></div>
 						</div>
-					</div>	
+					</div>
 
+</div>
 
 						<?php endforeach; ?>
 					<?php endif; ?>
 
-				</div>
-			</section>
+		</div><!-- .ui.four -->
+</section>
 			<?php include 'footer.php'; ?>
 			<script type="text/javascript">
 		// Deixa o header fixo no site
