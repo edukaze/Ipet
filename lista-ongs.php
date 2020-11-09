@@ -44,7 +44,7 @@ $rowTotal = $resultado-> rowCount();
 										</div>
 										<div class="content">
 											<div class="summary">
-												<button class="ui button"><a href="perfil-ong-geral.php?id=<?= $result['ONG_ID'] ?>">Veja Mais Sobre a gente</a></button>
+												<button class="ui button"><a href="perfil-ong-geral.php?id=<?= $result['ONG_ID'] ?>">Veja mais sobre a gente</a></button>
 											</div>
 										</div>
 									</div>
