@@ -45,25 +45,43 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
                  	<section class="voltar">
                  		<a href="adocao.php"> < < </a>
                  	</section>
+
                      <section class="edc">
                      	<div class="box">
-	                		<div class="box1">
-	                   		  <div class="box2">
-	                           <dl>
-	                              <dt>Nome</dt>
-	                              <dd><?= $ong['ONG_NOME']?></dd>
-	                              <dt>CNPJ</dt>
-	                              <dd><?= $ong['ONG_CNPJ']?></dd>
-	                              <dt>Facebook</dt>
-	                              <dd><a href="https://facebook\.com\<?= $ong['ONG_FACEBOOK']?>">facebook</a></dd>
-	                              <dt>Instagram</dt>
-	                              <dd><a href="https://instagram\.com\<?=$ong['ONG_INSTAGRAM']?>">Instagram</a></dd>
-	                              <dt>descrição</dt>
-	                              <dd><?= $ong['ONG_DESCRICAO']?></dd>
-	                           </dl>
-	                          </div>
-	                        </div>
-                        </div>
+
+						<div class="ui card">
+						  <div class="content">
+						    <div class="header"><?= $ong['ONG_NOME']?></div>
+						    <div class="extra content">CNPJ: <?= $ong['ONG_CNPJ']?></div>
+						  </div>
+						  <div class="content">
+						    <h4 class="ui sub header">Contato</h4>
+						    <div class="ui small feed">
+						      <div class="event">
+						        <div class="content">
+						          <div class="summary">
+						   			<button class="ui button"><a href="<?= $ong['ONG_FACEBOOK']?>">Facebook</a></button>
+						   			<button class="ui button"><a href="<?=$ong['ONG_INSTAGRAM']?>">Instagram</a></button>
+						          </div>
+						        </div>
+						      </div>
+						      <div class="event">
+						        <div class="content">
+						          <div class="summary">
+						          	Telefone: <?= $ong['ONG_TELEFONE']?>
+						             <?= $usuarios['NOR_EMAIL']?>
+						          </div>
+						        </div>
+						      </div>
+						  		<div class="content">
+						 		<div class="extra content">
+						   			<?= $ong['ONG_DESCRICAO']?>
+						 		</div>
+						 		</div>
+							</div>
+						</div>
+					</div>
+				</div>
     				</section>
                      <?php endforeach; ?>  
                   <?php endif; ?>

@@ -18,6 +18,8 @@ $rowTotal = $resultado-> rowCount();
 <title>ONGS</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/lista_ongs.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 	
 </head>
@@ -29,16 +31,25 @@ $rowTotal = $resultado-> rowCount();
 
 						<?php if ($rowTotal > 0): ?>
 							<?php foreach ($resultados as  $result): ?>
-								<div class="box2">
-									<dl>
-										<dt>Nome</dt>
-										<dd><?= $result['ONG_NOME']?></dd>
-										<dt>descrição</dt>
-										<dd><?= $result['ONG_DESCRICAO']?></dd>
-										<div class="botao">
-										<a href="perfil-ong-geral.php?id=<?= $result['ONG_ID'] ?>">Veja Mais Sobre a gente</a>
+								<div class="ui card">
+									<div class="content">
+										<div class="header"><?= $result['ONG_NOME']?></div>
+									</div>
+									<div class="content">
+										<h4 class="ui sub header">Descrição</h4>
+										<div class="ui small feed">
+											<div class="event">
+												<div class="extra content">
+													<?= $result['ONG_DESCRICAO']?>
+												</div>
+											</div>
 										</div>
-									</dl>
+										<div class="content">
+											<div class="summary">
+												<button class="ui button"><a href="perfil-ong-geral.php?id=<?= $result['ONG_ID'] ?>">Veja Mais Sobre a gente</a></button>
+											</div>
+										</div>
+									</div>
 								</div>
 							<?php endforeach; ?>  
 						<?php endif; ?> 

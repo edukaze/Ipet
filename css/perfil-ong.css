@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+body {
+	background-color: #F7F8F9;
+}
 section.voltar 
 {
 	margin-top: 160px;
@@ -13,9 +15,9 @@ section.voltar
 }
 .box
 {
-	width: 90%;
 	margin: 0 auto;
-	padding: 0 2px;
+	padding: 0 0px;
+	height: auto;
 }
 section.edc
 {
@@ -23,11 +25,14 @@ section.edc
 }
 section.edc > .box
 {
-	background-image: url(../img/bg3.jpg);
+	background-image: url(../img/background.png);
 	background-size: cover;
 	display: flex;
 	flex-wrap: wrap;
-
+}
+section.usuarios
+{
+	padding: 30px 90px;
 }
 .box1
 {
@@ -84,10 +89,8 @@ section.edc > .box
 {
 	display: none;
 }
-}
 a:hover{
 	text-decoration: none;
-	color: #000;
 }
 .box2 img {
   border: 1px solid #ddd;
