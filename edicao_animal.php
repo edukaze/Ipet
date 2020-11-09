@@ -36,16 +36,45 @@ $edianimais = $stmt->fetchAll();
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css//cadastro_doacao.css">
+	<!--  <link rel="stylesheet" href="css//cadastro_doacao.css"> -->
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png"/>
-
+	<style>
+	.banner-dc {
+		position: relative;
+		width: 100%;
+		max-height: 600px;
+		background-image: url("../img/bg3.jpg");
+		background-size: cover;
+		background-attachment: fixed;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.banner-dc .overlay h2 {
+		padding-top: 180px;
+		color: #fff;
+		font-size: 30px;
+		text-align: center;
+		line-height: 1em;
+		margin-top: 15%;
+		text-shadow: 5px 5px 7px #000000;
+		letter-spacing: 1px;
+		font-weight: bolder;
+	}
+	.overlay h2 span {
+		color: #fff;
+		font-size: 60px;
+	}
+	</style>
 </head>
+
 <body>
 	<!-- navbar -->
 	<?php  include 'header-diminuido.php'; ?>
+
 	<section class="banner-dc" id="home">
 		<div class="overlay">
-			<!-- <h2><span>Atitude é uma pequena<br>coisa que faz uma grande diferença</span></h2> -->
+			<h2>Edite as informações<br>do seu pet<br><br><span>⇣</span></span></h2>
 		</div>
 	</section>
 
@@ -53,13 +82,7 @@ $edianimais = $stmt->fetchAll();
 		<div class="container-fluid h-100">
 			<div class="row form-cadastro justify-content-center p-4">
 				<div class="col-md-3 align-self-center area-form">
-
-					<div class="row justify-content-center mb-4">
-					</div>
-					<span class="small d-block text-center" style="font-size: 20px;">Faça sua Alteração aqui</span>
-
-					<span class="small d-block text-center" style="font-size: 20px;">Insira os dados do Pet</span>
-
+					
 					<?php include 'condicional-cadastro.php'; ?>
 					<?php foreach ($edianimais as $edianimal): ?>
 						<form action="edicao_dados.php" method="POST" enctype="multipart/form-data">
