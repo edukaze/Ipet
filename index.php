@@ -230,7 +230,7 @@ if (isset($_SESSION['id_usuario'])) {
 			<div  class="teamBx">
 				<div class="member">
 					<div class="imgBx">
-						<img src="img/suelen.jpg">
+						<img src="img/suelen.png">
 					</div>
 					<div class="details">
 						<div>
