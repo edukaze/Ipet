@@ -50,7 +50,7 @@ include 'funcoes.php';
 	");
 		$query->execute([$senhaSegura, $contato,$email, $_SESSION['id_usuario']]);
 	$_SESSION['upadate'] = true;
-	//header('Location: alterar-perfil.php');
+	header('Location: alterar-perfil.php');
 	exit();
 	}
 	elseif ($row[0]['TOTAL']  == 0) {
@@ -61,7 +61,7 @@ include 'funcoes.php';
 	");
 	$query1->execute([$usuario , $senhaSegura, $contato, $email, $_SESSION['id_usuario']]);
 	$_SESSION['upadate'] = true;
-	//header('location: alterar-perfil.php');
+	header('location: alterar-perfil.php');
 	exit();
 	}
 	elseif ($row[0]['TOTAL']  > 1) {
@@ -127,7 +127,7 @@ elseif (isset($_SESSION['id_ong'])) {
 	");
 		$query->execute([$senhaSegura, $telefone, $email, $facebook, $instagram, $_SESSION['id_ong']]);
 	$_SESSION['upadate'] = true;
-	//header('Location: alterar-perfil.php');
+	header('Location: alterar-perfil.php');
 	exit();
 	}
 	elseif ($row[0]['TOTAL']  == 0) {
@@ -138,7 +138,7 @@ elseif (isset($_SESSION['id_ong'])) {
 	");
 	$query1->execute([$usuario , $senhaSegura, $telefone, $email, $facebook, $instagram,$_SESSION['id_ong']]);
 	$_SESSION['upadate'] = true;
-	//header('location: alterar-perfil.php');
+	header('location: alterar-perfil.php');
 	exit();
 	}
 	elseif ($row[0]['TOTAL']  > 1) {
