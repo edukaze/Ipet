@@ -36,6 +36,19 @@ $rowTotal = $stmt->rowCount();
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
+<style type="text/css">
+		a{
+		color: black                                                                                                                                                                      ;
+	}
+	.ui.grid>.column:not(.row), .ui.grid>.row>.column{
+		    padding-right: 7rem;
+		    padding-left: 3rem;
+	}
+	h3{
+		text-align: center;
+	}
+
+</style>
 <body>
 	<!-- navbar -->
 	<?php include 'header.php'; ?>
@@ -83,7 +96,7 @@ $rowTotal = $stmt->rowCount();
 								<div class="extra content">
 									<div class="description">
 										DESCRIÇÃO <br>
-										Espécie: <?= $animal['ESP_ESPECIE']?> <br>
+										Espécie: <?= $animal['ANI_ESPECIE']?> <br>
 										Raça: <?= $animal['ANI_RAÇA']?> <br>
 										Porte: <?= $animal['ANI_PORTE']?> | Gênero: <?= $animal['ANI_GENERO']?> <br>
 									</div>
@@ -94,9 +107,13 @@ $rowTotal = $stmt->rowCount();
 										Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
 									</div>
 								</div>
-								<a href="edicao_animal.php?id=<?= $animal['ANI_CODIGO'] ?>">EDITAR<a href="delete.php?id=<?= $animal['ANI_CODIGO'] ?>">EXCLUIR</a>
+							<div class="ui four column grid">
+ 								 <div class="row">
+							 <div class="column"><button class="ui red button" _msthash="1608854" _msttexthash="114907"><a href="delete.php?id=<?= $animal['ANI_CODIGO'] ?>">EXCLUIR</a></button></div>
+							 <div class="column"><button class="ui blue button" _msthash="1612989" _msttexthash="46332"><a href="edicao_animal.php?id=<?= $animal['ANI_CODIGO'] ?>">EDITAR</a></button></div>
+						</div>
+					</div>	
 
-							</div>
 
 						<?php endforeach; ?>
 					<?php endif; ?>
