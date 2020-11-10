@@ -28,17 +28,20 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 <html>
 <head>
 	<title>PERFIL ONG</title>
-   <meta charset="utf-8">
-   <link rel="stylesheet" type="text/css" href="css/perfil-ong.css"/>
-   <link rel="icon" type="imagem/png" href="/img/iPettt.png" />
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/perfil-ong.css"/>
+	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 	<style>
-	.ui.four.cards {
-    margin-left: 6.25em;
-    margin-right: 6.25em;
-    margin-bottom: 3.25em;
-	}
+		body {
+			background: #F7F8F9;
+		}
+		.ui.four.cards {
+			margin-left: 6.25em;
+			margin-right: 6.25em;
+			margin-bottom: 3.25em;
+		}
 	</style>
 </head>
 

@@ -37,12 +37,15 @@ $rowTotal = $stmt->rowCount();
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
 <style type="text/css">
-		a{
-		color: black                                                                                                                                                                      ;
+	body {
+		background: #F7F8F9;
+	}
+	a{
+		color: black;
 	}
 	.ui.grid>.column:not(.row), .ui.grid>.row>.column{
-		    padding-right: 7rem;
-		    padding-left: 3rem;
+		padding-right: 7rem;
+		padding-left: 3rem;
 	}
 	h3{
 		text-align: center;

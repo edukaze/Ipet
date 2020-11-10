@@ -21,7 +21,11 @@ $rowTotal = $resultado-> rowCount();
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
-	
+	<style>
+		body {
+			background: #F7F8F9;
+		}
+	</style>
 </head>
 <body>
 	<?php  include 'header-diminuido.php'; ?>

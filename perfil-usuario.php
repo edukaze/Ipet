@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-
 include 'banco.php';
 $id = $_GET['id'];
 $pdo = dbConnect();
@@ -24,6 +23,7 @@ $usuario = $smtm->fetchAll();
 $rowTotal2 =$smtm -> rowCount();
 
 ?>	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,11 +32,22 @@ $rowTotal2 =$smtm -> rowCount();
 	<link rel="stylesheet" type="text/css" href="css/perfil-ong.css"/>
 	<link rel="icon" type="imagem/png" href="/img/iPettt.png" />
 
-	   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<style>
+	body {
+	background: #F7F8F9;
+	}	
+	.ui.four.cards {
+    margin-left: 5.25em;
+    margin-right: 5.25em;
+    margin-bottom: 3.25em;
+	}
+	</style>
 </head>
+
 <body>
-	<?php  include 'header-diminuido.php' ?>
+<?php  include 'header-diminuido.php' ?>
 
 	<?php if ($rowTotal2 > 0): ?>
 		<?php foreach ($usuario as  $usuarios): ?>
@@ -81,6 +92,9 @@ $rowTotal2 =$smtm -> rowCount();
 		<?php endforeach ?>  
 	<?php endif ?>
 
+<section class="usuarios">
+<div class="ui four cards">
+
 	<?php foreach ($animais as  $animal): ?>
 		<?php
 		$imagem = 'imagens/1/bbb.jpeg';
@@ -88,12 +102,10 @@ $rowTotal2 =$smtm -> rowCount();
 			$imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
 		}
 		?>
-		      <section class="usuarios">
-    			<div class="ui four cards">
     			    <div class="ui card">
-								<div class="image">
-							<img src="<?= $imagem ?>">
-								</div>
+    			    	<div class="image">
+    			    		<img src="<?= $imagem ?>">
+    			    	</div>
 
 			            <div class="content">
 			               <div class="header"><?= $animal['ANI_NOME']?></div>
@@ -113,12 +125,14 @@ $rowTotal2 =$smtm -> rowCount();
 							</div>
 			        	</div>
 			     	</div>   
-    		
-    		</div>
-		 </section>
 
+   	<?php endforeach; ?>
+</div>
+</section>
 
-      <?php endforeach; ?>	<script type="text/javascript">
+<?php include 'footer.php'; ?>
+
+   	<script type="text/javascript">
       // Deixa o header fixo no site
       window.addEventListener("scroll", function(){
       	var header = document.querySelector("header");
@@ -129,7 +143,7 @@ $rowTotal2 =$smtm -> rowCount();
       	var header = document.querySelector("header");
       	header.classList.toggle("active");
       }
+  </script>
 
-  </script>   
 </body>
 </html>
