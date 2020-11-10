@@ -75,7 +75,7 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 						        <div class="content">
 						          <div class="summary">
 						          	Telefone: <?= $ong['ONG_TELEFONE']?>
-						             <?= $usuarios['NOR_EMAIL']?>
+						             <?= $ong['ONG_EMAIL']?>
 						          </div>
 						        </div>
 						      </div>
@@ -93,6 +93,8 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
                      <?php endforeach; ?>  
                   <?php endif; ?>
 
+                  <div class="ui four cards">
+
                   <?php foreach ($animais as  $animal): ?>
          <?php
          $imagem = 'imagens/1/bbb.jpeg';
@@ -102,7 +104,7 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
          ?>
          <section class="ong">
     	<div class="ui grid">
-		       <div class="ui four cards">
+		     
 		         		<div class="ui card">
 								<div class="image">
 							<img src="<?= $imagem ?>">
@@ -124,7 +126,8 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 							</div>
 			        </div>
 			     </div>   
-    		</div>
+    		
+    	</div>
 		 </section>
 
 
@@ -134,6 +137,7 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
    <a href="lista-ongs.php">Veja mais ONGs</a>
 </div>
 </div> -->
+</div>
 
 
 	
