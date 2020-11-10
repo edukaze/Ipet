@@ -1,7 +1,6 @@
 <?php 
 session_start();
  
-
 include 'banco.php';
 $id = $_GET['id'];
 $pdo = dbConnect();
@@ -23,7 +22,8 @@ $rowTotal = $animaisong->rowCount();
 $ongs = $preprarandoOgns->fetchAll();
 $rowTotal2 =$preprarandoOgns -> rowCount();
 
-?>	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,12 +34,14 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 	<style>
-		.ui.four.cards {
-    margin-left: 3.25em;
-    margin-right: 3.25em;
-}
+	.ui.four.cards {
+    margin-left: 6.25em;
+    margin-right: 6.25em;
+    margin-bottom: 3.25em;
+	}
 	</style>
 </head>
+
 <body>
   <?php  include 'header-diminuido.php'; ?>
 
@@ -48,7 +50,7 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 <?php if ($rowTotal2 > 0): ?>
                      <?php foreach ($ongs as  $ong): ?>
                  	<section class="voltar">
-                 		<a href="adocao.php"> < < </a>
+                 		<a href="lista-ongs.php"> < < </a>
                  	</section>
 
                      <section class="edc">
