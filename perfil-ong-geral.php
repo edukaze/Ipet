@@ -45,18 +45,15 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 <body>
   <?php  include 'header-diminuido.php'; ?>
 
+  <?php   var_dump($_GET['id']); ?>
+  <?php if ($rowTotal2 > 0): ?>
+  	<?php foreach ($ongs as  $ong): ?>
+  		<section class="voltar">
+  			<a href="lista-ongs.php"> < < </a>
+  		</section>
 
-<?php   var_dump($_GET['id']); ?>
-<?php if ($rowTotal2 > 0): ?>
-                     <?php foreach ($ongs as  $ong): ?>
-                 	<section class="voltar">
-                 		<a href="lista-ongs.php"> < < </a>
-                 	</section>
-
-                     <section class="edc">
-                     	<div class="box">
-
-             
+            <section class="edc">
+                <div class="box">
 						<div class="ui card">
 						  <div class="content">
 						    <div class="header"><?= $ong['ONG_NOME']?></div>
@@ -89,62 +86,51 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
 							</div>
 						</div>
 					</div>
-			
 				</div>
-    				</section>
-                     <?php endforeach; ?>  
-                  <?php endif; ?>
+			</section>
+		<?php endforeach; ?>  
+	<?php endif; ?>
 
-                  <div class="ui four cards">
+	<div class="ui four cards">
 
-                  <?php foreach ($animais as  $animal): ?>
-         <?php
-         $imagem = 'imagens/1/bbb.jpeg';
-         if (is_file("imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'])) {
-            $imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
-         }
-         ?>
-         <section class="ong">
-    	<div class="ui grid">
-		     
-		         		<div class="ui card">
-								<div class="image">
-							<img src="<?= $imagem ?>">
+		<?php foreach ($animais as  $animal): ?>
+			<?php
+			$imagem = 'imagens/1/bbb.jpeg';
+			if (is_file("imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'])) {
+				$imagem = "imagens/" .  $animal['ANI_CODIGO'] . "/" . $animal['ANI_IMAGEM'];
+			}
+			?>
+		    <section class="ong">
+		    	<div class="ui grid">
+				         		<div class="ui card">
+										<div class="image">
+									<img src="<?= $imagem ?>">
+										</div>
+					            <div class="content">
+					               <div class="header"><?= $animal['ANI_NOME']?></div>
+					    				<div class="extra content">
+									<div class="description">
+					              		DESCRIÇÃO <br>
+										Espécie: <?= $animal['ANI_ESPECIE']?> <br>
+										Raça: <?= $animal['ANI_RAÇA']?> <br>
+										Porte: <?= $animal['ANI_PORTE']?>  Gênero: <?= $animal['ANI_GENERO']?> <br>
+					            	</div>
 								</div>
-			            <div class="content">
-			               <div class="header"><?= $animal['ANI_NOME']?></div>
-			    				<div class="extra content">
-							<div class="description">
-			              		DESCRIÇÃO <br>
-								Espécie: <?= $animal['ANI_ESPECIE']?> <br>
-								Raça: <?= $animal['ANI_RAÇA']?> <br>
-								Porte: <?= $animal['ANI_PORTE']?>  Gênero: <?= $animal['ANI_GENERO']?> <br>
-			            	</div>
-						</div>
-							<div class="extra content">
-								<div class="descriptin">
-									Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
-								</div>
-							</div>
-			        </div>
-			     </div>   
-    		
-    	</div>
-		 </section>
+									<div class="extra content">
+										<div class="descriptin">
+											Sobre o pet: <?= $animal['ANI_DESCRICAO']?>
+										</div>
+									</div>
+					        </div>
+					     </div>   
+		    		
+		    	</div>
+			</section>
 
-
-      <?php endforeach; ?>
-<!-- <div class="box-botao">     
-<div class="botao">    
-   <a href="lista-ongs.php">Veja mais ONGs</a>
-</div>
-</div> -->
+  		<?php endforeach; ?>
 </div>
 
-
-	
 <?php include 'footer.php'; ?>
-
 
 <script type="text/javascript">
       // Deixa o header fixo no site
@@ -161,4 +147,3 @@ $rowTotal2 =$preprarandoOgns -> rowCount();
    </script>   
 </body>
 </html>
-
